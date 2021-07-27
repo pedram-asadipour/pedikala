@@ -3668,3 +3668,8 @@ th { text-align: right; }
 #wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > ul {
     z-index: 10000;
 }
+
+input.ltr {
+    direction: ltr;
+    /* text-align: left; */
+}

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ShopManagement.Configuration;
 
 namespace ServiceHost
 {
@@ -17,6 +18,10 @@ namespace ServiceHost
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = Configuration.GetConnectionString("connection");
+
+            services.AddShopConfigure(connection);
+
             services.AddRazorPages();
         }
 
