@@ -1,0 +1,13 @@
+body{
+    direction: rtl !important;
+    text-align: right;
+}
+
+.topbar .topbar-right {
+    float: right;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+    width: 240px;
+    background: #317eeb;
+  }
