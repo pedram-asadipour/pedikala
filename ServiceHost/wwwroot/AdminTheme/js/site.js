@@ -41,7 +41,6 @@ SinglePage.LoadOperation = function() {
 
             ClearHash();
             CallBackHandler(data, "Refresh", null);
-            SinglePage.LoadContent();
 
         }).fail(function() {
         swal("خطا در انجام عملیات!!!", "خطایی رخ داده , لطفا با مدیر سیستم تماس بگیرید", "error");
@@ -56,12 +55,7 @@ SinglePage.LoadContent = function() {
     GetContent(url, "siteContent");
 
     if (handlerPage == "list")
-        setTimeout(function() {
-                $('#datatable').DataTable({
-                    responsive: true,
-                });
-            },
-            1000);
+        setTimeout(function() { $("#datatable").DataTable(); }, 1000);
 
 }
 
@@ -71,7 +65,7 @@ function GetPathName() {
 }
 
 function ClearHash() {
-    window.location.hash = "##";
+    window.location.hash = "";
 }
 
 function showModal() {
@@ -124,7 +118,6 @@ $(document).ready(function() {
                     data,
                     function(data) {
                         CallBackHandler(data, action, form);
-                        SinglePage.LoadContent();
                     });
             } else {
                 const formData = new FormData(this);
@@ -139,7 +132,6 @@ $(document).ready(function() {
                     success: function(data) {
                         hideModal();
                         CallBackHandler(data, action, form);
-                        SinglePage.LoadContent();
                     },
                     error: function() {
                         hideModal();
@@ -158,8 +150,8 @@ function CallBackHandler(data, action, form) {
         break;
     case "Refresh":
         if (data.isSucceeded) {
+            SinglePage.LoadContent();
             swal(data.message, "لیست به صورت خودکار بروز رسانی شد", "success");
-
         } else {
             swal(data.message, "", "error");
         }
@@ -217,8 +209,8 @@ function checkSlugDuplication(url, dist) {
 }
 
 function fillField(source, dist) {
-    const value = $('#' + source).val();
-    $('#' + dist).val(value);
+    const value = $("#" + source).val();
+    $("#" + dist).val(value);
 }
 
 $(document).on("click",
@@ -259,19 +251,17 @@ function handleAjaxCall(method, url, data) {
 
 function SetTagInput() {
     try {
-        $('.tagInput').tagsInput({ width: 'auto', height: 'auto' });
+        $(".tagInput").tagsInput({ width: "auto", height: "auto" });
     } catch (e) {
-        console.log(e);
     }
 }
 
 function SetSelect2(source) {
     try {
-        $("#" + source).select2({
-            width: '100%'
+        $(`#${source}`).select2({
+            width: "100%"
         });
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -279,7 +269,6 @@ function SetDataTable() {
     try {
         $("#datatable").dataTable();
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -297,21 +286,20 @@ function SetPersianDatePicker() {
         });
 
     } catch (e) {
-        console.log(e);
     }
 }
 
-jQuery.validator.addMethod("maxFileSize",
-    function(value, element, params) {
-        var size = element.files[0].size;
-        var maxSize = 3 * 1024 * 1024;
-        if (size > maxSize)
-            return false;
-        else {
-            return true;
-        }
-    });
-jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+//jQuery.validator.addMethod("maxFileSize",
+//    function(value, element, params) {
+//        var size = element.files[0].size;
+//        var maxSize = 3 * 1024 * 1024;
+//        if (size > maxSize)
+//            return false;
+//        else {
+//            return true;
+//        }
+//    });
+//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
 
 //jQuery.validator.addMethod("maxFileSize",
 //    function (value, element, params) {

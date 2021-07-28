@@ -95,3 +95,7 @@ C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razo
 C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\Product\Edit.cshtml.g.cs
 C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\Product\Index.cshtml.g.cs
 C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\Product\List.cshtml.g.cs
+C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\ProductPicture\Create.cshtml.g.cs
+C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\ProductPicture\Edit.cshtml.g.cs
+C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\ProductPicture\Index.cshtml.g.cs
+C:\Users\pedram\Desktop\pedram\source\Pedikala\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shop\ProductPicture\List.cshtml.g.cs

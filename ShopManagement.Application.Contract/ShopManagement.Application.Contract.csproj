@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ProductPicture\**" />
-    <EmbeddedResource Remove="ProductPicture\**" />
-    <None Remove="ProductPicture\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\01_Framework\01_Framework.csproj" />
   </ItemGroup>
 

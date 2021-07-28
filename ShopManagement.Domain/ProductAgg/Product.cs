@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Domain;
 using ShopManagement.Domain.ProductCategoryAgg;
+using ShopManagement.Domain.ProductPictureAgg;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -18,11 +19,11 @@ namespace ShopManagement.Domain.ProductAgg
         public bool IsRemoved { get; private set; }
         public long CategoryId { get; private set; }
         public ProductCategory ProductCategory { get; private set; }
-        // public List<ProductPicture> ProductPictures { get; private set; }
+        public List<ProductPicture> ProductPictures { get; private set; }
 
         protected Product()
         {
-            // ProductPictures = new List<ProductPicture>();
+            ProductPictures = new List<ProductPicture>();
         }
 
         public Product(string name, string productCode, string shortDescription, 

@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "تصاویر محصولات";
+}
+
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <h4 class="">
+            <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Create")">افزودن تصویر برای محصول <i class="md md-add"></i></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="page-title">تصاویر محصولات</h2>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">فیلتر تصاویر</h3>
+            </div>
+            <div class="panel-body">
+
+                <form class="form-inline" role="form" method="get">
+                    <div class="form-group">
+                        <select asp-for="@Model.SearchModel.ProductId" asp-items="@Model.ProductSelectList">
+                            <option value="0">محصولات مورد نظر را انتخاب کنید</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">فیلتر</button>
+                    <a asp-page="./Index" class="btn btn-inverse waves-effect waves-light m-r-5">نمایش همه</a>
+                </form>
+
+            </div> <!-- panel-body -->
+        </div> <!-- panel -->
+    </div> <!-- col -->
+
+</div>
+
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.ProductPictures" />
+</div>
+
+
+
+@section Styles
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- TagsInput -->
+    <link href="~/lib/tagsinput/jquery.tagsinput.css" rel="stylesheet" />
+
+    <!-- Select2 -->
+    <link href="~/lib/select2/select2.css" rel="stylesheet" type="text/css" />
+
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+
+    <!-- Select2 -->
+    <script src="~/lib/select2/select2.min.js" type="text/javascript"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}
