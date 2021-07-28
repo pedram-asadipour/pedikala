@@ -12,3 +12,4 @@ C:\Users\pedram\Desktop\pedram\source\Pedikala\01_Framework\obj\Debug\net5.0\01_
 C:\Users\pedram\Desktop\pedram\source\Pedikala\01_Framework\obj\Debug\net5.0\ref\01_Framework.dll
 C:\Users\pedram\Desktop\pedram\source\Pedikala\01_Framework\obj\Debug\net5.0\01_Framework.pdb
 C:\Users\pedram\Desktop\pedram\source\Pedikala\01_Framework\obj\Debug\net5.0\01_Framework.genruntimeconfig.cache
+C:\Users\pedram\Desktop\pedram\source\Pedikala\01_Framework\obj\Debug\net5.0\01_Framework.csproj.AssemblyReference.cache

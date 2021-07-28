@@ -6,11 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="ProductPicture\**" />
-    <Compile Remove="Product\**" />
     <EmbeddedResource Remove="ProductPicture\**" />
-    <EmbeddedResource Remove="Product\**" />
     <None Remove="ProductPicture\**" />
-    <None Remove="Product\**" />
   </ItemGroup>
 
   <ItemGroup>

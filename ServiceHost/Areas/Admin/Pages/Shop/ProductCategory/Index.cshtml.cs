@@ -8,7 +8,6 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductCategory
     public class IndexModel : PageModel
     {
         public ProductCategorySearchModel SearchModel { get; set; }
-
         public List<ProductCategoryViewModel> ProductCategories { get; set; }
 
         private readonly IProductCategoryApplication _application;
