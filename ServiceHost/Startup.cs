@@ -22,7 +22,7 @@ namespace ServiceHost
             var connection = Configuration.GetConnectionString("connection");
 
             services.AddShopConfigure(connection);
-            services.AddConfigureDiscount(connection);
+            services.AddDiscountConfigure(connection);
 
             services.AddRazorPages();
         }

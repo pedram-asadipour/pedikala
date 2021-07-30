@@ -1,5 +1,7 @@
 ﻿using DiscountManagement.Application;
+using DiscountManagement.Application.Contract.ColleagueDiscount;
 using DiscountManagement.Application.Contract.CustomerDiscount;
+using DiscountManagement.Domain.ColleagueDiscountAgg;
 using DiscountManagement.Domain.CustomerDiscountAgg;
 using DiscountManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore.Repository;
@@ -10,7 +12,7 @@ namespace DiscountManagement.Configuration
 {
     public static class DiscountBootstrapper
     {
-        public static void AddConfigureDiscount(this IServiceCollection services, string connection)
+        public static void AddDiscountConfigure(this IServiceCollection services, string connection)
         {
             services.AddDbContext<DiscountContext>(options =>
             {
@@ -21,6 +23,13 @@ namespace DiscountManagement.Configuration
 
             services.AddScoped<ICustomerDiscountRepository, CustomerDiscountRepository>();
             services.AddScoped<ICustomerDiscountApplication, CustomerDiscountApplication>();
+
+            #endregion
+
+            #region Colleague Discount
+
+            services.AddScoped<IColleagueDiscountRepository, ColleagueDiscountRepository>();
+            services.AddScoped<IColleagueDiscountApplication, ColleagueDiscountApplication>();
 
             #endregion
         }

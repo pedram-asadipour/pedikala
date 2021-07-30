@@ -36,12 +36,12 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
 
         public PartialViewResult OnGetCreate()
         {
-            var createProduct = new CreateProductPicture()
+            var createProductPicture = new CreateProductPicture()
             {
                 Products = _productApplication.GetAllSelectModel()
             };
 
-            return Partial("./Create", createProduct);
+            return Partial("./Create", createProductPicture);
         }
 
         public JsonResult OnPostCreate(CreateProductPicture command)
@@ -52,11 +52,11 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
 
         public PartialViewResult OnGetEdit(long id)
         {
-            var productPicture = _application.GetDetail(id);
+            var editProductPicture = _application.GetDetail(id);
 
-            productPicture.Products = _productApplication.GetAllSelectModel();
+            editProductPicture.Products = _productApplication.GetAllSelectModel();
 
-            return Partial("./Edit", productPicture);
+            return Partial("./Edit", editProductPicture);
         }
 
         public JsonResult OnPostEdit(EditProductPicture command)

@@ -52,11 +52,11 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.Product
 
         public PartialViewResult OnGetEdit(long id)
         {
-            var productCategory = _application.GetDetail(id);
+            var editProduct = _application.GetDetail(id);
 
-            productCategory.Categories = _categoryApplication.GetAllSelectModel();
+            editProduct.Categories = _categoryApplication.GetAllSelectModel();
 
-            return Partial("./Edit", productCategory);
+            return Partial("./Edit", editProduct);
         }
 
         public JsonResult OnPostEdit(EditProduct command)
