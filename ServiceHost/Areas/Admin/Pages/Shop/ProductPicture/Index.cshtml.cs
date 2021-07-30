@@ -10,7 +10,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
     public class IndexModel : PageModel
     {
         public ProductPictureSearchModel SearchModel { get; set; }
-        public SelectList ProductSelectList { get; set; }
+        public SelectList Products { get; set; }
         public List<ProductPictureViewModel> ProductPictures { get; set; }
 
         private readonly IProductPictureApplication _application;
@@ -24,7 +24,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
 
         public void OnGet(ProductPictureSearchModel searchModel)
         {
-            ProductSelectList = new SelectList(_productApplication.GetAllSelectModel(), "Id", "Name");
+            Products = new SelectList(_productApplication.GetAllSelectModel(), "Id", "Name");
             ProductPictures = _application.GetAll(searchModel);
         }
 
@@ -38,7 +38,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
         {
             var createProduct = new CreateProductPicture()
             {
-                ProductSelectModels = _productApplication.GetAllSelectModel()
+                Products = _productApplication.GetAllSelectModel()
             };
 
             return Partial("./Create", createProduct);
@@ -54,7 +54,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
         {
             var productPicture = _application.GetDetail(id);
 
-            productPicture.ProductSelectModels = _productApplication.GetAllSelectModel();
+            productPicture.Products = _productApplication.GetAllSelectModel();
 
             return Partial("./Edit", productPicture);
         }

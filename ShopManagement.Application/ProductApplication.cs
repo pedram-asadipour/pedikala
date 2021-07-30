@@ -76,7 +76,7 @@ namespace ShopManagement.Application
             return operationResult.Succeeded();
         }
 
-        public OperationResult Remove(long id)
+        public OperationResult Removed(long id)
         {
             var operationResult = new OperationResult();
             var product = _repository.GetBy(id);

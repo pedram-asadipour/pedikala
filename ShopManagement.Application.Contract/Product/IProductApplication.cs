@@ -10,7 +10,7 @@ namespace ShopManagement.Application.Contract.Product
         EditProduct GetDetail(long id);
         OperationResult Create(CreateProduct command);
         OperationResult Edit(EditProduct command);
-        OperationResult Remove(long id);
+        OperationResult Removed(long id);
         OperationResult Restore(long id);
     }
 }

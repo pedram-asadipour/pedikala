@@ -1,0 +1,96 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "تخفیفات مشتری";
+}
+
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <h4>
+            <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Define")">ایجاد تخفیف برای مشتری <i class="md md-add"></i></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="page-title">تخفیفات مشتری</h2>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">فیلتر تخفیفات</h3>
+            </div>
+            <div class="panel-body">
+
+                <form class="form-inline" role="form" method="get">
+                    <div class="form-group">
+                        <label asp-for="@Model.SearchModel.StartDate"></label>
+                        <input asp-for="@Model.SearchModel.StartDate" class="form-control datePickerInput" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.SearchModel.EndDate"></label>
+                        <input asp-for="@Model.SearchModel.EndDate" class="form-control datePickerInput" readonly>
+                    </div>
+                    <div class="form-group">
+                        <select asp-for="@Model.SearchModel.ProductId" asp-items="@Model.Products">
+                            <option value="0">محصولات مورد نظر را انتخاب کنید</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">فیلتر</button>
+                    <a asp-page="./Index" class="btn btn-inverse waves-effect waves-light m-r-5">نمایش همه</a>
+                </form>
+
+            </div> <!-- panel-body -->
+        </div> <!-- panel -->
+    </div> <!-- col -->
+
+</div>
+
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.CustomerDiscounts" />
+</div>
+
+
+
+@section Styles
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 -->
+    <link href="~/lib/select2/select2.css" rel="stylesheet" type="text/css" />
+
+    <!--Persian DatePicker-->
+    <link rel="stylesheet" href="~/lib/persian-datepicker/persian-datepicker.min.css">
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+    <!-- Select2 -->
+    <script src="~/lib/select2/select2.min.js" type="text/javascript"></script>
+
+    <!--Persian DatePicker-->
+    <script src="~/lib/persian-datepicker/persian-date.min.js"></script>
+    <script src="~/lib/persian-datepicker/persian-datepicker.min.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

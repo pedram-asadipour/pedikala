@@ -74,6 +74,339 @@
         }
       }
     },
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "projectName": "DiscountManagement.Application.Contract",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "projectName": "DiscountManagement.Application",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\DiscountManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
+        "projectName": "DiscountManagement.Configuration",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\DiscountManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application\\DiscountManagement.Application.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "projectName": "DiscountManagement.Domain",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "projectName": "DiscountManagement.Infrastructure.EFCore",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ServiceHost\\ServiceHost.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -98,6 +431,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"
+              },
               "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
               }

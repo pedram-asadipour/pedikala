@@ -15,7 +15,7 @@
         <div class="row">
             <div class="form-group">
                 <label class="control-label"></label>
-                <select asp-for="ProductId" asp-items='new SelectList(Model.ProductSelectModels,"Id","Name")'>
+                <select asp-for="ProductId" asp-items='new SelectList(Model.Products,"Id","Name")'>
                     <option value="0">محصول</option>
                 </select>
                 <span asp-validation-for="ProductId" class="error"></span>

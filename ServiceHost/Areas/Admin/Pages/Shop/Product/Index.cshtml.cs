@@ -67,7 +67,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.Product
 
         public JsonResult OnGetRemove(long id)
         {
-            var json = _application.Remove(id);
+            var json = _application.Removed(id);
             return new JsonResult(json);
         }
 

@@ -9,7 +9,7 @@ namespace _01_Framework.Tools
             var dateNow = DateTime.Now;
             dateNow = dateNow.Date;
 
-            return dateStart > dateNow && dateEnd < dateNow;
+            return dateEnd > dateNow && dateNow >= dateStart;
         }
     }
 }

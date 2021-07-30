@@ -25,6 +25,6 @@ namespace ShopManagement.Application.Contract.ProductPicture
         [DisplayName("Title تصویر")]
         public string ImageTitle { get; set; }
 
-        public List<SelectModel> ProductSelectModels { get; set; }
+        public List<SelectModel> Products { get; set; }
     }
 }
