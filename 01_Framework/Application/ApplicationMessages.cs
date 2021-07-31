@@ -8,5 +8,6 @@
         public const string NotFound = "هیچ مقداری با این مشخصات یافت نشد";
         public const string Exists = "این مقدار از قبل وجود دارد";
         public const string CurrentCount = "تعداد موجودی کمتر از میزان ورودی می باشد";
+        public const string Failed = "عملیات انجام نشد";
     }
 }

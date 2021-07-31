@@ -1,0 +1,51 @@
+﻿@model List<InventoryManagement.Application.Contract.Inventory.InventoryOperationViewModel>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">لیست گردش انبار (@Model.Count)</h4>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center table-responsive">
+                        <table class="table table-bordered ">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>نوع گردش</th>
+                                <th>تعداد</th>
+                                <th>نام اپراتور</th>
+                                <th>موچودی انبار در زمان گردش</th>
+                                <th>توضیحات</th>
+                                <th>تاریخ گردش</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="@(item.OperationType ? "bg-success" : "bg-danger")">
+                                    <td>@item.Id</td>
+                                    <td>@(item.OperationType ? "افزایش" : "کاهش")</td>
+                                    <td>@item.Count</td>
+                                    <td>@item.OperatorName</td>
+                                    <td>@item.CurrentCount</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.OperationDate</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+</div>

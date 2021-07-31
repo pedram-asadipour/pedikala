@@ -33,15 +33,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Infrastructure", "DM.Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Application", "DM.Application", "{93747122-F168-4FC9-B6E8-DC709DD3D842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Domain", "DiscountManagement.Domain\DiscountManagement.Domain.csproj", "{3369F57F-B2BC-420B-8C7C-E03D7EB31C57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Domain", "DiscountManagement.Domain\DiscountManagement.Domain.csproj", "{3369F57F-B2BC-420B-8C7C-E03D7EB31C57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{E89DE870-BC9D-4197-A261-7A5101E37F6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{E89DE870-BC9D-4197-A261-7A5101E37F6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Application.Contract", "DiscountManagement.Application.Contract\DiscountManagement.Application.Contract.csproj", "{2D56AE5A-C37C-4382-9586-11D74D1C65B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application.Contract", "DiscountManagement.Application.Contract\DiscountManagement.Application.Contract.csproj", "{2D56AE5A-C37C-4382-9586-11D74D1C65B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Configuration", "DiscountManagement.Configuration\DiscountManagement.Configuration.csproj", "{71FC0355-C93E-450A-8EB3-D08E0C6F0245}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Configuration", "DiscountManagement.Configuration\DiscountManagement.Configuration.csproj", "{71FC0355-C93E-450A-8EB3-D08E0C6F0245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{4832F707-7214-40AC-AB40-A53FB8E7110A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{4832F707-7214-40AC-AB40-A53FB8E7110A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryManagement", "InventoryManagement", "{86076B80-BB88-49A8-8027-C016079E6CF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IM.Domain", "IM.Domain", "{1FF2B71D-2EBC-468E-A52A-9FF7BE5B256D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IM.Application", "IM.Application", "{5718DC90-651C-482F-94A6-488CAF9416E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IM.Infrastructure", "IM.Infrastructure", "{A7492862-22DE-4375-B32B-7F652426F671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Domain", "InventoryManagement.Domain\InventoryManagement.Domain.csproj", "{4032EA70-6FCC-4F60-A78A-05629385F810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Application.Contract", "InventoryManagement.Application.Contract\InventoryManagement.Application.Contract.csproj", "{4BC55653-CB25-4FA4-90CC-F006AC1520D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Application", "InventoryManagement.Application\InventoryManagement.Application.csproj", "{4BA3F73E-4B47-494A-87AD-1465B62AAB41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Configuration", "InventoryManagement.Configuration\InventoryManagement.Configuration.csproj", "{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Infrastructure.EFCore", "InventoryManagement.Infrastructure.EFCore\InventoryManagement.Infrastructure.EFCore.csproj", "{B057CBAC-37A1-48CF-B866-EA8F69C5943C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +115,26 @@ Global
 		{4832F707-7214-40AC-AB40-A53FB8E7110A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4832F707-7214-40AC-AB40-A53FB8E7110A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4832F707-7214-40AC-AB40-A53FB8E7110A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4032EA70-6FCC-4F60-A78A-05629385F810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4032EA70-6FCC-4F60-A78A-05629385F810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4032EA70-6FCC-4F60-A78A-05629385F810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4032EA70-6FCC-4F60-A78A-05629385F810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC55653-CB25-4FA4-90CC-F006AC1520D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC55653-CB25-4FA4-90CC-F006AC1520D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC55653-CB25-4FA4-90CC-F006AC1520D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC55653-CB25-4FA4-90CC-F006AC1520D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA3F73E-4B47-494A-87AD-1465B62AAB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA3F73E-4B47-494A-87AD-1465B62AAB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA3F73E-4B47-494A-87AD-1465B62AAB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA3F73E-4B47-494A-87AD-1465B62AAB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B057CBAC-37A1-48CF-B866-EA8F69C5943C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B057CBAC-37A1-48CF-B866-EA8F69C5943C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B057CBAC-37A1-48CF-B866-EA8F69C5943C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B057CBAC-37A1-48CF-B866-EA8F69C5943C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +156,14 @@ Global
 		{2D56AE5A-C37C-4382-9586-11D74D1C65B1} = {93747122-F168-4FC9-B6E8-DC709DD3D842}
 		{71FC0355-C93E-450A-8EB3-D08E0C6F0245} = {8D7A6510-3ED4-4575-BBE2-6D39A29A89BE}
 		{4832F707-7214-40AC-AB40-A53FB8E7110A} = {8D7A6510-3ED4-4575-BBE2-6D39A29A89BE}
+		{1FF2B71D-2EBC-468E-A52A-9FF7BE5B256D} = {86076B80-BB88-49A8-8027-C016079E6CF6}
+		{5718DC90-651C-482F-94A6-488CAF9416E2} = {86076B80-BB88-49A8-8027-C016079E6CF6}
+		{A7492862-22DE-4375-B32B-7F652426F671} = {86076B80-BB88-49A8-8027-C016079E6CF6}
+		{4032EA70-6FCC-4F60-A78A-05629385F810} = {1FF2B71D-2EBC-468E-A52A-9FF7BE5B256D}
+		{4BC55653-CB25-4FA4-90CC-F006AC1520D8} = {5718DC90-651C-482F-94A6-488CAF9416E2}
+		{4BA3F73E-4B47-494A-87AD-1465B62AAB41} = {5718DC90-651C-482F-94A6-488CAF9416E2}
+		{9384A3B8-A646-487A-A1C4-9EDFBAC4EBF0} = {A7492862-22DE-4375-B32B-7F652426F671}
+		{B057CBAC-37A1-48CF-B866-EA8F69C5943C} = {A7492862-22DE-4375-B32B-7F652426F671}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {601AE53F-9163-4DE8-9CEB-4B94532DB0C9}
