@@ -1522,6 +1522,19 @@
           "bin/placeholder/01_Framework.dll": {}
         }
       },
+      "01_PedikalaQuery/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/01_PedikalaQuery.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/01_PedikalaQuery.dll": {}
+        }
+      },
       "DiscountManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5987,6 +6000,11 @@
       "path": "../01_Framework/01_Framework.csproj",
       "msbuildProject": "../01_Framework/01_Framework.csproj"
     },
+    "01_PedikalaQuery/1.0.0": {
+      "type": "project",
+      "path": "../01_PedikalaQuery/01_PedikalaQuery.csproj",
+      "msbuildProject": "../01_PedikalaQuery/01_PedikalaQuery.csproj"
+    },
     "DiscountManagement.Application/1.0.0": {
       "type": "project",
       "path": "../DiscountManagement.Application/DiscountManagement.Application.csproj",
@@ -6065,6 +6083,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "01_PedikalaQuery >= 1.0.0",
       "DiscountManagement.Configuration >= 1.0.0",
       "InventoryManagement.Configuration >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
@@ -6098,6 +6117,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj"
+            },
             "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"
             },

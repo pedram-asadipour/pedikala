@@ -1,3 +1,4 @@
+using _01_PedikalaQuery.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +26,8 @@ namespace ServiceHost
             services.AddShopConfigure(connection);
             services.AddDiscountConfigure(connection);
             services.AddInventoryConfigure(connection);
+
+            services.AddQueryConfigure();
 
             services.AddRazorPages();
         }
