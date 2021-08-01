@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagement.Configu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagement.Infrastructure.EFCore", "InventoryManagement.Infrastructure.EFCore\InventoryManagement.Infrastructure.EFCore.csproj", "{B057CBAC-37A1-48CF-B866-EA8F69C5943C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_PedikalaQuery", "01_PedikalaQuery\01_PedikalaQuery.csproj", "{7F051C08-0D31-4B9D-B1DD-2D82C6B958C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_PedikalaQuery", "01_PedikalaQuery\01_PedikalaQuery.csproj", "{7F051C08-0D31-4B9D-B1DD-2D82C6B958C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

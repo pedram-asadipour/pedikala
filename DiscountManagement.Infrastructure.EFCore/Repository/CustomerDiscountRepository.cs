@@ -49,7 +49,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Repository
                     DiscountRate = x.DiscountRate,
                     StartDate = x.StartDate.ToPersianDate(),
                     EndDate = x.EndDate.ToPersianDate(),
-                    DiscountStatus = DateTools.DateChecker(x.StartDate,x.EndDate) && !x.IsRemoved,
+                    DiscountStatus = DiscountOperation.DiscountStatus(x.StartDate,x.EndDate,!x.IsRemoved),
                     IsRemoved = x.IsRemoved,
                     CreationDate = x.CreationDate.ToPersianDate(),
                 })
