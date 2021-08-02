@@ -2847,11 +2847,12 @@ select {
     padding-bottom: 210px;
 }
 
-.breadcrumb-bg {
-    background-image: url('../img/backgrounds/category-image-1820x400.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+.breadcrumb-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
 }
 
 /*=====  End of breadcrumb  ======*/

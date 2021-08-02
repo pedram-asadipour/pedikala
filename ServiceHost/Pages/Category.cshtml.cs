@@ -20,6 +20,10 @@ namespace ServiceHost.Pages
                 return NotFound();
 
             Category = _query.GetCategoryBy(id);
+
+            if (Category == null)
+                return NotFound();
+
             return Page();
         }
     }

@@ -7,6 +7,8 @@ using _01_PedikalaQuery.Contract.ProductCategory;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.ProductAgg;
+using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Infrastructure.EFCore;
 
 namespace _01_PedikalaQuery.Query
@@ -38,20 +40,6 @@ namespace _01_PedikalaQuery.Query
 
         public ProductCategoryQueryModel GetCategoryBy(long id)
         {
-            var products = _shopContext.Products
-                .Where(x => x.CategoryId == id && !x.IsRemoved)
-                .Select(x => new ProductWrapQueryModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Image = x.Image,
-                    ImageAlt = x.ImageAlt,
-                    ImageTitle = x.ImageTitle,
-                    IsRemoved = x.IsRemoved,
-                })
-                .AsNoTracking()
-                .ToList();
-
             var categoryQuery = _shopContext.ProductCategories
                 .Select(x => new ProductCategoryQueryModel
                 {
@@ -63,41 +51,60 @@ namespace _01_PedikalaQuery.Query
                     ImageTitle = x.ImageTitle,
                     Keyword = x.Keyword,
                     MetaDescription = x.MetaDescription,
-                    Products = products
+                    Products = ProductsMapping(x.Products)
                 })
                 .OrderByDescending(x => x.Id)
                 .AsNoTracking()
-                .First(x => x.Id == id);
+                .FirstOrDefault(x => x.Id == id);
+
+            if (categoryQuery == null) return null;
+
+            var inventoryQuery = _inventoryContext.Inventories
+                .Select(x => new {x.ProductId, x.UnitPrice, x.IsInStock})
+                .AsNoTracking()
+                .ToList();
+
+            var discountQuery = _discountContext.CustomerDiscounts
+                .Select(x => new {x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved})
+                .AsNoTracking()
+                .ToList();
 
 
             foreach (var product in categoryQuery.Products)
             {
-                var inventoryQuery = _inventoryContext.Inventories
-                    .Select(x => new {x.ProductId, x.UnitPrice, x.IsInStock})
-                    .FirstOrDefault(x => x.ProductId == product.Id);
 
-                var discountQuery = _discountContext.CustomerDiscounts
-                    .Select(x => new {x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved})
-                    .FirstOrDefault(x => x.ProductId == product.Id);
+                var currentInventory = inventoryQuery.FirstOrDefault(x => x.ProductId == product.Id);
+                if (currentInventory == null) continue;
 
-                if (inventoryQuery == null) continue;
+                product.UnitPrice = currentInventory.UnitPrice.ToString("##,###");
+                product.IsInStock = currentInventory.IsInStock;
 
-                product.UnitPrice = inventoryQuery.UnitPrice.ToString("##,###");
-                product.IsInStock = inventoryQuery.IsInStock;
+                var currentDiscount = discountQuery.FirstOrDefault(x => x.ProductId == product.Id && !x.IsRemoved);
+                if (currentDiscount == null) continue;
 
-                if (discountQuery == null) continue;
-
-                if (!DiscountOperation.DiscountStatus(discountQuery.StartDate, discountQuery.EndDate, !discountQuery.IsRemoved)) continue;
-
-                product.HasDiscount = true;
-                product.DiscountRate = discountQuery.DiscountRate;
-                product.DiscountPrice = CurrencyProcess
-                    .GetDiscountPrice(discountQuery.DiscountRate, inventoryQuery.UnitPrice)
-                    .ToString("##,###");
-                product.DiscountEndDate = discountQuery.EndDate.ToString("yyyy/MM/dd");
+                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, currentDiscount.IsRemoved);
+                product.DiscountRate = currentDiscount.DiscountRate;
+                product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
+                product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate,currentInventory.UnitPrice).ToString("##,###");
             }
 
             return categoryQuery;
+        }
+
+        private static List<ProductWrapQueryModel> ProductsMapping(IEnumerable<Product> products)
+        {
+            return products
+                .Where(x => !x.IsRemoved)
+                .Select(x => new ProductWrapQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Image = x.Image,
+                    ImageAlt = x.ImageAlt,
+                    ImageTitle = x.ImageTitle,
+                    IsRemoved = x.IsRemoved,
+                })
+                .ToList();
         }
     }
 }
