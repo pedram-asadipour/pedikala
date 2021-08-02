@@ -2,6 +2,6 @@
 {
     public interface IProductQuery
     {
-        
+        ProductQueryModel GetProductBy(long productId);
     }
 }

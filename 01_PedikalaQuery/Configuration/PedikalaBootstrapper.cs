@@ -1,4 +1,5 @@
 ﻿using _01_PedikalaQuery.Contract.Menu;
+using _01_PedikalaQuery.Contract.Product;
 using _01_PedikalaQuery.Contract.ProductCategory;
 using _01_PedikalaQuery.Query;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,12 @@ namespace _01_PedikalaQuery.Configuration
             #region Menu
 
             services.AddScoped<IMenuQuery, MenuQuery>();
+
+            #endregion
+
+            #region Product
+
+            services.AddScoped<IProductQuery, ProductQuery>();
 
             #endregion
         }
