@@ -236,8 +236,8 @@
     <!--=======  search form  =======-->
 
     <div class="search-form">
-        <form action="#">
-            <input type="search" placeholder="جست و جوی محصول ...">
+        <form asp-page="/Search" method="GET">
+            <input type="search" name="search" id="search" placeholder="جست و جوی محصول ...">
             <button type="submit">
                 <i class="ion-android-search"></i>
             </button>
@@ -256,8 +256,8 @@
 
         <div class="offcanvas-inner-content">
             <div class="offcanvas-mobile-search-area">
-                <form action="#">
-                    <input type="search" placeholder="جست و جو ...">
+                <form asp-page="/Search" method="GET">
+                    <input type="search" name="search" id="search" placeholder="جست و جو ...">
                     <button type="submit">
                         <i class="fa fa-search"></i>
                     </button>

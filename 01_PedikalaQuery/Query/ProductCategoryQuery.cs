@@ -35,6 +35,7 @@ namespace _01_PedikalaQuery.Query
                     Id = x.Id,
                     Name = x.Name
                 })
+                .AsNoTracking()
                 .ToList();
         }
 

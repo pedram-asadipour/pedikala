@@ -54,6 +54,7 @@ namespace _01_PedikalaQuery.Query
 
             var currentInventory = _inventoryContext.Inventories
                 .Select(x => new {x.ProductId, x.UnitPrice, x.IsInStock})
+                .AsNoTracking()
                 .FirstOrDefault(x => x.ProductId == productQuery.Id);
             if (currentInventory == null) return productQuery;
 
@@ -62,6 +63,7 @@ namespace _01_PedikalaQuery.Query
 
             var currentDiscount = _discountContext.CustomerDiscounts
                 .Select(x => new { x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved })
+                .AsNoTracking()
                 .FirstOrDefault(x => x.ProductId == productQuery.Id);
             if (currentDiscount == null) return productQuery;
 
@@ -71,6 +73,61 @@ namespace _01_PedikalaQuery.Query
             productQuery.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
 
             return productQuery;
+        }
+
+        public List<ProductWrapQueryModel> Search(string search)
+        {
+            var productsQuery = _shopContext.Products
+                .Where(x => x.Name.Contains(search) && !x.IsRemoved)
+                .Include(x => x.ProductCategory)
+                .Select(x => new ProductWrapQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Image = x.Image,
+                    ImageAlt = x.ImageAlt,
+                    ImageTitle = x.ImageTitle,
+                    IsRemoved = x.IsRemoved,
+                    CategoryId = x.ProductCategory.Id,
+                    CategoryName = x.ProductCategory.Name
+                })
+                .AsNoTracking()
+                .ToList();
+
+            var inventories = _inventoryContext.Inventories
+                .Select(x => new { x.ProductId, x.UnitPrice, x.IsInStock })
+                .AsNoTracking()
+                .AsNoTracking()
+                .ToList();
+
+            var discounts = _discountContext.CustomerDiscounts
+                .Select(x => new {x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved})
+                .AsNoTracking()
+                .ToList();
+
+            foreach (var product in productsQuery)
+            {
+                var currentInventory = _inventoryContext.Inventories
+                    .Select(x => new { x.ProductId, x.UnitPrice, x.IsInStock })
+                    .FirstOrDefault(x => x.ProductId == product.Id);
+                if (currentInventory == null) continue;
+
+                product.UnitPrice = currentInventory.UnitPrice.ToString("##,###");
+                product.IsInStock = currentInventory.IsInStock;
+
+
+                var currentDiscount = _discountContext.CustomerDiscounts
+                    .Select(x => new { x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved })
+                    .FirstOrDefault(x => x.ProductId == product.Id);
+                if (currentDiscount == null) continue;
+
+                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
+                product.DiscountRate = currentDiscount.DiscountRate;
+                product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
+                product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
+            }
+
+            return productsQuery;
         }
 
         private static List<ProductPictureQueryModel> PicturesMapping(IEnumerable<ProductPicture> productPictures)
@@ -83,7 +140,8 @@ namespace _01_PedikalaQuery.Query
                     Image = picture.Image,
                     ImageAlt = picture.ImageAlt,
                     ImageTitle = picture.ImageTitle
-                }).ToList();
+                })
+                .ToList();
         }
     }
 }
