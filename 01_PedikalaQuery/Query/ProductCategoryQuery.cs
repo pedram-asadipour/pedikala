@@ -82,7 +82,7 @@ namespace _01_PedikalaQuery.Query
                 var currentDiscount = discountQuery.FirstOrDefault(x => x.ProductId == product.Id && !x.IsRemoved);
                 if (currentDiscount == null) continue;
 
-                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, currentDiscount.IsRemoved);
+                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
                 product.DiscountRate = currentDiscount.DiscountRate;
                 product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
                 product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate,currentInventory.UnitPrice).ToString("##,###");
