@@ -11,6 +11,11 @@ namespace _01_Framework.Tools
 
             return dateEnd > dateNow && dateNow >= dateStart;
         }
+
+        public static string FullDate(DateTime date)
+        {
+            return date.ToString("yyyy-MM-dd_HH-mm-ss");
+        }
     }
 
     public class DiscountOperation
@@ -20,5 +25,6 @@ namespace _01_Framework.Tools
             return DateTools.DateChecker(startDate, endDate) && status;
         }
     }
+
 }
 

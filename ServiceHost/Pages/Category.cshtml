@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper">
-                    <img class="breadcrumb-img" src="@Model.Category.Image" alt="@Model.Category.ImageAlt" title="@Model.Category.ImageTitle"/>
+                    <img class="breadcrumb-img" src="~/Uploads/@Model.Category.Image" alt="@Model.Category.ImageAlt" title="@Model.Category.ImageTitle"/>
                     <div class="breadcrumb-content">
                         <h2 class="breadcrumb-content__title">@Model.Category.Name</h2>
                         <ul class="breadcrumb-content__page-map">
@@ -135,17 +135,22 @@
                                                                 @product.Name
                                                             </a>
                                                         </h3>
+
                                                         <p class="single-grid-product__price">
                                                             @if (product.IsInStock)
                                                             {
-                                                                <span class="discounted-price">@product.UnitPrice</span>
+                                                                @if (product.HasDiscount)
+                                                                {
+                                                                    <span class="discounted-price">@product.DiscountPrice</span>
+                                                                    <span class="main-price discounted">@product.UnitPrice</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="discounted-price">@product.UnitPrice</span>
+                                                                }
                                                             }
-                                                            @if (product.HasDiscount && product.IsInStock)
-                                                            {
-                                                                <span class="main-price discounted">@product.DiscountPrice</span>
-                                                            }
-
                                                         </p>
+
                                                         @if (product.HasDiscount && product.IsInStock)
                                                         {
                                                             <div class="product-countdown" data-countdown="@product.DiscountEndDate"></div>

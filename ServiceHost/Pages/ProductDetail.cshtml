@@ -155,9 +155,13 @@
                     {
                         @if (Model.Product.HasDiscount)
                         {
+                            <span class="discounted-price">@Model.Product.DiscountPrice</span>
                             <span class="main-price discounted">@Model.Product.UnitPrice</span>
                         }
-                        <span class="discounted-price">@Model.Product.DiscountPrice</span>
+                        else
+                        {
+                            <span class="discounted-price">@Model.Product.UnitPrice</span>
+                        }
                     }
                 </p>
 

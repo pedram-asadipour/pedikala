@@ -20,14 +20,14 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             Products = new List<Product>();
         }
 
-        public ProductCategory(string name, string description, string image, string imageAlt, string imageTitle,
+        public ProductCategory(string name, string description,
             string keyword, string metaDescription)
         {
             Name = name;
             Description = description;
-            Image = image;
-            ImageAlt = imageAlt;
-            ImageTitle = imageTitle;
+            Image = "";
+            ImageAlt = "";
+            ImageTitle = "";
             Keyword = keyword;
             MetaDescription = metaDescription;
         }
@@ -37,7 +37,8 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         {
             Name = name;
             Description = description;
-            Image = image;
+            if (!string.IsNullOrWhiteSpace(image))
+                Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             Keyword = keyword;

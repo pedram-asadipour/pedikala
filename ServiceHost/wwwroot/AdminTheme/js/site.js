@@ -289,27 +289,26 @@ function SetPersianDatePicker() {
     }
 }
 
-//jQuery.validator.addMethod("maxFileSize",
-//    function(value, element, params) {
-//        var size = element.files[0].size;
-//        var maxSize = 3 * 1024 * 1024;
-//        if (size > maxSize)
-//            return false;
-//        else {
-//            return true;
-//        }
-//    });
-//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+//File extension Validation
+jQuery.validator.addMethod("fileExtensionLimit",
+    function (value, element, params) {
 
-//jQuery.validator.addMethod("maxFileSize",
-//    function (value, element, params) {
-//        var size = element.files[0].size;
-//        var maxSize = 3 * 1024 * 1024;
-//        debugger;
-//        if (size > maxSize)
-//            return false;
-//        else {
-//            return true;
-//        }
-//    });
-//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+        var fileExe = element.files[0].name.split(".");
+        fileExe = `.${fileExe[fileExe.length - 1]}`;
+
+        const exe = element.attributes.getNamedItem("data-val-extensions").value.split(",");
+
+        return exe.includes(fileExe);
+    });
+jQuery.validator.unobtrusive.adapters.addBool("fileExtensionLimit");
+
+//File Size Validation
+jQuery.validator.addMethod("maxFileSize",
+    function (value, element, params) {
+
+        const fileSize = element.files[0].size;
+        const maxSize = element.attributes.getNamedItem("data-val-fileSize").value;
+
+        return fileSize < maxSize;
+    });
+jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");

@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using _01_Framework.Application;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contract.ProductCategory;
@@ -35,6 +36,11 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductCategory
 
         public JsonResult OnPostCreate(CreateProductCategory command)
         {
+            if (!ModelState.IsValid)
+            {
+                return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
+            }
+
             var json = _application.Create(command);
             return new JsonResult(json);
         }
@@ -47,6 +53,11 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductCategory
 
         public JsonResult OnPostEdit(EditProductCategory command)
         {
+            if (!ModelState.IsValid)
+            {
+                return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
+            }
+
             var json = _application.Edit(command);
             return new JsonResult(json);
         }

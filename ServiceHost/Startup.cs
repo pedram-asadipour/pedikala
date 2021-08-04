@@ -1,3 +1,4 @@
+using _01_Framework.Application;
 using _01_PedikalaQuery.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ServiceHost.Framework;
 using ShopManagement.Configuration;
 
 namespace ServiceHost
@@ -28,6 +30,7 @@ namespace ServiceHost
             services.AddInventoryConfigure(connection);
 
             services.AddQueryConfigure();
+            services.AddScoped<IFileManager, FileManager>();
 
             services.AddRazorPages();
         }

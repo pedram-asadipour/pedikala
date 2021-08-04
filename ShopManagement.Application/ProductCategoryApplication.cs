@@ -8,10 +8,12 @@ namespace ShopManagement.Application
     public class ProductCategoryApplication : IProductCategoryApplication
     {
         private readonly IProductCategoryRepository _repository;
+        private readonly IFileManager _fileManager;
 
-        public ProductCategoryApplication(IProductCategoryRepository repository)
+        public ProductCategoryApplication(IProductCategoryRepository repository, IFileManager fileManager)
         {
             _repository = repository;
+            _fileManager = fileManager;
         }
 
 
@@ -37,8 +39,8 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.Name == command.Name))
                 return operationResult.Failed(ApplicationMessages.Exists);
 
-            var productCategory = new ProductCategory(command.Name, command.Description,
-                command.Image, command.ImageAlt, command.ImageTitle, command.Keyword, command.MetaDescription);
+            var productCategory = new ProductCategory(command.Name, command.Description, command.Keyword,
+                command.MetaDescription);
 
             _repository.Create(productCategory);
 
@@ -58,8 +60,13 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.Duplication);
 
+            var imageFile = _fileManager.Uploader(command.Image, $"category-id-{productCategory.Id}");
+
+            if(command.Image != null)
+                _fileManager.Remove(productCategory.Image);
+
             productCategory.Edit(command.Name, command.Description,
-                command.Image, command.ImageAlt, command.ImageTitle, command.Keyword, command.MetaDescription);
+                imageFile, command.ImageAlt, command.ImageTitle, command.Keyword, command.MetaDescription);
 
             _repository.Edit(productCategory);
 
