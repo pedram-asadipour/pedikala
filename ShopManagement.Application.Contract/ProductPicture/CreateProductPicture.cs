@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using _01_Framework.Application;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopManagement.Application.Contract.ProductPicture
 {
@@ -11,9 +12,10 @@ namespace ShopManagement.Application.Contract.ProductPicture
         public long ProductId { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
-        [DisplayName("آدرس تصویر محصول")]
-        public string Image { get; set; }
+        [DisplayName("تصویر محصول")]
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = ValidationMessages.FileSize + ": 3 مگابایت")]
+        [FileExtensionLimit(new string[] { ".jpg", ".jpeg", ".png" }, ErrorMessage = ValidationMessages.FileType + " فایل های مجاز : jpg,jpeg,png")]
+        public IFormFile Image { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]

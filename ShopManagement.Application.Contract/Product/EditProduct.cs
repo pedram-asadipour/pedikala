@@ -9,7 +9,7 @@ namespace ShopManagement.Application.Contract.Product
     {
         public long Id { get; set; }
 
-        [DisplayName("آدرس تصویر محصول")]
+        [DisplayName("تصویر محصول")]
         [MaxFileSize(3 * 1024 * 1024, ErrorMessage = ValidationMessages.FileSize + ": 3 مگابایت")]
         [FileExtensionLimit(new string[] { ".jpg", ".jpeg", ".png" }, ErrorMessage = ValidationMessages.FileType + " فایل های مجاز : jpg,jpeg,png")]
         public IFormFile Image { get; set; }

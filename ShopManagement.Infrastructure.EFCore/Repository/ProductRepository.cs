@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Domain.ProductAgg;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Tools;
@@ -77,6 +76,17 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                     CategoryId = x.CategoryId
                 })
                 .FirstOrDefault(x => x.Id == id);
+        }
+
+        public ProductWithCategoryModel GetCategoryIdBy(long productId)
+        {
+           return _context.Products
+                .Select(x => new ProductWithCategoryModel
+                {
+                    Id = x.Id,
+                    CategoryId = x.CategoryId
+                })
+                .FirstOrDefault(x => x.Id == productId);
         }
     }
 }

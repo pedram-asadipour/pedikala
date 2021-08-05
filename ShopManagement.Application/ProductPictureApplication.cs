@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
 using ShopManagement.Application.Contract.ProductPicture;
+using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 
 namespace ShopManagement.Application
@@ -8,10 +9,15 @@ namespace ShopManagement.Application
     public class ProductPictureApplication : IProductPictureApplication
     {
         private readonly IProductPictureRepository _repository;
+        private readonly IProductRepository _productRepository;
+        private readonly IFileManager _fileManager;
 
-        public ProductPictureApplication(IProductPictureRepository repository)
+        public ProductPictureApplication(IProductPictureRepository repository, IFileManager fileManager,
+            IProductRepository productRepository)
         {
             _repository = repository;
+            _fileManager = fileManager;
+            _productRepository = productRepository;
         }
 
         public List<ProductPictureViewModel> GetAll(ProductPictureSearchModel searchModel)
@@ -28,11 +34,13 @@ namespace ShopManagement.Application
         {
             var operationResult = new OperationResult();
 
-            if (_repository.Exists(x => x.ProductId == command.ProductId && x.Image == command.Image))
-                return operationResult.Failed(ApplicationMessages.DuplicationImage);
+            var categoryModel = _productRepository.GetCategoryIdBy(command.ProductId);
+
+            var imageFile = _fileManager.Uploader(command.Image,
+                $"category-id-{categoryModel.CategoryId}/product-id-{command.ProductId}");
 
             var productPicture =
-                new ProductPicture(command.ProductId, command.Image, command.ImageAlt, command.ImageTitle);
+                new ProductPicture(command.ProductId, imageFile, command.ImageAlt, command.ImageTitle);
 
             _repository.Create(productPicture);
 
@@ -50,11 +58,15 @@ namespace ShopManagement.Application
             if (productPicture == null)
                 return operationResult.Failed(ApplicationMessages.NotFound);
 
-            if (_repository.Exists(x =>
-                x.ProductId == command.ProductId && x.Image == command.Image && x.Id != command.Id))
-                return operationResult.Failed(ApplicationMessages.DuplicationImage);
+            var categoryModel = _productRepository.GetCategoryIdBy(command.ProductId);
 
-            productPicture.Edit(command.ProductId, command.Image, command.ImageAlt, command.ImageTitle);
+            var imageFile = _fileManager.Uploader(command.Image,
+                $"category-id-{categoryModel.CategoryId}/product-id-{command.ProductId}");
+
+            if (command.Image != null)
+                _fileManager.Remove(productPicture.Image);
+
+            productPicture.Edit(command.ProductId, imageFile, command.ImageAlt, command.ImageTitle);
 
             _repository.Edit(productPicture);
 
