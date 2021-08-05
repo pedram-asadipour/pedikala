@@ -26,21 +26,6 @@ namespace ShopManagement.Application.Contract.Product
         [DisplayName("توضیحات")]
         public string Description { get; set; }
 
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
-        [DisplayName("آدرس تصویر محصول")]
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string Image { get; set; }
-
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
-        [DisplayName("Alt تصویر")]
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string ImageAlt { get; set; }
-
-        [MaxLength(500, ErrorMessage = ValidationMessages.LengthRequired)]
-        [DisplayName("Title تصویر")]
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string ImageTitle { get; set; }
-
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [MaxLength(80, ErrorMessage = ValidationMessages.LengthRequired)]
         [DisplayName("کلمات کلیدی")]

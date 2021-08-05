@@ -26,17 +26,13 @@ namespace ShopManagement.Domain.ProductAgg
             ProductPictures = new List<ProductPicture>();
         }
 
-        public Product(string name, string productCode, string shortDescription, 
-            string description, string image, string imageAlt, string imageTitle,
-            string keyword, string metaDescription, long categoryId)
+        public Product(string name, string productCode, string shortDescription,
+            string description, string keyword, string metaDescription, long categoryId)
         {
             Name = name;
             ProductCode = productCode;
             ShortDescription = shortDescription;
             Description = description;
-            Image = image;
-            ImageAlt = imageAlt;
-            ImageTitle = imageTitle;
             Keyword = keyword;
             MetaDescription = metaDescription;
             IsRemoved = false;
@@ -51,7 +47,8 @@ namespace ShopManagement.Domain.ProductAgg
             ProductCode = productCode;
             ShortDescription = shortDescription;
             Description = description;
-            Image = image;
+            if (!string.IsNullOrWhiteSpace(image))
+                Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             Keyword = keyword;

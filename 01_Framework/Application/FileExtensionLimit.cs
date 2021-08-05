@@ -28,6 +28,9 @@ namespace _01_Framework.Application
 
         public void AddValidation(ClientModelValidationContext context)
         {
+            if(context.Attributes.All(x => x.Key != "data-val"))
+                context.Attributes.Add("data-val","true");
+
             context.Attributes.Add("data-val-extensions",string.Join(",",Extensions));
             context.Attributes.Add("data-val-fileExtensionLimit", ErrorMessage);
         }

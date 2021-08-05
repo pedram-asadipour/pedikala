@@ -68,7 +68,7 @@
             {"breakpoint":479, "settings": {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1} }
         ]'>
                         <div class="single-image">
-                            <img src="@Model.Product.Image" class="img-fluid"
+                            <img src="~/Uploads/@Model.Product.Image" class="img-fluid"
                                  alt="@Model.Product.ImageAlt"
                                  title="@Model.Product.ImageTitle">
                         </div>
@@ -76,7 +76,7 @@
                         @foreach (var picture in Model.Product.Pictures)
                         {
                             <div class="single-image">
-                                <img src="@picture.Image" class="img-fluid"
+                                <img src="~/Uploads/@picture.Image" class="img-fluid"
                                      alt="@picture.ImageAlt"
                                      title="@picture.ImageTitle">
                             </div>
@@ -108,7 +108,7 @@
         {"breakpoint":479, "settings": {"slidesToShow": 2, "arrows": false, "slidesToScroll": 1} }
     ]'>
                     <div class="single-image">
-                        <img src="@Model.Product.Image" class="img-fluid"
+                        <img src="~/Uploads/@Model.Product.Image" class="img-fluid"
                              alt="@Model.Product.ImageAlt"
                              title="@Model.Product.ImageTitle">
                     </div>
@@ -116,7 +116,7 @@
                     @foreach (var picture in Model.Product.Pictures)
                     {
                         <div class="single-image">
-                            <img src="@picture.Image" class="img-fluid"
+                            <img src="~/Uploads/@picture.Image" class="img-fluid"
                                  alt="@picture.ImageAlt"
                                  title="@picture.ImageTitle">
                         </div>

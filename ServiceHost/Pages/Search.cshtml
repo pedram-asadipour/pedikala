@@ -108,7 +108,7 @@
                                                         <a asp-page="/ProductDetail"
                                                            asp-route-id="@product.Id"
                                                            asp-route-slug="@product.Name.Sluggish()">
-                                                            <img src="@product.Image" class="img-fluid"
+                                                            <img src="~/Uploads/@product.Image" class="img-fluid"
                                                                  alt="@product.ImageAlt"
                                                                  title="@product.ImageTitle">
                                                         </a>

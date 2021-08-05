@@ -8,10 +8,12 @@ namespace ShopManagement.Application
     public class ProductApplication : IProductApplication
     {
         private readonly IProductRepository _repository;
+        private readonly IFileManager _fileManager;
 
-        public ProductApplication(IProductRepository repository)
+        public ProductApplication(IProductRepository repository, IFileManager fileManager)
         {
             _repository = repository;
+            _fileManager = fileManager;
         }
 
 
@@ -41,8 +43,7 @@ namespace ShopManagement.Application
                 return operationResult.Failed(ApplicationMessages.DuplicationCode);
 
             var product = new Product(command.Name, command.ProductCode.ToLower(), command.ShortDescription,
-                command.Description, command.Image, command.ImageAlt, command.ImageTitle,
-                command.Keyword, command.MetaDescription, command.CategoryId);
+                command.Description, command.Keyword, command.MetaDescription, command.CategoryId);
 
             _repository.Create(product);
 
@@ -65,8 +66,13 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.ProductCode == command.ProductCode && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.DuplicationCode);
 
+            var imageFile = _fileManager.Uploader(command.Image, $"category-id-{command.CategoryId}/product-id-{product.Id}");
+
+            if (command.Image != null)
+                _fileManager.Remove(product.Image);
+
             product.Edit(command.Name, command.ProductCode.ToLower(), command.ShortDescription,
-                command.Description, command.Image, command.ImageAlt, command.ImageTitle,
+                command.Description, imageFile, command.ImageAlt, command.ImageTitle,
                 command.Keyword, command.MetaDescription, command.CategoryId);
 
             _repository.Edit(product);

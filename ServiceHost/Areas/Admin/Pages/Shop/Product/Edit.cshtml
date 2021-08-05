@@ -43,7 +43,7 @@
         <div class="row">
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control ltr">
+                <input asp-for="Image" class="form-control" accept="image/*">
                 <span asp-validation-for="Image" class="error"></span>
             </div>
         </div>
@@ -99,6 +99,17 @@
         </div>
 
         <input type="hidden" asp-for="Id">
+
+        <div class="row">
+            <div class="col-12">
+                نکات مهم
+                <ul>
+                    <li>برای SEO بهتر سایت حتما از کلمات کلیدی مناسب و توضیحات متا خوبی استفاده کنید.</li>
+                    <li>بهترین ابعاد تصویر برای این قسمت (600x800)می باشد.</li>
+                    <li>Alt , Title تصویر خود را همنام با موضوع عکس انتخاب کنید.</li>
+                </ul>
+            </div>
+        </div>
 
     </div>
     <div class="modal-footer">
