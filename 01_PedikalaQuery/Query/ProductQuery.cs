@@ -2,7 +2,9 @@
 using System.Linq;
 using _01_Framework.Tools;
 using _01_PedikalaQuery.Contract.Product;
+using _01_PedikalaQuery.Contract.ProductComment;
 using _01_PedikalaQuery.Contract.ProductPicture;
+using CommandManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,17 +18,31 @@ namespace _01_PedikalaQuery.Query
         private readonly ShopContext _shopContext;
         private readonly DiscountContext _discountContext;
         private readonly InventoryContext _inventoryContext;
+        private readonly CommandContext _commandContext;
 
-        public ProductQuery(ShopContext shopContext, DiscountContext discountContext, InventoryContext inventoryContext)
+        public ProductQuery(ShopContext shopContext, DiscountContext discountContext, InventoryContext inventoryContext, CommandContext commandContext)
         {
             _shopContext = shopContext;
             _discountContext = discountContext;
             _inventoryContext = inventoryContext;
+            _commandContext = commandContext;
         }
 
 
         public ProductQueryModel GetProductBy(long productId)
         {
+
+            var commandQuery = _commandContext.ProductCommands
+                .Where(x => x.ProductId == productId && x.IsConfirmed && !x.IsCanceled)
+                .Select(x => new ProductCommandQueryModel
+                {
+                    Name = x.Name,
+                    Message = x.Message,
+                    CreationDate = x.CreationDate.ToPersianDate()
+                })
+                .AsNoTracking()
+                .ToList();
+
             var productQuery = _shopContext.Products
                 .Include(x => x.ProductCategory)
                 .Include(x => x.ProductPictures)
@@ -45,6 +61,7 @@ namespace _01_PedikalaQuery.Query
                     IsRemoved = x.IsRemoved,
                     CategoryId = x.CategoryId,
                     CategoryName = x.ProductCategory.Name,
+                    Comments = commandQuery,
                     Pictures = PicturesMapping(x.ProductPictures)
                 })
                 .AsNoTracking()

@@ -1619,6 +1619,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "CommandManagement.Infrastructure.EFCore": "1.0.0",
           "DiscountManagement.Infrastructure.EFCore": "1.0.0",
           "InventoryManagement.Infrastructure.EFCore": "1.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
@@ -1628,6 +1629,78 @@
         },
         "runtime": {
           "bin/placeholder/01_PedikalaQuery.dll": {}
+        }
+      },
+      "CommandManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CommandManagement.Application.Contract": "1.0.0",
+          "CommandManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandManagement.Application.dll": {}
+        }
+      },
+      "CommandManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandManagement.Application.Contract.dll": {}
+        }
+      },
+      "CommandManagement.Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CommandManagement.Application": "1.0.0",
+          "CommandManagement.Infrastructure.EFCore": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandManagement.Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandManagement.Configuration.dll": {}
+        }
+      },
+      "CommandManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "CommandManagement.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandManagement.Domain.dll": {}
+        }
+      },
+      "CommandManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CommandManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommandManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandManagement.Infrastructure.EFCore.dll": {}
         }
       },
       "DiscountManagement.Application/1.0.0": {
@@ -6245,6 +6318,31 @@
       "path": "../01_PedikalaQuery/01_PedikalaQuery.csproj",
       "msbuildProject": "../01_PedikalaQuery/01_PedikalaQuery.csproj"
     },
+    "CommandManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../CommandManagement.Application/CommandManagement.Application.csproj",
+      "msbuildProject": "../CommandManagement.Application/CommandManagement.Application.csproj"
+    },
+    "CommandManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../CommandManagement.Application.Contract/CommandManagement.Application.Contract.csproj",
+      "msbuildProject": "../CommandManagement.Application.Contract/CommandManagement.Application.Contract.csproj"
+    },
+    "CommandManagement.Configuration/1.0.0": {
+      "type": "project",
+      "path": "../CommandManagement.Configuration/CommandManagement.Configuration.csproj",
+      "msbuildProject": "../CommandManagement.Configuration/CommandManagement.Configuration.csproj"
+    },
+    "CommandManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CommandManagement.Domain/CommandManagement.Domain.csproj",
+      "msbuildProject": "../CommandManagement.Domain/CommandManagement.Domain.csproj"
+    },
+    "CommandManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../CommandManagement.Infrastructure.EFCore/CommandManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../CommandManagement.Infrastructure.EFCore/CommandManagement.Infrastructure.EFCore.csproj"
+    },
     "DiscountManagement.Application/1.0.0": {
       "type": "project",
       "path": "../DiscountManagement.Application/DiscountManagement.Application.csproj",
@@ -6324,6 +6422,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "01_PedikalaQuery >= 1.0.0",
+      "CommandManagement.Configuration >= 1.0.0",
       "DiscountManagement.Configuration >= 1.0.0",
       "InventoryManagement.Configuration >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
@@ -6359,6 +6458,9 @@
           "projectReferences": {
             "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj"
+            },
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommandManagement.Configuration\\CommandManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommandManagement.Configuration\\CommandManagement.Configuration.csproj"
             },
             "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"

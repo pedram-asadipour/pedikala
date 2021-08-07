@@ -13,12 +13,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\01_PedikalaQuery\01_PedikalaQuery.csproj" />
+    <ProjectReference Include="..\CommandManagement.Configuration\CommandManagement.Configuration.csproj" />
     <ProjectReference Include="..\DiscountManagement.Configuration\DiscountManagement.Configuration.csproj" />
     <ProjectReference Include="..\InventoryManagement.Configuration\InventoryManagement.Configuration.csproj" />
     <ProjectReference Include="..\ShopManagement.Configuration\ShopManagement.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Components\" />
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 

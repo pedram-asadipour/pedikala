@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _01_PedikalaQuery.Contract.ProductComment;
 using _01_PedikalaQuery.Contract.ProductPicture;
 
 namespace _01_PedikalaQuery.Contract.Product
@@ -24,6 +25,7 @@ namespace _01_PedikalaQuery.Contract.Product
         public int DiscountRate { get; set; }
         public string DiscountPrice { get; set; }
         public string DiscountEndDate { get; set; }
+        public List<ProductCommandQueryModel> Comments { get; set; }
         public List<ProductPictureQueryModel> Pictures { get; set; }
     }
 }
