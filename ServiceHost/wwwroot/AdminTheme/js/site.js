@@ -293,6 +293,9 @@ function SetPersianDatePicker() {
 jQuery.validator.addMethod("fileExtensionLimit",
     function (value, element, params) {
 
+        if (element.files[0] == null)
+            return true;
+
         var fileExe = element.files[0].name.split(".");
         fileExe = `.${fileExe[fileExe.length - 1]}`;
 
@@ -304,6 +307,9 @@ jQuery.validator.addMethod("fileExtensionLimit",
 
 jQuery.validator.addMethod("maxFileSize",
     function (value, element, params) {
+
+        if (element.files[0] == null)
+            return true;
 
         const fileSize = element.files[0].size;
         const maxSize = element.attributes.getNamedItem("data-val-fileSize").value;

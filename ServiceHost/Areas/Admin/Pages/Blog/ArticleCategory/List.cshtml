@@ -1,0 +1,51 @@
+﻿@model List<BlogManagement.Application.Contract.ArticleCategory.ArticleCategoryViewModel>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">لیست دسته بندی مقالات</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center table-responsive">
+                        <table id="datatable" class="table table-striped table-bordered ">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>تصویر</th>
+                                <th>نام</th>
+                                <th>تعداد مقالات دسته بندی</th>
+                                <th>تاریخ ایجاد</th>
+                                <th>عملیات</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>
+                                        <img src="~/Uploads/@item.Image" style="width: 80px; height: 100px" alt="@item.Name"/>
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.ArticleCount</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>
+                                        <a href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش <i class="md md-edit"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

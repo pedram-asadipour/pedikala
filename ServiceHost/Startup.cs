@@ -1,5 +1,6 @@
 using _01_Framework.Application;
 using _01_PedikalaQuery.Configuration;
+using BlogManagement.Configuration;
 using CommandManagement.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
@@ -30,6 +31,7 @@ namespace ServiceHost
             services.AddDiscountConfigure(connection);
             services.AddInventoryConfigure(connection);
             services.AddCommandConfigure(connection);
+            services.AddBlogConfigure(connection);
 
             services.AddQueryConfigure();
             services.AddScoped<IFileManager, FileManager>();
