@@ -3673,3 +3673,10 @@ input.ltr {
     direction: ltr;
     /* text-align: left; */
 }
+
+
+.Validation-Error_-Fix {
+    display: block !important;
+    visibility: hidden;
+    position: absolute;
+}

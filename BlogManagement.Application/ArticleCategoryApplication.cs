@@ -27,6 +27,11 @@ namespace BlogManagement.Application
             return _repository.GetDetail(id);
         }
 
+        public List<SelectModel> GetAllSelectModel()
+        {
+            return _repository.GetAllSelectModel();
+        }
+
         public OperationResult Create(CreateArticleCategory command)
         {
             var operationResult = new OperationResult();

@@ -1,0 +1,201 @@
+﻿@page "{id}"
+@model EditModel
+@{
+    ViewData["Title"] = "ویرایش مقاله";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">ویرایش مقاله : (@Model.Command.Title)</h3>
+            </div>
+
+            <div class="panel-body">
+                <form asp-page="./Edit"
+                      method="post"
+                      data-ajax="true"
+                      data-callback="@Url.Page("./Index")"
+                      data-action="RefreshPage">
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.Title" class="control-label"></label>
+                                <input asp-for="Command.Title" class="form-control">
+                                <span asp-validation-for="Command.Title" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.CategoryId" class="control-label"></label>
+                                <select asp-for="Command.CategoryId" asp-items="Model.Categories">
+                                    <option value="0">دسته بندی مقاله</option>
+                                </select>
+                                <span asp-validation-for="Command.CategoryId" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.PublishDate" class="control-label"></label>
+                                <input asp-for="Command.PublishDate" class="form-control datePickerInput" readonly>
+                                <span asp-validation-for="Command.PublishDate" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.Image" class="control-label"></label>
+                                <input asp-for="Command.Image" class="form-control" accept="image/*">
+                                <span asp-validation-for="Command.Image" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.ImageAlt" class="control-label"></label>
+                                <input asp-for="Command.ImageAlt" class="form-control">
+                                <span asp-validation-for="Command.ImageAlt" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.ImageTitle" class="control-label"></label>
+                                <input asp-for="Command.ImageTitle" class="form-control">
+                                <span asp-validation-for="Command.ImageTitle" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.CanonicalAddress" class="control-label"></label>
+                                <input asp-for="Command.CanonicalAddress" class="form-control ltr">
+                                <span asp-validation-for="Command.CanonicalAddress" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.Keyword" class="control-label"></label>
+                                <input asp-for="Command.Keyword" class="form-control tagInput">
+                                <span asp-validation-for="Command.Keyword" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.ShortDescription" class="control-label"></label>
+                                <textarea asp-for="Command.ShortDescription" class="form-control"></textarea>
+                                <span asp-validation-for="Command.ShortDescription" class="error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.MetaDescription" class="control-label"></label>
+                                <textarea asp-for="Command.MetaDescription" class="form-control"></textarea>
+                                <span asp-validation-for="Command.MetaDescription" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label asp-for="Command.Description" class="control-label"></label>
+                                <textarea asp-for="Command.Description" class="form-control"></textarea>
+                                <span asp-validation-for="Command.Description" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" asp-for="Command.Id" />
+
+                    <div class="row">
+                        <div class="col-12">
+                            نکات مهم
+                            <ul>
+                                <li>برای SEO بهتر سایت حتما از کلمات کلیدی مناسب و توضیحات متا خوبی استفاده کنید.</li>
+                                <li>بهترین ابعاد تصویر برای این قسمت (1170x743) می باشد.</li>
+                                <li>Alt , Title تصویر خود را همنام با موضوع عکس انتخاب کنید.</li>
+                                <li>توجه : اگر مقاله شما مشابه مقاله دیگریست که در سایت وجود دارد آدرس ان مقاله را حتما در بخش 'آدرس مقاله مترادف' وارد کنید</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+                            <a asp-page="./Index" class="btn btn-default waves-effect">لغو</a>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Styles
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- TagsInput -->
+    <link href="~/lib/tagsinput/jquery.tagsinput.css" rel="stylesheet" />
+
+    <!-- Select2 -->
+    <link href="~/lib/select2/select2.css" rel="stylesheet" type="text/css" />
+
+    <!--Persian DatePicker-->
+    <link rel="stylesheet" href="~/lib/persian-datepicker/persian-datepicker.min.css">
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery TagsInput -->
+    <script src="~/lib/tagsinput/jquery.tagsinput.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="~/lib/select2/select2.min.js" type="text/javascript"></script>
+
+
+    <!--Persian DatePicker-->
+    <script src="~/lib/persian-datepicker/persian-date.min.js"></script>
+    <script src="~/lib/persian-datepicker/persian-datepicker.min.js"></script>
+
+    <!--Tiny Editor-->
+    <script src="~/lib/ckeditor/ckeditor.js" referrerpolicy="origin"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+
+    <script>
+        CKEDITOR.replace('Command_Description',
+            {
+                language: "fa"
+            });
+    </script>
+}

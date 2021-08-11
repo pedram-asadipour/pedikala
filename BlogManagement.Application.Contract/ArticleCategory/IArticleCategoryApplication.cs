@@ -7,6 +7,7 @@ namespace BlogManagement.Application.Contract.ArticleCategory
     {
         List<ArticleCategoryViewModel> GetAll(ArticleCategorySearchModel searchModel);
         EditArticleCategory GetDetail(long id);
+        List<SelectModel> GetAllSelectModel();
         OperationResult Create(CreateArticleCategory command);
         OperationResult Edit(EditArticleCategory command);
     }

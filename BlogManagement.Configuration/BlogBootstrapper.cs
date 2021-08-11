@@ -1,5 +1,7 @@
 ﻿using BlogManagement.Application;
+using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
+using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using BlogManagement.Infrastructure.EFCore;
 using BlogManagement.Infrastructure.EFCore.Repository;
@@ -21,6 +23,13 @@ namespace BlogManagement.Configuration
 
             services.AddScoped<IArticleCategoryRepository, ArticleCategoryRepository>();
             services.AddScoped<IArticleCategoryApplication, ArticleCategoryApplication>();
+
+            #endregion
+
+            #region Article
+
+            services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IArticleApplication, ArticleApplication>();
 
             #endregion
         }

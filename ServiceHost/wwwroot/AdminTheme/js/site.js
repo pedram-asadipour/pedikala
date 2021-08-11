@@ -82,6 +82,8 @@ $(document).ready(function() {
     SetDataTable();
     SetSelect2("SearchModel_CategoryId");
     SetSelect2("SearchModel_ProductId");
+    SetSelect2("Command_CategoryId");
+    SetTagInput();
     SetPersianDatePicker();
 
     //hash Change event
@@ -148,6 +150,17 @@ function CallBackHandler(data, action, form) {
     case "Message":
         swal(data.message);
         break;
+    case "RefreshPage":
+        if (data.isSucceeded) {
+            swal(data.message, "شما به صورت خودکار به صفحه اصلی باز گردانه می شوید", "success");
+            const refreshUrl = form.attr("data-callback");
+            setTimeout(function() {
+                location.assign(refreshUrl);
+            }, 3000);
+        } else {
+            swal(data.message, "", "error");
+        }
+        break;
     case "Refresh":
         if (data.isSucceeded) {
             SinglePage.LoadContent();
@@ -156,12 +169,12 @@ function CallBackHandler(data, action, form) {
             swal(data.message, "", "error");
         }
         break;
-    case "RefereshList":
+    case "RefreshList":
         {
             hideModal();
-            const refereshUrl = form.attr("data-refereshurl");
-            const refereshDiv = form.attr("data-refereshdiv");
-            get(refereshUrl, refereshDiv);
+            const refreshUrl = form.attr("data-refereshurl");
+            const refreshDiv = form.attr("data-refereshdiv");
+            get(refreshUrl, refreshDiv);
         }
         break;
     case "setValue":
@@ -291,7 +304,7 @@ function SetPersianDatePicker() {
 
 //File extension Validation
 jQuery.validator.addMethod("fileExtensionLimit",
-    function (value, element, params) {
+    function(value, element, params) {
 
         if (element.files[0] == null)
             return true;
@@ -306,7 +319,7 @@ jQuery.validator.addMethod("fileExtensionLimit",
 //File Size Validation
 
 jQuery.validator.addMethod("maxFileSize",
-    function (value, element, params) {
+    function(value, element, params) {
 
         if (element.files[0] == null)
             return true;
