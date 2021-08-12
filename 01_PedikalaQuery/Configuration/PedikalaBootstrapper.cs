@@ -1,4 +1,6 @@
-﻿using _01_PedikalaQuery.Contract.Menu;
+﻿using _01_PedikalaQuery.Contract.Article;
+using _01_PedikalaQuery.Contract.ArticleCategory;
+using _01_PedikalaQuery.Contract.Menu;
 using _01_PedikalaQuery.Contract.Product;
 using _01_PedikalaQuery.Contract.ProductCategory;
 using _01_PedikalaQuery.Query;
@@ -25,6 +27,18 @@ namespace _01_PedikalaQuery.Configuration
             #region Product
 
             services.AddScoped<IProductQuery, ProductQuery>();
+
+            #endregion
+
+            #region Article Category
+
+            services.AddScoped<IArticleCategoryQuery, ArticleCategoryQuery>();
+
+            #endregion
+
+            #region Article
+
+            services.AddScoped<IArticleQuery, ArticleQuery>();
 
             #endregion
         }

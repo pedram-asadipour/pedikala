@@ -24,11 +24,10 @@
                 <li class="menu-item-has-children">
                     <a href="#">محصولات</a>
                     <ul class="sub-menu">
-
-                        @foreach (var item in Model.Categories)
+                        @foreach (var item in Model.ProductCategories)
                         {
                             <li>
-                                <a asp-page="/Category"
+                                <a asp-page="/ProductCategory"
                                    asp-route-id="@item.Id"
                                    asp-route-slug="@item.Name.Sluggish()">
                                     @item.Name
@@ -41,9 +40,16 @@
                 <li class="menu-item-has-children">
                     <a href="#">بلاگ سایت</a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="#author">تست</a>
-                        </li>
+                        @foreach (var item in Model.ArticleCategories)
+                        {
+                            <li>
+                                <a asp-page="/ArticleCategory"
+                                   asp-route-id="@item.Id"
+                                   asp-route-slug="@item.Name.Sluggish()">
+                                    @item.Name
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </li>
 
@@ -272,10 +278,10 @@
                     <li class="menu-item-has-children">
                         <a href="#">محصولات</a>
                         <ul class="sub-menu">
-                            @foreach (var item in Model.Categories)
+                            @foreach (var item in Model.ProductCategories)
                             {
                                 <li>
-                                    <a asp-page="/Category"
+                                    <a asp-page="/ProductCategory"
                                        asp-route-id="@item.Id"
                                        asp-route-slug="@item.Name.Sluggish()">
                                         @item.Name
@@ -286,11 +292,18 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="#">بلاگ سایت</a>
+                        <a href="#">‌مقالات سایت</a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="#">تست</a>
-                            </li>
+                            @foreach (var item in Model.ArticleCategories)
+                            {
+                                <li>
+                                    <a asp-page="/ArticleCategory"
+                                       asp-route-id="@item.Id"
+                                       asp-route-slug="@item.Name.Sluggish()">
+                                        @item.Name
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </li>
 

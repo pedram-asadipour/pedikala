@@ -85,7 +85,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="Command.Keyword" class="control-label"></label>
-                                <input asp-for="Command.Keyword" class="form-control tagInput">
+                                <input asp-for="Command.Keyword" class="form-control Validation-Error-Fix tagInput">
                                 <span asp-validation-for="Command.Keyword" class="error"></span>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label asp-for="Command.Description" class="control-label"></label>
-                                <textarea asp-for="Command.Description" class="form-control"></textarea>
+                                <textarea asp-for="Command.Description" class="form-control Validation-Error-Fix"></textarea>
                                 <span asp-validation-for="Command.Description" class="error"></span>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+                            <button type="submit" class="btn btn-pink waves-effect waves-light">ویرایش</button>
                             <a asp-page="./Index" class="btn btn-default waves-effect">لغو</a>
                         </div>
                     </div>

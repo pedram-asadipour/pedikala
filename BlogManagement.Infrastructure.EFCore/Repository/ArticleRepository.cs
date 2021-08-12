@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Infrastructure;
 using _01_Framework.Tools;
@@ -30,7 +31,8 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                     PublishDate = x.PublishDate.ToPersianDate(),
                     CreationDate = x.CreationDate.ToPersianDate(),
                     CategoryId = x.CategoryId,
-                    CategoryName = x.Category.Name
+                    CategoryName = x.Category.Name,
+                    Status = x.PublishDate <= DateTime.Now
                 });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))

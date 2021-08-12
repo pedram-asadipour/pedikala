@@ -1,6 +1,6 @@
 ﻿@page "{id}/{slug}"
 @using _01_Framework.Tools
-@model ServiceHost.Pages.CategoryModel
+@model ProductCategoryModel
 @{
     ViewData["Title"] = "دسته بندی " + Model.Category.Name;
     ViewData["MetaDescription"] = Model.Category.MetaDescription;
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper">
-                    <img class="breadcrumb-img" src="~/Uploads/@Model.Category.Image" alt="@Model.Category.ImageAlt" title="@Model.Category.ImageTitle"/>
+                    <img class="breadcrumb-img" src="~/Uploads/@Model.Category.Image" alt="@Model.Category.ImageAlt" title="@Model.Category.ImageTitle" />
                     <div class="breadcrumb-content">
                         <h2 class="breadcrumb-content__title">@Model.Category.Name</h2>
                         <ul class="breadcrumb-content__page-map">
@@ -93,8 +93,8 @@
                                                             }
 
                                                         </div>
-                                                        <a asp-page="/ProductDetail" 
-                                                           asp-route-id="@product.Id" 
+                                                        <a asp-page="/ProductDetail"
+                                                           asp-route-id="@product.Id"
                                                            asp-route-slug="@product.Name.Sluggish()">
                                                             <img src="~/Uploads/@product.Image" class="img-fluid"
                                                                  alt="@product.ImageAlt"
@@ -115,8 +115,8 @@
                                                     <div class="single-grid-product__content">
                                                         <div class="single-grid-product__category-rating">
                                                             <span class="category">
-                                                                <a asp-page="/Category" 
-                                                                   asp-route-id="@Model.Category.Id" 
+                                                                <a asp-page="/Category"
+                                                                   asp-route-id="@Model.Category.Id"
                                                                    asp-route-slug="@Model.Category.Name.Sluggish()">@Model.Category.Name</a>
                                                             </span>
                                                             <span class="rating">
@@ -129,8 +129,8 @@
                                                         </div>
 
                                                         <h3 class="single-grid-product__title">
-                                                            <a asp-page="/ProductDetail" 
-                                                               asp-route-id="@product.Id" 
+                                                            <a asp-page="/ProductDetail"
+                                                               asp-route-id="@product.Id"
                                                                asp-route-slug="@product.Name.Sluggish()">
                                                                 @product.Name
                                                             </a>
