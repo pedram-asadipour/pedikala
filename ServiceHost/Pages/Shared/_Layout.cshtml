@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>فروشگاه پدیکالا | @ViewData["Title"]</title>
     <meta name="description" content="@ViewData["MetaDescription"]">
     <meta name="keywords" content="@ViewData["KeyWord"]">
-
-
     <!-- Vendor CSS -->
     <link href="~/MainTheme/css/vendors.css" rel="stylesheet">
     <!-- Main CSS -->
     <link href="~/MainTheme/css/style.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/MainTheme/css/Custom.css" rel="stylesheet">
-    @await RenderSectionAsync("Styles", required: false)
+
+    @await RenderSectionAsync("Meta", required: false)
+
 </head>
 
 <body>

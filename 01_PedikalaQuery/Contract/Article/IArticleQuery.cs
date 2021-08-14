@@ -4,6 +4,7 @@ namespace _01_PedikalaQuery.Contract.Article
 {
     public interface IArticleQuery
     {
+        ArticleQueryModel GetArticleBy(long id);
         List<ArticleMiniWrapQueryModel> GetLastArticles();
     }
 }

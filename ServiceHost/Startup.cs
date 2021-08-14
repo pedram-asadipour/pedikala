@@ -1,3 +1,5 @@
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using _01_Framework.Application;
 using _01_PedikalaQuery.Configuration;
 using BlogManagement.Configuration;
@@ -35,6 +37,10 @@ namespace ServiceHost
 
             services.AddQueryConfigure();
             services.AddScoped<IFileManager, FileManager>();
+
+            services.AddSingleton<HtmlEncoder>(
+                HtmlEncoder.Create(UnicodeRanges.BasicLatin,UnicodeRanges.Arabic)
+                );
 
             services.AddRazorPages();
         }

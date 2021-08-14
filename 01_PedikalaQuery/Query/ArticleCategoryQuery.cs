@@ -77,6 +77,7 @@ namespace _01_PedikalaQuery.Query
                     ShortDescription = x.ShortDescription,
                     PublishDate = x.PublishDate.ToPersianDate()
                 })
+                .OrderByDescending(x => x.Id)
                 .ToList();
         }
     }

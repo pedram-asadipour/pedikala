@@ -11,28 +11,28 @@
     <title>@ViewData["Title"] | پنل مدیریت سایت</title>
 
     <!-- Base Css Files -->
-    <link href="~/AdminTheme/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/AdminTheme/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Icons -->
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="~/lib/ionicon/css/ionicons.min.css" rel="stylesheet"/>
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/ionicon/css/ionicons.min.css" rel="stylesheet" />
     <link href="~/AdminTheme/css/material-design-iconic-font.min.css" rel="stylesheet">
 
     <!-- animate css -->
-    <link href="~/AdminTheme/css/animate.css" rel="stylesheet"/>
+    <link href="~/AdminTheme/css/animate.css" rel="stylesheet" />
 
     <!-- Waves-effect -->
     <link href="~/AdminTheme/css/waves-effect.css" rel="stylesheet">
 
-    @await RenderSectionAsync("Styles", required: false);
-
     <!-- Custom Files -->
-    <link href="~/AdminTheme/css/helper.css" rel="stylesheet" type="text/css"/>
-    <link href="~/AdminTheme/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="~/AdminTheme/css/helper.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminTheme/css/style.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom RTL Css -->
     <link rel="stylesheet" href="~/AdminTheme/css/rtl-main.css">
     <script src="~/AdminTheme/js/modernizr.min.js"></script>
+
+    @await RenderSectionAsync("Meta", required: false);
 
 </head>
 
