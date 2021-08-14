@@ -6002,11 +6002,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application\\BlogManagement.Application.csproj",
+      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Application\\BlogManagement.Application.csproj",
       "projectName": "BlogManagement.Application",
-      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application\\BlogManagement.Application.csproj",
+      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Application\\BlogManagement.Application.csproj",
       "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application\\obj\\",
+      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6023,11 +6023,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7dx/L7eaupbt9jnbp36ITTXLENuBMZG/C6PLRoHaRB/eck9ttzqC9zrjybWI3E7MU9TLhn0p0qWSbB+l5sqX2w==",
+  "dgSpecHash": "yAI+hQODV6YQnDYk/o2l+AZK9/UHR37+pKcORXM7qsrv2yOspS7ca5vNAnSqMt0wTNvH2FHOyg1ConJs8FbRgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",

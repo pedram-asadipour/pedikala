@@ -95,7 +95,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="Command.ShortDescription" class="control-label"></label>
-                                <textarea asp-for="Command.ShortDescription" class="form-control" onkeyup="fillField('Command_ShortDescription', 'Command_StylesDescription')"></textarea>
+                                <textarea asp-for="Command.ShortDescription" class="form-control" onkeyup="fillField('Comment_ShortDescription', 'Comment_StylesDescription')"></textarea>
                                 <span asp-validation-for="Command.ShortDescription" class="error"></span>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
     <script src="~/AdminTheme/js/site.js"></script>
 
     <script>
-        CKEDITOR.replace('Command_Description',
+        CKEDITOR.replace('Comment_Description',
             {
                 language: "fa"
             });

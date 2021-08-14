@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SLIJxqF6Rtn6dNTTckI7RVXyFOHIg/AzHJVA4dTT41iDrFKCr3eko6edh9VDJdkoSqE9k4hZnYsecPe7rtKOUQ==",
+  "dgSpecHash": "zpG7hYX6+N0P6zw6LGCLFkqLhueqGzUdTjOrhcyxUY3wytKruNSUBcS6WdHv++UHLRPD+zSSaYQiN0tOAfwmbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

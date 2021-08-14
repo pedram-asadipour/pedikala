@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BcjLWpsZLf6w43IlGtwE6i2PYLDk7qk4GeApSyei32IJL9WBlyPrZ19zNCiyT80cjQOxturCqBjojmuxE61xdw==",
+  "dgSpecHash": "RCeguQMsGzBx51dPQB+eeYztR8I+V9SYkKMHLzJyk5FOgMnt5XjqNrQXfe3j0JvFBwS5s8KkXvsIzR8ybI/uwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",

@@ -159,19 +159,6 @@
                     </a>
                 </p>
                 <h4 class="product-title">@Model.Product.Name</h4>
-                <div class="product-rating">
-                    <span class="rating">
-                        <i class="ion-android-star active"></i>
-                        <i class="ion-android-star active"></i>
-                        <i class="ion-android-star active"></i>
-                        <i class="ion-android-star active"></i>
-                        <i class="ion-android-star-outline"></i>
-                    </span>
-
-                    <span class="review-count">
-                        <a href="#">(2 reviews)</a> | <a href="#">Write A Review</a>
-                    </span>
-                </div>
 
                 <p class="single-grid-product__price">
                     @if (Model.Product.IsInStock)
@@ -188,7 +175,7 @@
                     }
                 </p>
 
-                <p class="single-info">Product Code: <span class="value">@Model.Product.ProductCode</span> </p>
+                <p class="single-info">کد محصول: <span class="value">@Model.Product.ProductCode</span> </p>
 
                 <p class="single-info">
                     وضعیت محصول:
@@ -277,6 +264,7 @@
                                         <div class="rating-author">
                                             <h3>@command.Name</h3>
                                             <div class="rating-star">
+                                                &nbsp;
                                                 @command.CreationDate
                                             </div>
                                         </div>
@@ -292,22 +280,22 @@
                                 <form method="POST">
                                     <div class="rating-form row">
                                         <div class="col-md-6 col-12 form-group">
-                                            <label asp-for="Command.Name"></label>
-                                            <input asp-for="Command.Name" placeholder="نام خود را وارد کنید">
-                                            <span asp-validation-for="Command.Name" class="text-danger"></span>
+                                            <label asp-for="Comment.Name"></label>
+                                            <input asp-for="Comment.Name" placeholder="نام خود را وارد کنید">
+                                            <span asp-validation-for="Comment.Name" class="text-danger"></span>
                                         </div>
                                         <div class="col-md-6 col-12 form-group">
-                                            <label asp-for="Command.Email"></label>
-                                            <input asp-for="Command.Email" placeholder="ایمیل خود را وارد کنید">
-                                            <span asp-validation-for="Command.Email" class="text-danger"></span>
+                                            <label asp-for="Comment.Email"></label>
+                                            <input asp-for="Comment.Email" placeholder="ایمیل خود را وارد کنید">
+                                            <span asp-validation-for="Comment.Email" class="text-danger"></span>
                                         </div>
                                         <div class="col-12 form-group">
-                                            <label asp-for="Command.Message"></label>
-                                            <textarea asp-for="Command.Message" placeholder="پیغام خود را وارد کنید"></textarea>
-                                            <span asp-validation-for="Command.Message" class="text-danger"></span>
+                                            <label asp-for="Comment.Message"></label>
+                                            <textarea asp-for="Comment.Message" placeholder="پیغام خود را وارد کنید"></textarea>
+                                            <span asp-validation-for="Comment.Message" class="text-danger"></span>
                                         </div>
                                         
-                                        <input type="hidden" asp-for="Command.ProductId" value="@Model.Product.Id" />
+                                        <input type="hidden" asp-for="Comment.ProductId" value="@Model.Product.Id" />
 
                                         <div class="col-12">
                                             <input value="ارسال" type="submit">

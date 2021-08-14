@@ -35,7 +35,8 @@
         "dependencies": {
           "01_PedikalaQuery": "1.0.0",
           "BlogManagement.Configuration": "1.0.0",
-          "CommandManagement.Configuration": "1.0.0",
+          "CommentManagement.Application.Contract": "1.0.0",
+          "CommentManagement.Configuration": "1.0.0",
           "DiscountManagement.Configuration": "1.0.0",
           "InventoryManagement.Configuration": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.8",
@@ -1395,7 +1396,7 @@
       "01_PedikalaQuery/1.0.0": {
         "dependencies": {
           "BlogManagement.Infrastructure.EFCore": "1.0.0",
-          "CommandManagement.Infrastructure.EFCore": "1.0.0",
+          "CommentManagement.Infrastructure.EFCore": "1.0.0",
           "DiscountManagement.Infrastructure.EFCore": "1.0.0",
           "InventoryManagement.Infrastructure.EFCore": "1.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
@@ -1469,66 +1470,68 @@
           "BlogManagement.Infrastructure.EFCore.dll": {}
         }
       },
-      "CommandManagement.Application/1.0.0": {
+      "CommentManagement.Application/1.0.0": {
         "dependencies": {
-          "CommandManagement.Application.Contract": "1.0.0",
-          "CommandManagement.Domain": "1.0.0"
+          "CommentManagement.Application.Contract": "1.0.0",
+          "CommentManagement.Domain": "1.0.0"
         },
         "runtime": {
-          "CommandManagement.Application.dll": {}
+          "CommentManagement.Application.dll": {}
         },
         "compile": {
-          "CommandManagement.Application.dll": {}
+          "CommentManagement.Application.dll": {}
         }
       },
-      "CommandManagement.Application.Contract/1.0.0": {
+      "CommentManagement.Application.Contract/1.0.0": {
         "dependencies": {
           "01_Framework": "1.0.0"
         },
         "runtime": {
-          "CommandManagement.Application.Contract.dll": {}
+          "CommentManagement.Application.Contract.dll": {}
         },
         "compile": {
-          "CommandManagement.Application.Contract.dll": {}
+          "CommentManagement.Application.Contract.dll": {}
         }
       },
-      "CommandManagement.Configuration/1.0.0": {
+      "CommentManagement.Configuration/1.0.0": {
         "dependencies": {
-          "CommandManagement.Application": "1.0.0",
-          "CommandManagement.Infrastructure.EFCore": "1.0.0",
+          "CommentManagement.Application": "1.0.0",
+          "CommentManagement.Infrastructure.EFCore": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "runtime": {
-          "CommandManagement.Configuration.dll": {}
+          "CommentManagement.Configuration.dll": {}
         },
         "compile": {
-          "CommandManagement.Configuration.dll": {}
+          "CommentManagement.Configuration.dll": {}
         }
       },
-      "CommandManagement.Domain/1.0.0": {
+      "CommentManagement.Domain/1.0.0": {
         "dependencies": {
           "01_Framework": "1.0.0",
-          "CommandManagement.Application.Contract": "1.0.0"
+          "CommentManagement.Application.Contract": "1.0.0"
         },
         "runtime": {
-          "CommandManagement.Domain.dll": {}
+          "CommentManagement.Domain.dll": {}
         },
         "compile": {
-          "CommandManagement.Domain.dll": {}
+          "CommentManagement.Domain.dll": {}
         }
       },
-      "CommandManagement.Infrastructure.EFCore/1.0.0": {
+      "CommentManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
-          "CommandManagement.Domain": "1.0.0",
+          "01_Framework": "1.0.0",
+          "CommentManagement.Application.Contract": "1.0.0",
+          "CommentManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "runtime": {
-          "CommandManagement.Infrastructure.EFCore.dll": {}
+          "CommentManagement.Infrastructure.EFCore.dll": {}
         },
         "compile": {
-          "CommandManagement.Infrastructure.EFCore.dll": {}
+          "CommentManagement.Infrastructure.EFCore.dll": {}
         }
       },
       "DiscountManagement.Application/1.0.0": {
@@ -4156,27 +4159,27 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CommandManagement.Application/1.0.0": {
+    "CommentManagement.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CommandManagement.Application.Contract/1.0.0": {
+    "CommentManagement.Application.Contract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CommandManagement.Configuration/1.0.0": {
+    "CommentManagement.Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CommandManagement.Domain/1.0.0": {
+    "CommentManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CommandManagement.Infrastructure.EFCore/1.0.0": {
+    "CommentManagement.Infrastructure.EFCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

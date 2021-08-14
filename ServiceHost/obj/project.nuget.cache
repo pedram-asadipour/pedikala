@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ym8ymot3fV0WwQsHwyWN4Ls2Os5K/X1596Yd3WHOZahMueO45Gjuep6zz68vI7zIdV2ASiZppIVhCR4xibPFrg==",
+  "dgSpecHash": "j/GTGOJs85cKyGvNpmgHCfRtl5GGshQvPKrz3MDGoDUqV2/7hsiq2JCUKgfSAMluWnt2w47S+8tcefMg6GPoIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ServiceHost\\ServiceHost.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ServiceHost\\ServiceHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X7YO8BUOu3P5/+OxP/Mvd1B1AIKRj+w/8YvWWwWQQJWTk6zXaVIMK7uSCWmauN0gI6ROcGTTb6DKphsUjSyM+w==",
+  "dgSpecHash": "JWU8+ncmqhFDo9xqOgZXDTiQZqAQRpjDMyKRIqQkFqcLzypdoYog/NdZ4xoAN+qJ69x4YpuJw2+OD+9pEZNacA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",

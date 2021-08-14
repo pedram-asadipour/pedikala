@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {}
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "projectName": "01_Framework",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
         "projectName": "DiscountManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -106,8 +106,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -140,14 +140,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
         "projectName": "DiscountManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -164,11 +164,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj"
               }
             }
           }
@@ -201,14 +201,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
         "projectName": "DiscountManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -225,14 +225,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Domain\\DiscountManagement.Domain.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
@@ -287,14 +287,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "projectName": "ShopManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -311,8 +311,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -345,14 +345,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "projectName": "ShopManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -369,11 +369,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               }
             }
           }
@@ -406,14 +406,14 @@
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "projectName": "ShopManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -430,8 +430,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }

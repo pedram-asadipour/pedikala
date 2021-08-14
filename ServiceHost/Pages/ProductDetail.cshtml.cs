@@ -1,5 +1,5 @@
 ﻿using _01_PedikalaQuery.Contract.Product;
-using CommandManagement.Application.Contract.ProductCommand;
+using CommentManagement.Application.Contract.ProductComment;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,13 +8,13 @@ namespace ServiceHost.Pages
     public class ProductDetailModel : PageModel
     {
         private readonly IProductQuery _query;
-        private readonly IProductCommandApplication _application;
+        private readonly IProductCommentApplication _application;
         public ProductQueryModel Product { get; set; }
-        public CreateProductCommand Command { get; set; }
+        public CreateProductComment Comment { get; set; }
         [ViewData] public string CommandStatusMessage { get; set; }
         [ViewData] public bool IsCommandSend { get; set; }
 
-        public ProductDetailModel(IProductQuery query, IProductCommandApplication application)
+        public ProductDetailModel(IProductQuery query, IProductCommentApplication application)
         {
             _query = query;
             _application = application;
@@ -33,7 +33,7 @@ namespace ServiceHost.Pages
             return Page();
         }
 
-        public IActionResult OnPost(CreateProductCommand command)
+        public IActionResult OnPost(CreateProductComment comment)
         {
 
             if (!ModelState.IsValid)
@@ -42,7 +42,7 @@ namespace ServiceHost.Pages
 
                 IsCommandSend = false;
 
-                Product = GetProduct(command.ProductId);
+                Product = GetProduct(comment.ProductId);
 
                 if (Product == null)
                     return NotFound();
@@ -50,7 +50,7 @@ namespace ServiceHost.Pages
                 return Page();
             }
 
-            var json = _application.Create(command);
+            var json = _application.Create(comment);
 
             CommandStatusMessage = json.IsSucceeded switch
             {
@@ -64,7 +64,7 @@ namespace ServiceHost.Pages
                 false => false
             };
 
-            Product = GetProduct(command.ProductId);
+            Product = GetProduct(comment.ProductId);
 
             if (Product == null)
                 return NotFound();

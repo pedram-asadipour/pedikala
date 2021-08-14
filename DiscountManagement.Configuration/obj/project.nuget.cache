@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VW8ebfgyvaPyhooeizrjAMKnQZiU8TgTQcJPfLcWoTY+D4LsoLROGcP0zS3Q5feBDz61mhsTapTyZlPALtDPdw==",
+  "dgSpecHash": "WqTkAz6Rtlfz4oOr8yfhz8jP5bvK95c9f+KOy2K8V+2sk7YJzKZsuxRhSu+NzJ73mbbgB45VmZzRfwXatATKNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
+  "projectFilePath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pedram\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",

@@ -3,7 +3,7 @@ using System.Text.Unicode;
 using _01_Framework.Application;
 using _01_PedikalaQuery.Configuration;
 using BlogManagement.Configuration;
-using CommandManagement.Configuration;
+using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
 using Microsoft.AspNetCore.Builder;
@@ -32,7 +32,7 @@ namespace ServiceHost
             services.AddShopConfigure(connection);
             services.AddDiscountConfigure(connection);
             services.AddInventoryConfigure(connection);
-            services.AddCommandConfigure(connection);
+            services.AddCommentConfigure(connection);
             services.AddBlogConfigure(connection);
 
             services.AddQueryConfigure();

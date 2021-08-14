@@ -6098,11 +6098,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
       "projectName": "ShopManagement.Infrastructure.EFCore",
-      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
       "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
+      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6119,8 +6119,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
             }
           }
         }

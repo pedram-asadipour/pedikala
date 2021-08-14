@@ -156,16 +156,16 @@
 
                     <li class="has_sub">
                         <a href="#" class="waves-effect">
-                            <i class="md md-message"></i><span> نظرات </span>
+                            <i class="md md-message"></i><span> کامنت ها </span>
                             <span class="pull-left">
                                 <i class="md md-add"></i>
                             </span>
                         </a>
                         <ul class="list-unstyled">
                             <li>
-                                <a asp-page="/Command/ProductCommand/Index">
-                                    نظرات محصولات
-                                    @await Component.InvokeAsync("CountProductCommand")
+                                <a asp-page="/Comment/ProductComment/Index">
+                                    کامنت محصولات
+                                    @await Component.InvokeAsync("CountProductComment")
                                 </a>
                             </li>
                         </ul>
