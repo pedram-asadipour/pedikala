@@ -14,7 +14,7 @@ namespace ServiceHost.Areas.Admin.Components
 
         public IViewComponentResult Invoke()
         {
-            var countCommand = _application.GetCountCommand();
+            var countCommand = _application.GetCountComments();
             return View(countCommand);
         }
     }

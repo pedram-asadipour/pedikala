@@ -10,6 +10,7 @@
         public const string FileSize = "حجم فایل بیش از حد مجاز می باشد";
         public const string FileType = "این نوع فایل مجاز نمی باشد";
         public const string AllRequired = "همه فیلد ها اجباری هستند";
+        public const string EmailRequired = "لطفا از  یک ایمیل استفاده کنید";
 
     }
 }

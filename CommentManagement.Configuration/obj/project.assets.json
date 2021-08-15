@@ -1589,6 +1589,49 @@
           "bin/placeholder/01_Framework.dll": {}
         }
       },
+      "BlogManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.8"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Application.Contract.dll": {}
+        }
+      },
+      "BlogManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "BlogManagement.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Domain.dll": {}
+        }
+      },
+      "BlogManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "BlogManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8"
+        },
+        "compile": {
+          "bin/placeholder/BlogManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
       "CommentManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1635,6 +1678,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "01_Framework": "1.0.0",
+          "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "CommentManagement.Application.Contract": "1.0.0",
           "CommentManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
@@ -6052,6 +6096,21 @@
       "path": "../01_Framework/01_Framework.csproj",
       "msbuildProject": "../01_Framework/01_Framework.csproj"
     },
+    "BlogManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Application.Contract/BlogManagement.Application.Contract.csproj",
+      "msbuildProject": "../BlogManagement.Application.Contract/BlogManagement.Application.Contract.csproj"
+    },
+    "BlogManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Domain/BlogManagement.Domain.csproj",
+      "msbuildProject": "../BlogManagement.Domain/BlogManagement.Domain.csproj"
+    },
+    "BlogManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../BlogManagement.Infrastructure.EFCore/BlogManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../BlogManagement.Infrastructure.EFCore/BlogManagement.Infrastructure.EFCore.csproj"
+    },
     "CommentManagement.Application/1.0.0": {
       "type": "project",
       "path": "../CommentManagement.Application/CommentManagement.Application.csproj",
@@ -6101,11 +6160,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
+      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
       "projectName": "CommentManagement.Configuration",
-      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
+      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
       "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Configuration\\obj\\",
+      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6122,11 +6181,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj"
             }
           }
         }

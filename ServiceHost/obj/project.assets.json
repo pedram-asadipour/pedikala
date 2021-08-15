@@ -1765,6 +1765,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "01_Framework": "1.0.0",
+          "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "CommentManagement.Application.Contract": "1.0.0",
           "CommentManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
@@ -6537,11 +6538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ServiceHost\\ServiceHost.csproj",
+      "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ServiceHost\\ServiceHost.csproj",
       "projectName": "ServiceHost",
-      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ServiceHost\\ServiceHost.csproj",
+      "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ServiceHost\\ServiceHost.csproj",
       "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ServiceHost\\obj\\",
+      "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ServiceHost\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6558,26 +6559,26 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\DiscountManagement.Configuration\\DiscountManagement.Configuration.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj"
             },
-            "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
-              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
+            "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
             }
           }
         }

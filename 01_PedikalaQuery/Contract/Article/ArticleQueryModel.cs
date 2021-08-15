@@ -1,4 +1,7 @@
-﻿namespace _01_PedikalaQuery.Contract.Article
+﻿using System.Collections.Generic;
+using _01_PedikalaQuery.Contract.ArticleComment;
+
+namespace _01_PedikalaQuery.Contract.Article
 {
     public class ArticleQueryModel
     {
@@ -14,5 +17,6 @@
         public string CanonicalAddress { get; set; }
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public List<ArticleCommentQueryModel> Comments { get; set; }
     }
 }

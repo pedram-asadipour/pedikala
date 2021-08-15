@@ -53,7 +53,7 @@ namespace CommandManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<long>("ProductId")
+                    b.Property<long>("ArticleId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");

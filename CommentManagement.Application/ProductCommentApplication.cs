@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
 using CommentManagement.Application.Contract.ProductComment;
+using CommentManagement.Domain.ArticleCommentAgg;
 using CommentManagement.Domain.ProductCommentAgg;
 
 namespace CommentManagement.Application
@@ -64,7 +65,7 @@ namespace CommentManagement.Application
             return operationResult.Succeeded();
         }
 
-        public int GetCountCommand()
+        public int GetCountComments()
         {
             return _repository.GetCountCommand();
         }

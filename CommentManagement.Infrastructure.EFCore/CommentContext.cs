@@ -1,4 +1,5 @@
-﻿using CommentManagement.Domain.ProductCommentAgg;
+﻿using CommentManagement.Domain.ArticleCommentAgg;
+using CommentManagement.Domain.ProductCommentAgg;
 using CommentManagement.Infrastructure.EFCore.Mapping;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ namespace CommentManagement.Infrastructure.EFCore
         }
 
         public DbSet<ProductComment> ProductComments { get; set; }
+        public DbSet<ArticleComment> ArticleComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

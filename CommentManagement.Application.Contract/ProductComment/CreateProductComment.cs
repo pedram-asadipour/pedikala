@@ -15,6 +15,7 @@ namespace CommentManagement.Application.Contract.ProductComment
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("ایمیل")]
+        [EmailAddress(ErrorMessage = ValidationMessages.EmailRequired)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

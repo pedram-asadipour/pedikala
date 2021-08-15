@@ -1,5 +1,7 @@
 ﻿using CommentManagement.Application;
+using CommentManagement.Application.Contract.ArticleComment;
 using CommentManagement.Application.Contract.ProductComment;
+using CommentManagement.Domain.ArticleCommentAgg;
 using CommentManagement.Domain.ProductCommentAgg;
 using CommentManagement.Infrastructure.EFCore;
 using CommentManagement.Infrastructure.EFCore.Repository;
@@ -22,6 +24,13 @@ namespace CommentManagement.Configuration
 
             services.AddScoped<IProductCommentRepository, ProductCommentRepository>();
             services.AddScoped<IProductCommentApplication, ProductCommentApplication>();
+
+            #endregion
+
+            #region Article Comment
+
+            services.AddScoped<IArticleCommentRepository, ArticleCommentRepository>();
+            services.AddScoped<IArticleCommentApplication, ArticleCommentApplication>();
 
             #endregion
         }

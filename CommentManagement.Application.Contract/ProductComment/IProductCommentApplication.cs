@@ -9,6 +9,6 @@ namespace CommentManagement.Application.Contract.ProductComment
         OperationResult Create(CreateProductComment comment);
         OperationResult Confirmed(long id);
         OperationResult Canceled(long id);
-        int GetCountCommand();
+        int GetCountComments();
     }
 }

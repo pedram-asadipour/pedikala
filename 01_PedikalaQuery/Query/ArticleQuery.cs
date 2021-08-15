@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Tools;
 using _01_PedikalaQuery.Contract.Article;
+using _01_PedikalaQuery.Contract.ArticleComment;
+using _01_PedikalaQuery.Contract.ProductComment;
 using BlogManagement.Infrastructure.EFCore;
+using CommentManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace _01_PedikalaQuery.Query
@@ -11,15 +14,32 @@ namespace _01_PedikalaQuery.Query
     public class ArticleQuery : IArticleQuery
     {
         private readonly BlogContext _context;
+        private readonly CommentContext _commentContext;
 
-        public ArticleQuery(BlogContext context)
+        public ArticleQuery(BlogContext context, CommentContext commentContext)
         {
             _context = context;
+            _commentContext = commentContext;
         }
 
-        public ArticleQueryModel GetArticleBy(long id)
+        public ArticleQueryModel GetArticleBy(long articleId)
         {
-            return _context.Articles
+
+            var commentsQuery = _commentContext.ArticleComments
+                .Where(x => x.ArticleId == articleId && x.IsConfirmed && !x.IsCanceled)
+                .Select(x => new ArticleCommentQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Message = x.Message,
+                    CreationDate = x.CreationDate.ToPersianDate(),
+                    ParentId = x.ParentId
+                })
+                .OrderByDescending(x => x.Id)
+                .AsNoTracking()
+                .ToList();
+
+            var articleQuery = _context.Articles
                 .Where(x => x.PublishDate <= DateTime.Now)
                 .Select(x => new ArticleQueryModel
                 {
@@ -34,10 +54,13 @@ namespace _01_PedikalaQuery.Query
                     PublishDate = x.PublishDate.ToPersianDate(),
                     CanonicalAddress = x.CanonicalAddress,
                     CategoryId = x.CategoryId,
-                    CategoryName = x.Category.Name
+                    CategoryName = x.Category.Name,
+                    Comments = commentsQuery
                 })
                 .AsNoTracking()
-                .FirstOrDefault(x => x.Id == id);
+                .FirstOrDefault(x => x.Id == articleId);
+
+            return articleQuery;
         }
 
         public List<ArticleMiniWrapQueryModel> GetLastArticles()
