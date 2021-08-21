@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccountManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(AccountContext))]
-    [Migration("20210821125935_AccountsTblAndRolesTblImplement")]
+    [Migration("20210821230219_AccountsTblAndRolesTblImplement")]
     partial class AccountsTblAndRolesTblImplement
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

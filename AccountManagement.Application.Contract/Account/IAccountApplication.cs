@@ -8,7 +8,9 @@ namespace AccountManagement.Application.Contract.Account
         List<AccountViewModel> GetAll(AccountSearchModel searchModel);
         EditAccount GetDetail(long id);
         OperationResult Create(CreateAccount command);
+        OperationResult Create(SignInAccount command);
         OperationResult Edit(EditAccount command);
         OperationResult ChangePassword(ChangePasswordAccount command);
+        OperationResult LogIn(LogInAccount command);
     }
 }

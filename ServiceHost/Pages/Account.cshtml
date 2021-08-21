@@ -1,0 +1,152 @@
+﻿@page
+@model ServiceHost.Pages.AccountModel
+@{
+    ViewData["Title"] = "ورود - ثبت نام";
+    ViewData["MetaDescription"] = "ورود و ثبت نام حساب کاربری";
+    ViewData["KeyWord"] = "ورود به حساب,ثبت نام حساب کاربری,LogIn,Create";
+}
+
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-wrapper">
+                    <img class="breadcrumb-img" src="/MainTheme/img/backgrounds/header-bg-1820x400.jpg" alt="pattern" title="pattern" />
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-content__title">ورود - ثبت نام</h2>
+                        <ul class="breadcrumb-content__page-map">
+                            <li><a asp-page="./">صفحه اصلی</a></li>
+                            <li class="active">ورود - ثبت نام</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content-area mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-wrapper">
+                    <div class="page-content-wrapper">
+                        <div class="row">
+
+                            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                                <form asp-page-handler="LogIn" method="post">
+                                    <div class="login-form">
+                                        <h4 class="login-title">ورود</h4>
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-12">
+                                                <label asp-for="LogIn.Username"></label>
+                                                <input asp-for="LogIn.Username" class="ltr">
+                                                <span asp-validation-for="LogIn.Username" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <label asp-for="LogIn.Password"></label>
+                                                <input asp-for="LogIn.Password" class="ltr">
+                                                <span asp-validation-for="LogIn.Password" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-sm-6 text-left text-sm-right">
+                                                <a href="#" class="forget-pass-link">رمز عبور خود را فراموش کرده اید؟</a>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <button class="register-button">ورود به حساب</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                                <form asp-page-handler="Create">
+
+                                    <div class="login-form">
+                                        <h4 class="login-title">ثبت نام</h4>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Create.Fullname"></label>
+                                                <input asp-for="Create.Fullname">
+                                                <span asp-validation-for="Create.Fullname" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Create.Username"></label>
+                                                <input asp-for="Create.Username" class="ltr">
+                                                <span asp-validation-for="Create.Username" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Create.Password"></label>
+                                                <input asp-for="Create.Password" class="ltr">
+                                                <span asp-validation-for="Create.Password" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Create.RePassword"></label>
+                                                <input asp-for="Create.RePassword" class="ltr">
+                                                <span asp-validation-for="Create.RePassword" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-12 col-12 mb-20">
+                                                <label asp-for="Create.Mobile"></label>
+                                                <input asp-for="Create.Mobile" class="ltr">
+                                                <span asp-validation-for="Create.Mobile" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button class="register-button mt-0">ثبت نام</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Meta
+{
+    <link rel="stylesheet" href="~/lib/sweet-alert/sweet-alert.min.css" />
+}
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    @if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+    {
+        @if (Model.StatusMessage)
+        {
+            <script>
+                swal("عملیات با موفقیت انجام شد", "@Model.ResultMessage", "success")
+            </script>
+        }
+        else
+        {
+            <script>
+                swal("خطا", "@Model.ResultMessage", "error")
+            </script>
+        }
+    }
+}

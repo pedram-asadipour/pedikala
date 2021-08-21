@@ -8,5 +8,6 @@ namespace AccountManagement.Domain.AccountAgg
     {
         List<AccountViewModel> GetAll(AccountSearchModel searchModel);
         EditAccount GetDetail(long id);
+        Account GetAccountBy(string username);
     }
 }

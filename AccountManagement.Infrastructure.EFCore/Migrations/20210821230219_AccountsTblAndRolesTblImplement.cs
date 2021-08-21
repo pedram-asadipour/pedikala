@@ -21,6 +21,11 @@ namespace AccountManagement.Infrastructure.EFCore.Migrations
                     table.PrimaryKey("PK_Roles", x => x.Id);
                 });
 
+            migrationBuilder.InsertData(
+                "Roles", 
+                new string[] { "Id", "Name", "CreationDate" },
+                new string[] { "1", "کاربر معمولی", DateTime.Now.ToString() });
+
             migrationBuilder.CreateTable(
                 name: "Accounts",
                 columns: table => new

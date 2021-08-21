@@ -19,6 +19,7 @@ namespace AccountManagement.Application.Contract.Account
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("نام کاربری")]
         [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
+        [EmailAddress(ErrorMessage = ValidationMessages.EmailRequired)]
         public string Username { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

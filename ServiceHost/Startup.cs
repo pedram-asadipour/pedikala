@@ -7,8 +7,10 @@ using BlogManagement.Configuration;
 using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,6 +46,23 @@ namespace ServiceHost
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic)
             );
 
+            services.AddHttpContextAccessor();
+            services.AddSingleton<IAuthHelper, AuthHelper>();
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+                {
+                    options.LoginPath = new PathString("/Account");
+                    options.LogoutPath = new PathString("/Account");
+                    options.AccessDeniedPath = new PathString("/AccessDenied");
+                });
+
             services.AddRazorPages();
         }
 
@@ -59,10 +78,14 @@ namespace ServiceHost
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCookiePolicy();
 
             app.UseAuthorization();
 

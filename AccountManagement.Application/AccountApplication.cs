@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using _01_Framework.Application;
 using AccountManagement.Application.Contract.Account;
 using AccountManagement.Domain.AccountAgg;
@@ -11,12 +10,14 @@ namespace AccountManagement.Application
         private readonly IAccountRepository _repository;
         private readonly IFileManager _fileManager;
         private readonly IPasswordHasher _passwordHasher;
+        private readonly IAuthHelper _authHelper;
 
-        public AccountApplication(IAccountRepository repository, IFileManager fileManager, IPasswordHasher passwordHasher)
+        public AccountApplication(IAccountRepository repository, IFileManager fileManager, IPasswordHasher passwordHasher, IAuthHelper authHelper)
         {
             _repository = repository;
             _fileManager = fileManager;
             _passwordHasher = passwordHasher;
+            _authHelper = authHelper;
         }
 
         public List<AccountViewModel> GetAll(AccountSearchModel searchModel)
@@ -34,7 +35,7 @@ namespace AccountManagement.Application
             var operationResult = new OperationResult();
 
             if (_repository.Exists(x => x.Username == command.Username || x.Mobile == command.Mobile))
-                return operationResult.Failed(ApplicationMessages.Exists);
+                return operationResult.Failed(ApplicationMessages.Exists + " به نام کاربری و شماره موبایل توجه کنید");
 
             if (command.Password != command.RePassword)
                 return operationResult.Failed(ApplicationMessages.PasswordNotMatch);
@@ -52,6 +53,27 @@ namespace AccountManagement.Application
             return operationResult.Succeeded();
         }
 
+        public OperationResult Create(SignInAccount command)
+        {
+            var operationResult = new OperationResult();
+
+            if (_repository.Exists(x => x.Username == command.Username || x.Mobile == command.Mobile))
+                return operationResult.Failed(ApplicationMessages.Exists + " به نام کاربری و شماره موبایل توجه کنید");
+
+            if (command.Password != command.RePassword)
+                return operationResult.Failed(ApplicationMessages.PasswordNotMatch);
+
+            var password = _passwordHasher.Hash(command.Password);
+
+            var account = new Account(command.Fullname, command.Username, password, command.Mobile, command.RoleId,null);
+
+            _repository.Create(account);
+
+            _repository.SaveChange();
+
+            return operationResult.Succeeded(ApplicationMessages.AccountCreated);
+        }
+
         public OperationResult Edit(EditAccount command)
         {
             var operationResult = new OperationResult();
@@ -62,7 +84,7 @@ namespace AccountManagement.Application
                 return operationResult.Failed(ApplicationMessages.NotFound);
 
             if (_repository.Exists(x => (x.Username == command.Username || x.Mobile == command.Mobile) && x.Id != command.Id))
-                return operationResult.Failed(ApplicationMessages.Exists);
+                return operationResult.Failed(ApplicationMessages.Exists + " به نام کاربری و شماره موبایل توجه کنید");
 
             var profileImage = _fileManager.Uploader(command.ProfileImage, "کاربران");
 
@@ -95,6 +117,26 @@ namespace AccountManagement.Application
             account.ChangePassword(password);
 
             _repository.SaveChange();
+
+            return operationResult.Succeeded();
+        }
+
+        public OperationResult LogIn(LogInAccount command)
+        {
+            var operationResult = new OperationResult();
+            var account = _repository.GetAccountBy(command.Username);
+
+            if (account == null)
+                return operationResult.Failed(ApplicationMessages.AccountExists);
+
+            var passwordResult = _passwordHasher.Check(account.Password,command.Password);
+
+            if (!passwordResult.Verified)
+                return operationResult.Failed(ApplicationMessages.AccountExists);
+
+            var authInfo = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name);
+
+            _authHelper.Login(authInfo);
 
             return operationResult.Succeeded();
         }

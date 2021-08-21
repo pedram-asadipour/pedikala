@@ -26,10 +26,10 @@ namespace AccountManagement.Application
 
         public OperationResult Create(CreateRole command)
         {
-            var operation = new OperationResult();
+            var operationResult = new OperationResult();
 
             if (_repository.Exists(x => x.Name == command.Name))
-                return operation.Failed(ApplicationMessages.Exists);
+                return operationResult.Failed(ApplicationMessages.Exists);
 
             var role = new Role(command.Name);
 
@@ -37,19 +37,19 @@ namespace AccountManagement.Application
 
             _repository.SaveChange();
 
-            return operation.Succeeded();
+            return operationResult.Succeeded();
         }
 
         public OperationResult Edit(EditRole command)
         {
-            var operation = new OperationResult();
+            var operationResult = new OperationResult();
             var role = _repository.GetBy(command.Id);
 
             if (role == null)
-                return operation.Failed(ApplicationMessages.NotFound);
+                return operationResult.Failed(ApplicationMessages.NotFound);
 
             if (_repository.Exists(x => x.Name == command.Name && x.Id != command.Id))
-                return operation.Failed(ApplicationMessages.Exists);
+                return operationResult.Failed(ApplicationMessages.Exists);
 
             role.Edit(command.Name);
 
@@ -57,7 +57,7 @@ namespace AccountManagement.Application
 
             _repository.SaveChange();
 
-            return operation.Succeeded();
+            return operationResult.Succeeded();
         }
     }
 }
