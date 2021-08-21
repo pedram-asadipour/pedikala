@@ -16,7 +16,7 @@ namespace InventoryManagement.Application.Contract.Inventory
         public int Count { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(1000, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [DisplayName("توضیحات")]
         public string Description { get; set; }
 

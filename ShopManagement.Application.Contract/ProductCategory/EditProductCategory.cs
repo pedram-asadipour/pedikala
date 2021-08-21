@@ -14,12 +14,12 @@ namespace ShopManagement.Application.Contract.ProductCategory
         [FileExtensionLimit(new string[] {".jpg",".jpeg",".png"},ErrorMessage = ValidationMessages.FileType + " فایل های مجاز : jpg,jpeg,png")]
         public IFormFile Image { get; set; }
 
-        [MaxLength(255, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(255, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [DisplayName(displayName: "Alt تصویر")]
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string ImageAlt { get; set; }
 
-        [MaxLength(500, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(500, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [DisplayName(displayName: "Title تصویر")]
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string ImageTitle { get; set; }

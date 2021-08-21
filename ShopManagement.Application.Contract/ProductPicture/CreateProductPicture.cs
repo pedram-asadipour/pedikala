@@ -18,12 +18,12 @@ namespace ShopManagement.Application.Contract.ProductPicture
         public IFormFile Image { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [DisplayName("Alt تصویر")]
         public string ImageAlt { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        [MaxLength(500, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(500, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [DisplayName("Title تصویر")]
         public string ImageTitle { get; set; }
 

@@ -2,6 +2,7 @@ using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using _01_Framework.Application;
 using _01_PedikalaQuery.Configuration;
+using AccountManagement.Configuration;
 using BlogManagement.Configuration;
 using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
@@ -34,13 +35,14 @@ namespace ServiceHost
             services.AddInventoryConfigure(connection);
             services.AddCommentConfigure(connection);
             services.AddBlogConfigure(connection);
+            services.AddAccountConfigure(connection);
 
             services.AddQueryConfigure();
-            services.AddScoped<IFileManager, FileManager>();
-
+            services.AddSingleton<IFileManager, FileManager>();
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddSingleton<HtmlEncoder>(
-                HtmlEncoder.Create(UnicodeRanges.BasicLatin,UnicodeRanges.Arabic)
-                );
+                HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic)
+            );
 
             services.AddRazorPages();
         }

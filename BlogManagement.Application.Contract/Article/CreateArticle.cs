@@ -9,7 +9,7 @@ namespace BlogManagement.Application.Contract.Article
     {
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("عنوان مقاله")]
-        [MaxLength(500,ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(500,ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string Title { get; set; }
 
         [DisplayName("تصویر مقاله")]
@@ -19,17 +19,17 @@ namespace BlogManagement.Application.Contract.Article
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("Alt تصویر")]
-        [MaxLength(500, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(500, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string ImageAlt { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("Title تصویر")]
-        [MaxLength(500, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(500, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string ImageTitle { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("توضیحات کوتاه")]
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(1000, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string ShortDescription { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
@@ -38,12 +38,12 @@ namespace BlogManagement.Application.Contract.Article
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("کلمات کلیدی")]
-        [MaxLength(100, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(100, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string Keyword { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("توضیحات متا")]
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(1000, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string MetaDescription { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
@@ -51,7 +51,7 @@ namespace BlogManagement.Application.Contract.Article
         public string PublishDate { get; set; }
 
         [DisplayName("آدرس مقاله مترادف")]
-        [MaxLength(1000, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(1000, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         [Url(ErrorMessage = ValidationMessages.UrlRequired)]
         public string CanonicalAddress { get; set; }
 

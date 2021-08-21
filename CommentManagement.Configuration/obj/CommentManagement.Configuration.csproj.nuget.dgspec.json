@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {}
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "projectName": "01_Framework",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,21 +82,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj",
         "projectName": "BlogManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +114,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -142,21 +150,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
         "projectName": "BlogManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -170,11 +182,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Application.Contract\\BlogManagement.Application.Contract.csproj"
               }
             }
           }
@@ -203,21 +215,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj",
         "projectName": "BlogManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -231,8 +247,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Domain\\BlogManagement.Domain.csproj"
               }
             }
           }
@@ -283,21 +299,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj",
         "projectName": "CommentManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -311,8 +331,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -341,21 +361,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj",
         "projectName": "CommentManagement.Application",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -369,11 +393,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj"
               }
             }
           }
@@ -402,21 +426,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
         "projectName": "CommentManagement.Configuration",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Configuration\\CommentManagement.Configuration.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Configuration\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Configuration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -430,11 +458,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application\\CommentManagement.Application.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
@@ -469,21 +497,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj",
         "projectName": "CommentManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -497,11 +529,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
               }
             }
           }
@@ -530,21 +562,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj",
         "projectName": "CommentManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\CommentManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -558,20 +594,20 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Application.Contract\\CommentManagement.Application.Contract.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\CommentManagement.Domain\\CommentManagement.Domain.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
@@ -622,21 +658,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "projectName": "ShopManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -650,8 +690,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -680,21 +720,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "projectName": "ShopManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -708,11 +752,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               }
             }
           }
@@ -741,21 +785,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "projectName": "ShopManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -769,8 +817,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }
@@ -821,7 +869,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "نقش کاربران";
+}
+
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <h4 class="">
+            <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Create")">ایجاد نقش کاربری<i class="md md-add"></i></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="page-title">نقش کاربران</h2>
+    </div>
+</div>
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.Roles" />
+</div>
+
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

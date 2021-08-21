@@ -23,7 +23,8 @@ SinglePage.LoadModal = function() {
 
             showModal();
 
-        }).fail(function() {
+        }).fail(function () {
+        ClearHash();
         swal("خطا در انجام عملیات!!!", "خطایی رخ داده , لطفا با مدیر سیستم تماس بگیرید", "error");
     });
 };

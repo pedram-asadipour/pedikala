@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {}
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "projectName": "01_Framework",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,21 +82,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
         "projectName": "InventoryManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +114,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -136,21 +144,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
         "projectName": "InventoryManagement.Application",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,11 +176,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
               }
             }
           }
@@ -197,21 +209,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj",
         "projectName": "InventoryManagement.Configuration",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Configuration\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -225,11 +241,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application\\InventoryManagement.Application.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
@@ -264,21 +280,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
         "projectName": "InventoryManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -292,11 +312,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
               }
             }
           }
@@ -325,21 +345,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj",
         "projectName": "InventoryManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -353,11 +377,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
@@ -408,21 +432,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "projectName": "ShopManagement.Application.Contract",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -436,8 +464,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               }
             }
           }
@@ -466,21 +494,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "projectName": "ShopManagement.Domain",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -494,11 +526,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\01_Framework\\01_Framework.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_Framework\\01_Framework.csproj"
               },
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               }
             }
           }
@@ -527,21 +559,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "projectName": "ShopManagement.Infrastructure.EFCore",
-        "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -555,8 +591,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\pedram\\Desktop\\pedram\\source\\Pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }
@@ -607,7 +643,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

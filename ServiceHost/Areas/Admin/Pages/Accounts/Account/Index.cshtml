@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "حساب ها";
+}
+
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <h4 class="">
+            <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Create")">ایجاد حساب کاربری<i class="md md-add"></i></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="page-title">حساب ها</h2>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">فیلتر حساب ها</h3>
+            </div>
+            <div class="panel-body">
+
+                <form class="form-inline" role="form" method="get">
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="@Model.SearchModel.Fullname"></label>
+                        <input asp-for="@Model.SearchModel.Fullname" class="form-control" placeholder="نام و نام خانوادگی">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="@Model.SearchModel.Username"></label>
+                        <input asp-for="@Model.SearchModel.Username" class="form-control ltr" placeholder="نام کاربری">
+                    </div>
+                    <div class="form-group">
+                        <select asp-for="@Model.SearchModel.RoleId" class="form-control" asp-items="Model.Roles">
+                            <option value="0">نقش ها</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">فیلتر</button>
+                    <a asp-page="./Index" class="btn btn-inverse waves-effect waves-light m-r-5">نمایش همه</a>
+                </form>
+
+            </div> <!-- panel-body -->
+        </div> <!-- panel -->
+    </div> <!-- col -->
+
+</div>
+
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.Accounts" />
+</div>
+
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

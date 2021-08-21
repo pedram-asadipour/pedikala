@@ -9,12 +9,12 @@ namespace BlogManagement.Application.Contract.ArticleCategory
     {
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("نام")]
-        [MaxLength(225,ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225,ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string Name { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("توضیحات")]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string Description { get; set; }
 
         [DisplayName("تصویر دسته بندی")]
@@ -24,22 +24,22 @@ namespace BlogManagement.Application.Contract.ArticleCategory
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("Altتصویر")]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string ImageAlt { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("Titleتصویر")]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string ImageTitle { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("کلمات کلیدی")]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string Keyword { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         [DisplayName("توضیحات متا")]
-        [MaxLength(225, ErrorMessage = ValidationMessages.LengthRequired)]
+        [MaxLength(225, ErrorMessage = ValidationMessages.MaxLengthRequired)]
         public string MetaDescription { get; set; }
     }
 }
