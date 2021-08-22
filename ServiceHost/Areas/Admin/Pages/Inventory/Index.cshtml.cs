@@ -42,7 +42,7 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
                 Products = _productApplication.GetAllSelectModel()
             };
 
-            return Partial("./Create", createInventory);
+            return Partial("./Register", createInventory);
         }
 
         public JsonResult OnPostCreate(CreateInventory command)

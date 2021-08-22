@@ -7,19 +7,17 @@ namespace ServiceHost.Pages
 {
     public class AccountModel : PageModel
     {
-        public SignInAccount Create { get; set; }
+        public RegisterAccount Register { get; set; }
         public LogInAccount LogIn { get; set; }
         [ViewData] public bool StatusMessage { get; set; }
         [ViewData] public string ResultMessage { get; set; }
 
 
         private readonly IAccountApplication _application;
-        private readonly IAuthHelper _authHelper;
 
-        public AccountModel(IAccountApplication application, IAuthHelper authHelper)
+        public AccountModel(IAccountApplication application)
         {
             _application = application;
-            _authHelper = authHelper;
         }
 
         public void OnGet()
@@ -28,17 +26,17 @@ namespace ServiceHost.Pages
 
         public IActionResult OnGetSignOut()
         {
-            _authHelper.SignOut();
+            _application.SignOut();
             return Redirect("./");
         }
 
 
-        public IActionResult OnPostCreate(SignInAccount create)
+        public IActionResult OnPostRegister(RegisterAccount register)
         {
             if (!ModelState.IsValid)
                 return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
 
-            var json = _application.Create(create);
+            var json = _application.Register(register);
 
             StatusMessage = json.IsSucceeded;
             ResultMessage = json.Message;

@@ -200,6 +200,14 @@
             </div>
             <nav class="offcanvas-navigation">
                 <ul>
+
+                    @if (_authHelper.IsAuthenticated())
+                    {
+                        <li>
+                            خوش آمدید @(_authHelper.GetCurrentAccount().Fullname)
+                        </li>
+                    }
+
                     <li class="menu-item-has-children">
                         <a asp-page="/Index">صحفه اصلی</a>
                     </li>
@@ -245,13 +253,22 @@
             <div class="offcanvas-settings">
                 <nav class="offcanvas-navigation">
                     <ul>
-                        <li class="menu-item-has-children">
-                            <a href="#">ثبت نام</a>
-                        </li>
-
-                        <li class="menu-item-has-children">
-                            <a href="#">ورود</a>
-                        </li>
+                        @if (_authHelper.IsAuthenticated())
+                        {
+                            <li>
+                                <a href="#">مدیریت حساب</a>
+                            </li>
+                            <li>
+                                <a asp-page="./Account"
+                                   asp-page-handler="SignOut">خروج</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a asp-page="./Account">ورود - ثبت نام</a>
+                            </li>
+                        }
                     </ul>
                 </nav>
             </div>

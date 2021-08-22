@@ -35,22 +35,22 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return Partial("./List", Accounts);
         }
 
-        public PartialViewResult OnGetCreate()
+        public PartialViewResult OnGetRegister()
         {
-            var createAccount = new CreateAccount()
+            var createAccount = new RegisterAccount()
             {
                 Roles = _roleApplication.GetAll()
             };
 
-            return Partial("./Create", createAccount);
+            return Partial("./Register", createAccount);
         }
 
-        public JsonResult OnPostCreate(CreateAccount command)
+        public JsonResult OnPostRegister(RegisterAccount command)
         {
             if (!ModelState.IsValid)
                 return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
 
-            var json = _application.Create(command);
+            var json = _application.Register(command);
             return new JsonResult(json);
         }
 

@@ -30,7 +30,7 @@ namespace AccountManagement.Application
             return _repository.GetDetail(id);
         }
 
-        public OperationResult Create(CreateAccount command)
+        public OperationResult Register(RegisterAccount command)
         {
             var operationResult = new OperationResult();
 
@@ -51,27 +51,6 @@ namespace AccountManagement.Application
             _repository.SaveChange();
 
             return operationResult.Succeeded();
-        }
-
-        public OperationResult Create(SignInAccount command)
-        {
-            var operationResult = new OperationResult();
-
-            if (_repository.Exists(x => x.Username == command.Username || x.Mobile == command.Mobile))
-                return operationResult.Failed(ApplicationMessages.Exists + " به نام کاربری و شماره موبایل توجه کنید");
-
-            if (command.Password != command.RePassword)
-                return operationResult.Failed(ApplicationMessages.PasswordNotMatch);
-
-            var password = _passwordHasher.Hash(command.Password);
-
-            var account = new Account(command.Fullname, command.Username, password, command.Mobile, command.RoleId,null);
-
-            _repository.Create(account);
-
-            _repository.SaveChange();
-
-            return operationResult.Succeeded(ApplicationMessages.AccountCreated);
         }
 
         public OperationResult Edit(EditAccount command)
@@ -139,6 +118,11 @@ namespace AccountManagement.Application
             _authHelper.Login(authInfo);
 
             return operationResult.Succeeded();
+        }
+
+        public void SignOut()
+        {
+            _authHelper.SignOut();
         }
     }
 }

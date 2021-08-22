@@ -31,7 +31,7 @@ namespace ServiceHost.Areas.Admin.Pages.Blog.ArticleCategory
 
         public PartialViewResult OnGetCreate()
         {
-            return Partial("./Create", new CreateArticleCategory());
+            return Partial("./Register", new CreateArticleCategory());
         }
 
         public JsonResult OnPostCreate(CreateArticleCategory command)
