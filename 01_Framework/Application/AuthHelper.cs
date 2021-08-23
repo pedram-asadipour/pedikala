@@ -24,8 +24,8 @@ namespace _01_Framework.Application
                 new Claim("Id",account.Id.ToString()),
                 new Claim(ClaimTypes.Name,account.Fullname),
                 new Claim("Username",account.Username),
-                new Claim("RoleId",account.RoleId.ToString()),
-                new Claim(ClaimTypes.Role,account.Role),
+                new Claim(ClaimTypes.Role,account.RoleId.ToString()),
+                new Claim("RoleName",account.RoleName),
             };
 
             var claimsIdentity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
@@ -64,8 +64,8 @@ namespace _01_Framework.Application
                 id:long.Parse(claims.FirstOrDefault(x => x.Type == "Id")?.Value),
                 fullname:claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value,
                 username:claims.FirstOrDefault(x => x.Type == "Username")?.Value,
-                roleId:long.Parse(claims.FirstOrDefault(x => x.Type == "RoleId")?.Value),
-                role:claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value
+                roleId:long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value),
+                roleName:claims.FirstOrDefault(x => x.Type == "RoleName")?.Value
             );
 
             return result;

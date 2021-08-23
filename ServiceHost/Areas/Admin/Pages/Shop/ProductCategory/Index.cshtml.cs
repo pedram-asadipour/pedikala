@@ -31,7 +31,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductCategory
 
         public PartialViewResult OnGetCreate()
         {
-            return Partial("./Register",new CreateProductCategory());
+            return Partial("./Create", new CreateProductCategory());
         }
 
         public JsonResult OnPostCreate(CreateProductCategory command)

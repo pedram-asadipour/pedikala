@@ -41,7 +41,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
                 Products = _productApplication.GetAllSelectModel()
             };
 
-            return Partial("./Register", createProductPicture);
+            return Partial("./Create", createProductPicture);
         }
 
         public JsonResult OnPostCreate(CreateProductPicture command)

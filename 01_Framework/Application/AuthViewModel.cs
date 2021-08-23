@@ -6,19 +6,19 @@
         public string Fullname { get; private set; }
         public string Username { get; private set; }
         public long RoleId { get; private set; }
-        public string Role { get; private set; }
+        public string RoleName { get; private set; }
 
         public AuthViewModel()
         {
         }
 
-        public AuthViewModel(long id, string fullname, string username, long roleId, string role)
+        public AuthViewModel(long id, string fullname, string username, long roleId, string roleName)
         {
             Id = id;
             Fullname = fullname;
             Username = username;
             RoleId = roleId;
-            Role = role;
+            RoleName = roleName;
         }
     }
 }

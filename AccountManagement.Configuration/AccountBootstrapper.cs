@@ -26,7 +26,7 @@ namespace AccountManagement.Configuration
 
             #endregion
 
-            #region Role
+            #region RoleName
 
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IRoleApplication, RoleApplication>();

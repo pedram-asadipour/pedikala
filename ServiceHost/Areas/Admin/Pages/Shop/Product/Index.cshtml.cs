@@ -41,7 +41,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.Product
                 Categories = _categoryApplication.GetAllSelectModel()
             };
 
-            return Partial("./Register", createProduct);
+            return Partial("./Create", createProduct);
         }
 
         public JsonResult OnPostCreate(CreateProduct command)

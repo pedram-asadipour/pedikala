@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using _01_Framework.Application;
@@ -39,30 +40,84 @@ namespace ServiceHost
             services.AddBlogConfigure(connection);
             services.AddAccountConfigure(connection);
 
-            services.AddQueryConfigure();
             services.AddSingleton<IFileManager, FileManager>();
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
+            services.AddSingleton<IAuthHelper, AuthHelper>();
             services.AddSingleton<HtmlEncoder>(
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic)
             );
 
             services.AddHttpContextAccessor();
-            services.AddSingleton<IAuthHelper, AuthHelper>();
-
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.Lax;
             });
-
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
                     options.LoginPath = new PathString("/Account");
                     options.LogoutPath = new PathString("/Account");
-                    options.AccessDeniedPath = new PathString("/AccessDenied");
+                    options.AccessDeniedPath = new PathString("/404");
                 });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.ContentManager.ToString(),
+                    AccountRoles.Accountants.ToString()
+                }));
+
+                options.AddPolicy("ShopManagement",builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.Accountants.ToString()
+                }));
+
+                options.AddPolicy("InventoryManagement", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.Accountants.ToString()
+                }));
+
+                options.AddPolicy("DiscountManagement", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.Accountants.ToString()
+                }));
+
+                options.AddPolicy("BlogManagement", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.ContentManager.ToString()
+                }));
+
+                options.AddPolicy("CommentManagement", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString(),
+                    AccountRoles.ContentManager.ToString()
+                }));
+
+                options.AddPolicy("AccountManagement", builder => builder.RequireRole(new List<string>()
+                {
+                    AccountRoles.Administrator.ToString()
+                }));
+            });
+
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Shop", "ShopManagement");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Inventory", "InventoryManagement");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Discount", "DiscountManagement");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Blog", "BlogManagement");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Comment", "CommentManagement");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Accounts", "AccountManagement");
+            });
+
+            services.AddQueryConfigure();
             services.AddRazorPages();
         }
 

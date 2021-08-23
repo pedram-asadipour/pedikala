@@ -65,7 +65,7 @@ namespace AccountManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
+            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.RoleName", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -87,16 +87,16 @@ namespace AccountManagement.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("AccountManagement.Domain.AccountAgg.Account", b =>
                 {
-                    b.HasOne("AccountManagement.Domain.RoleAgg.Role", "Role")
+                    b.HasOne("AccountManagement.Domain.RoleAgg.RoleName", "RoleName")
                         .WithMany("Accounts")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Role");
+                    b.Navigation("RoleName");
                 });
 
-            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
+            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.RoleName", b =>
                 {
                     b.Navigation("Accounts");
                 });
