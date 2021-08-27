@@ -1,6 +1,7 @@
-﻿@model AccountManagement.Application.Contract.Role.EditRole
+﻿@using AccountManagement.Configuration.Permission
+@model AccountManagement.Application.Contract.Role.EditRole
 
-<form asp-page="./Index" asp-page-handler="Edit"
+<form asp-page="./Index" asp-page-handler="Edit" permission="@AccountPermissions.EditRole"
       method="post"
       data-ajax="true"
       data-callback=""
@@ -20,7 +21,25 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group">
+                <label asp-for="Permission" class="control-label"></label>
+                <select asp-for="Permission" asp-items="Model.Permissions" multiple="multiple" class="multi-select">
+                </select>
+            </div>
+        </div>
+
         <input type="hidden" asp-for="Id">
+
+        <div class="row">
+            <div class="col-12">
+                نکات مهم
+                <ul>
+                    <li>برای این که کاربر به پنل مدیریت سایت دسترسی داشته باشد حتما باید دستری 'پنل مدیریت سایت' به اون داده شود در غیر این صورت نمی تواند وارد این بخش شود</li>
+                    <li>برای دسترسی کاربر به هر بخش ابتدا دسترسی اصلی  ان بخش را به او بدهید در غیر این صورت نمی تواند وارد ان بخش شود برا مثال : برای بخش محصولات حتما باید دسترسی بخش 'مدیریت محصولات' داده شود</li>
+                </ul>
+            </div>
+        </div>
 
     </div>
     <div class="modal-footer">

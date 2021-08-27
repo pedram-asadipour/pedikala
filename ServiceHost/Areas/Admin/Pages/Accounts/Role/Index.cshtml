@@ -1,4 +1,5 @@
 ﻿@page
+@using AccountManagement.Configuration.Permission
 @model IndexModel
 @{
     ViewData["Title"] = "نقش کاربران";
@@ -7,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-6 text-left">
-        <h4 class="">
+        <h4 permission="@AccountPermissions.CreateRole">
             <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Create")">ایجاد نقش کاربری<i class="md md-add"></i></a>
         </h4>
     </div>
@@ -30,6 +31,8 @@
     <!-- DataTables -->
     <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Jquery Multi Select -->
+    <link href="~/lib/jquery-multi-select/multi-select.css" rel="stylesheet" />
 }
 
 @section Scripts
@@ -45,6 +48,15 @@
     <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
     <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
 
+    <!-- Jquery Multi Select -->
+    <script src="~/lib/jquery-multi-select/jquery.multi-select.js"></script>
+    <script src="~/lib/jquery-multi-select/jquery.quicksearch.js"></script>
+
     <!-- Custom Site Script -->
     <script src="~/AdminTheme/js/site.js"></script>
+    
+    
+    <script>
+        
+    </script>
 }

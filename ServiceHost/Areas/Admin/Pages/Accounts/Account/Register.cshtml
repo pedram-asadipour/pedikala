@@ -1,6 +1,7 @@
-﻿@model AccountManagement.Application.Contract.Account.RegisterAccount
+﻿@using AccountManagement.Configuration.Permission
+@model AccountManagement.Application.Contract.Account.RegisterAccount
 
-<form asp-page="./Index" asp-page-handler="Register"
+<form asp-page="./Index" asp-page-handler="Register" permission="@AccountPermissions.RegisterAccount"
       method="post"
       data-ajax="true"
       data-callback=""

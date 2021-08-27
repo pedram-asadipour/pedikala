@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using _01_Framework.Application;
+using _01_Framework.Infrastructure;
 using _01_PedikalaQuery.Configuration;
 using AccountManagement.Configuration;
 using BlogManagement.Configuration;
@@ -15,6 +17,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using ServiceHost.Framework;
 using ShopManagement.Configuration;
 
@@ -46,6 +49,7 @@ namespace ServiceHost
             services.AddSingleton<HtmlEncoder>(
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic)
             );
+            services.AddSingleton<IPermissionExposer, AdminPermissionExposer>();
 
             services.AddHttpContextAccessor();
             services.Configure<CookiePolicyOptions>(options =>
@@ -61,64 +65,24 @@ namespace ServiceHost
                     options.AccessDeniedPath = new PathString("/404");
                 });
 
+
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.ContentManager.ToString(),
-                    AccountRoles.Accountants.ToString()
-                }));
-
-                options.AddPolicy("ShopManagement",builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.Accountants.ToString()
-                }));
-
-                options.AddPolicy("InventoryManagement", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.Accountants.ToString()
-                }));
-
-                options.AddPolicy("DiscountManagement", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.Accountants.ToString()
-                }));
-
-                options.AddPolicy("BlogManagement", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.ContentManager.ToString()
-                }));
-
-                options.AddPolicy("CommentManagement", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString(),
-                    AccountRoles.ContentManager.ToString()
-                }));
-
-                options.AddPolicy("AccountManagement", builder => builder.RequireRole(new List<string>()
-                {
-                    AccountRoles.Administrator.ToString()
-                }));
-            });
-
-            services.AddRazorPages().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Shop", "ShopManagement");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Inventory", "InventoryManagement");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Discount", "DiscountManagement");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Blog", "BlogManagement");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Comment", "CommentManagement");
-                options.Conventions.AuthorizeAreaFolder("Admin", "/Accounts", "AccountManagement");
+                //Check Policy Admin With Permission (Admin)
+                options.AddPolicy("Admin", policy => policy.RequireAssertion(context =>
+                    context.User.HasClaim(claim =>
+                        (claim.Type == "Permissions" &&
+                         JsonConvert.DeserializeObject<List<string>>(claim.Value)
+                             .Any(permission => permission == AdminPermission.Admin)
+                        )
+                    )
+                ));
             });
 
             services.AddQueryConfigure();
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
+                .AddRazorPagesOptions(options => { options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin"); });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

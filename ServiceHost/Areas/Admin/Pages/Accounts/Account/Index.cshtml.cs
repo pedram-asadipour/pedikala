@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using _01_Framework.Application;
 using AccountManagement.Application.Contract.Account;
 using AccountManagement.Application.Contract.Role;
+using AccountManagement.Configuration.Permission;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,18 +24,21 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             _roleApplication = roleApplication;
         }
 
+        [NeedsPermission(AccountPermissions.Account)]
         public void OnGet(AccountSearchModel searchModel)
         {
             Roles = new SelectList(_roleApplication.GetAll(), "Id", "Name");
             Accounts = _application.GetAll(searchModel);
         }
 
+        [NeedsPermission(AccountPermissions.Account)]
         public PartialViewResult OnGetList(AccountSearchModel searchModel)
         {
             Accounts = _application.GetAll(searchModel);
             return Partial("./List", Accounts);
         }
 
+        [NeedsPermission(AccountPermissions.RegisterAccount)]
         public PartialViewResult OnGetRegister()
         {
             var createAccount = new RegisterAccount()
@@ -45,6 +49,7 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return Partial("./Register", createAccount);
         }
 
+        [NeedsPermission(AccountPermissions.RegisterAccount)]
         public JsonResult OnPostRegister(RegisterAccount command)
         {
             if (!ModelState.IsValid)
@@ -54,6 +59,7 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return new JsonResult(json);
         }
 
+        [NeedsPermission(AccountPermissions.EditAccount)]
         public PartialViewResult OnGetEdit(long id)
         {
             var editAccount = _application.GetDetail(id);
@@ -63,6 +69,7 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return Partial("./Edit", editAccount);
         }
 
+        [NeedsPermission(AccountPermissions.EditAccount)]
         public JsonResult OnPostEdit(EditAccount command)
         {
             if (!ModelState.IsValid)
@@ -72,6 +79,7 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return new JsonResult(json);
         }
 
+        [NeedsPermission(AccountPermissions.ChangePasswordAccount)]
         public PartialViewResult OnGetChangePassword(long id)
         {
             var account = new ChangePasswordAccount()
@@ -82,6 +90,7 @@ namespace ServiceHost.Areas.Admin.Pages.Accounts.Account
             return Partial("./ChangePassword",account);
         }
 
+        [NeedsPermission(AccountPermissions.ChangePasswordAccount)]
         public JsonResult OnPostChangePassword(ChangePasswordAccount command)
         {
             if (!ModelState.IsValid)

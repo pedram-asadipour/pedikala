@@ -2,16 +2,21 @@
 using AccountManagement.Application.Contract.Role;
 using AccountManagement.Domain.RoleAgg;
 using System.Collections.Generic;
+using System.Linq;
+using _01_Framework.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AccountManagement.Application
 {
     public class RoleApplication : IRoleApplication
     {
         private readonly IRoleRepository _repository;
+        private readonly IEnumerable<IPermissionExposer> _exposers;
 
-        public RoleApplication(IRoleRepository repository)
+        public RoleApplication(IRoleRepository repository, IEnumerable<IPermissionExposer> exposers)
         {
             _repository = repository;
+            _exposers = exposers;
         }
 
         public List<RoleViewModel> GetAll()
@@ -31,7 +36,11 @@ namespace AccountManagement.Application
             if (_repository.Exists(x => x.Name == command.Name))
                 return operationResult.Failed(ApplicationMessages.Exists);
 
-            var role = new Role(command.Name);
+            var permissions = new List<RolePermission>();
+
+            command.Permission?.ForEach(code => permissions.Add(new RolePermission(code)));
+
+            var role = new Role(command.Name,permissions);
 
             _repository.Create(role);
 
@@ -51,13 +60,50 @@ namespace AccountManagement.Application
             if (_repository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.Exists);
 
-            role.Edit(command.Name);
+            var permissions = new List<RolePermission>();
+
+            command.Permission?.ForEach(permission => permissions.Add(new RolePermission(permission)));
+
+            role.Edit(command.Name, permissions);
 
             _repository.Edit(role);
 
             _repository.SaveChange();
 
             return operationResult.Succeeded();
+        }
+
+        public List<SelectListItem> GetPermissions(List<string> currentRolePermissions)
+        {
+            var allPermissionsWithGroup = new List<SelectListItem>();
+
+            foreach (var exposer in _exposers)
+            {
+                var permissionDictionaries = exposer.Expose();
+
+                foreach (var (key,currentPermissions) in permissionDictionaries)
+                {
+                    var group = new SelectListGroup()
+                    {
+                        Name = key
+                    };
+
+                    foreach (var permission in currentPermissions)
+                    {
+                        var item = new SelectListItem(permission.Name,permission.Permission.ToString())
+                        {
+                            Group = group
+                        };
+
+                        if (currentRolePermissions.Any(code => code == permission.Permission))
+                            item.Selected = true;
+
+                        allPermissionsWithGroup.Add(item);
+                    }
+                }
+            }
+
+            return allPermissionsWithGroup;
         }
     }
 }

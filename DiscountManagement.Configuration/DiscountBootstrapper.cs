@@ -1,6 +1,8 @@
-﻿using DiscountManagement.Application;
+﻿using _01_Framework.Infrastructure;
+using DiscountManagement.Application;
 using DiscountManagement.Application.Contract.ColleagueDiscount;
 using DiscountManagement.Application.Contract.CustomerDiscount;
+using DiscountManagement.Configuration.Permission;
 using DiscountManagement.Domain.ColleagueDiscountAgg;
 using DiscountManagement.Domain.CustomerDiscountAgg;
 using DiscountManagement.Infrastructure.EFCore;
@@ -30,6 +32,12 @@ namespace DiscountManagement.Configuration
 
             services.AddScoped<IColleagueDiscountRepository, ColleagueDiscountRepository>();
             services.AddScoped<IColleagueDiscountApplication, ColleagueDiscountApplication>();
+
+            #endregion
+
+            #region Permission
+
+            services.AddSingleton<IPermissionExposer, DiscountPermissionExposer>();
 
             #endregion
         }

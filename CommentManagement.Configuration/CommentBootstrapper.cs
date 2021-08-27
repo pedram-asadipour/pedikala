@@ -1,6 +1,8 @@
-﻿using CommentManagement.Application;
+﻿using _01_Framework.Infrastructure;
+using CommentManagement.Application;
 using CommentManagement.Application.Contract.ArticleComment;
 using CommentManagement.Application.Contract.ProductComment;
+using CommentManagement.Configuration.Permission;
 using CommentManagement.Domain.ArticleCommentAgg;
 using CommentManagement.Domain.ProductCommentAgg;
 using CommentManagement.Infrastructure.EFCore;
@@ -31,6 +33,12 @@ namespace CommentManagement.Configuration
 
             services.AddScoped<IArticleCommentRepository, ArticleCommentRepository>();
             services.AddScoped<IArticleCommentApplication, ArticleCommentApplication>();
+
+            #endregion
+
+            #region Permission
+
+            services.AddSingleton<IPermissionExposer, CommentPermissionExposer>();
 
             #endregion
         }

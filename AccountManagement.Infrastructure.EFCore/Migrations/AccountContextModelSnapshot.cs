@@ -63,7 +63,7 @@ namespace AccountManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.RoleName", b =>
+            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,16 +85,48 @@ namespace AccountManagement.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("AccountManagement.Domain.AccountAgg.Account", b =>
                 {
-                    b.HasOne("AccountManagement.Domain.RoleAgg.RoleName", "RoleName")
+                    b.HasOne("AccountManagement.Domain.RoleAgg.Role", "Role")
                         .WithMany("Accounts")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("RoleName");
+                    b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.RoleName", b =>
+            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
+                {
+                    b.OwnsMany("AccountManagement.Domain.RoleAgg.RolePermission", "Permissions", b1 =>
+                        {
+                            b1.Property<long>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("bigint")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("Permission")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<long>("RoleId")
+                                .HasColumnType("bigint");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("RoleId");
+
+                            b1.ToTable("RolePermissions");
+
+                            b1.WithOwner("Role")
+                                .HasForeignKey("RoleId");
+
+                            b1.Navigation("Role");
+                        });
+
+                    b.Navigation("Permissions");
+                });
+
+            modelBuilder.Entity("AccountManagement.Domain.RoleAgg.Role", b =>
                 {
                     b.Navigation("Accounts");
                 });

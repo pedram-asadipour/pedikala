@@ -1,4 +1,10 @@
 ﻿@using _01_Framework.Application
+@using AccountManagement.Configuration.Permission
+@using BlogManagement.Configuration.Permission
+@using CommentManagement.Configuration.Permission
+@using DiscountManagement.Configuration.Permission
+@using InventoryManagement.Configuration.Permission
+@using ShopManagement.Configuration.Permission
 @inject IAuthHelper _authHelper
 @{
     var currentAccount = _authHelper.GetCurrentAccount();
@@ -10,29 +16,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-    <meta name="author" content="Coderthemes">
+    <meta name="author" content="RolePermissionrthemes">
 
     <link rel="shortcut icon" href="~/favicon.ico">
 
     <title>@ViewData["Title"] | پنل مدیریت سایت</title>
 
     <!-- Base Css Files -->
-    <link href="~/AdminTheme/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/AdminTheme/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Font Icons -->
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/lib/ionicon/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="~/lib/ionicon/css/ionicons.min.css" rel="stylesheet"/>
     <link href="~/AdminTheme/css/material-design-iconic-font.min.css" rel="stylesheet">
 
     <!-- animate css -->
-    <link href="~/AdminTheme/css/animate.css" rel="stylesheet" />
+    <link href="~/AdminTheme/css/animate.css" rel="stylesheet"/>
 
     <!-- Waves-effect -->
     <link href="~/AdminTheme/css/waves-effect.css" rel="stylesheet">
 
     <!-- Custom Files -->
-    <link href="~/AdminTheme/css/helper.css" rel="stylesheet" type="text/css" />
-    <link href="~/AdminTheme/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/AdminTheme/css/helper.css" rel="stylesheet" type="text/css"/>
+    <link href="~/AdminTheme/css/style.css" rel="stylesheet" type="text/css"/>
 
     <!-- Custom RTL Css -->
     <link rel="stylesheet" href="~/AdminTheme/css/rtl-main.css">
@@ -81,19 +87,15 @@
                 </div>
                 <div class="user-info">
                     <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">@currentAccount.Fullname<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            @currentAccount.Fullname<span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="javascript:void(0)">پروفال <i class="md md-face-unlock"></i></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">تنظیمات <i class="md md-settings"></i></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">قفل صفحه <i class="md md-lock"></i></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">خروج <i class="md md-settings-power"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -111,55 +113,62 @@
                         </a>
                     </li>
 
-                    @if (currentAccount.RoleId is AccountRoles.Administrator or AccountRoles.Accountants)
-                    {
-                        <li>
-                            <a asp-page="/Inventory/Index" class="waves-effect">
-                                <i class="md md-business"></i><span>مدیریت انبار</span>
-                            </a>
-                        </li>
 
-                        <li class="has_sub">
-                            <a href="#" class="waves-effect">
-                                <i class="md md-shopping-cart"></i><span>مدیریت فروشگاه</span>
-                                <span class="pull-left">
-                                    <i class="md md-add"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a asp-page="/Shop/ProductCategory/Index">گروه محصولات</a>
-                                </li>
-                                <li>
-                                    <a asp-page="/Shop/Product/Index">محصولات</a>
-                                </li>
-                                <li>
-                                    <a asp-page="/Shop/ProductPicture/Index">تصاویر محصولات</a>
-                                </li>
-                            </ul>
-                        </li>
+                    <li permission="@InventoryPermissions.Inventory">
+                        <a asp-page="/Inventory/Index" class="waves-effect">
+                            <i class="md md-business"></i><span>مدیریت انبار</span>
+                        </a>
+                    </li>
 
-                        <li class="has_sub">
-                            <a href="#" class="waves-effect">
-                                <i class="md md-wallet-giftcard"></i><span>مدیریت تخفیفات</span>
-                                <span class="pull-left">
-                                    <i class="md md-add"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a asp-page="/Discount/CustomerDiscount/Index">تخفیفات مشتری</a>
-                                </li>
-                                <li>
-                                    <a asp-page="/Discount/ColleagueDiscount/Index">تخفیفات همکاران</a>
-                                </li>
-                            </ul>
-                        </li>
-                    }
-                    
-                @if (currentAccount.RoleId is AccountRoles.Administrator)
-                {
-                    <li class="has_sub">
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         ShopPermissions.Product,
+                                                         ShopPermissions.ProductCategory,
+                                                         ShopPermissions.ProductPicture
+                                                     })">
+                        <a href="#" class="waves-effect">
+                            <i class="md md-shopping-cart"></i><span>مدیریت فروشگاه</span>
+                            <span class="pull-left">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li permission="@ShopPermissions.ProductCategory">
+                                <a asp-page="/Shop/ProductCategory/Index">گروه محصولات</a>
+                            </li>
+                            <li permission="@ShopPermissions.Product">
+                                <a asp-page="/Shop/Product/Index">محصولات</a>
+                            </li>
+                            <li permission="@ShopPermissions.ProductPicture">
+                                <a asp-page="/Shop/ProductPicture/Index">تصاویر محصولات</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         DiscountPermissions.CustomerDiscount,
+                                                         DiscountPermissions.ColleagueDiscount
+                                                     })">
+                        <a href="#" class="waves-effect">
+                            <i class="md md-wallet-giftcard"></i><span>مدیریت تخفیفات</span>
+                            <span class="pull-left">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li permission="@DiscountPermissions.CustomerDiscount">
+                                <a asp-page="/Discount/CustomerDiscount/Index">تخفیفات مشتری</a>
+                            </li>
+                            <li permission="@DiscountPermissions.ColleagueDiscount">
+                                <a asp-page="/Discount/ColleagueDiscount/Index">تخفیفات همکاران</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         AccountPermissions.Account,
+                                                         AccountPermissions.Role
+                                                     })">
                         <a href="#" class="waves-effect">
                             <i class="md md-account-circle"></i><span>مدیریت کاربران</span>
                             <span class="pull-left">
@@ -167,19 +176,20 @@
                             </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li>
+                            <li permission="@AccountPermissions.Account">
                                 <a asp-page="/Accounts/Account/Index">حساب کاربران</a>
                             </li>
-                            <li>
+                            <li permission="@AccountPermissions.Role">
                                 <a asp-page="/Accounts/Role/Index">نقش کاربران</a>
                             </li>
                         </ul>
                     </li>
-                }
-                    
-                @if (currentAccount.RoleId is AccountRoles.Administrator or AccountRoles.ContentManager)
-                {
-                    <li class="has_sub">
+
+
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         CommentPermissions.ProductComment,
+                                                         CommentPermissions.ArticleComment
+                                                     })">
                         <a href="#" class="waves-effect">
                             <i class="md md-message"></i><span>مدیریت کامنت</span>
                             <span class="pull-left">
@@ -187,11 +197,13 @@
                             </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li>
+                            <li permission="@CommentPermissions.ProductComment">
                                 <a asp-page="/Comment/ProductComment/Index">
                                     کامنت محصولات
                                     @await Component.InvokeAsync("CountProductComment")
                                 </a>
+                            </li>
+                            <li permission="@CommentPermissions.ArticleComment">
                                 <a asp-page="/Comment/ArticleComment/Index">
                                     کامنت مقالات
                                     @await Component.InvokeAsync("CountArticleComment")
@@ -200,7 +212,10 @@
                         </ul>
                     </li>
 
-                    <li class="has_sub">
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         BlogPermissions.ArticleCategory,
+                                                         BlogPermissions.Article
+                                                     })">
                         <a href="#" class="waves-effect">
                             <i class="md md-my-library-books"></i><span>مدیریت مقالات</span>
                             <span class="pull-left">
@@ -208,18 +223,22 @@
                             </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a asp-page="/Blog/ArticleCategory/Index">دسته بندی مقالات</a></li>
-                            <li><a asp-page="/blog/Article/Index">مقالات</a></li>
+                            <li permission="@BlogPermissions.ArticleCategory">
+                                <a asp-page="/Blog/ArticleCategory/Index">دسته بندی مقالات</a>
+                            </li>
+                            <li permission="@BlogPermissions.Article">
+                                <a asp-page="/blog/Article/Index">مقالات</a>
+                            </li>
                         </ul>
                     </li>
-                }
 
-                <li>
-                    <a asp-page="/Account"
-                       asp-page-handler="SignOut" class="waves-effect">
-                        <i class="md md-exit-to-app"></i><span>خروج</span>
-                    </a>
-                </li>
+
+                    <li>
+                        <a asp-page="/Account"
+                           asp-page-handler="SignOut" class="waves-effect">
+                            <i class="md md-exit-to-app"></i><span>خروج</span>
+                        </a>
+                    </li>
 
                 </ul>
                 <div class="clearfix"></div>

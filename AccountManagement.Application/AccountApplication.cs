@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _01_Framework.Application;
 using AccountManagement.Application.Contract.Account;
 using AccountManagement.Domain.AccountAgg;
+using AccountManagement.Domain.RoleAgg;
 
 namespace AccountManagement.Application
 {
@@ -11,13 +13,15 @@ namespace AccountManagement.Application
         private readonly IFileManager _fileManager;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IAuthHelper _authHelper;
+        private readonly IRoleRepository _roleRepository;
 
-        public AccountApplication(IAccountRepository repository, IFileManager fileManager, IPasswordHasher passwordHasher, IAuthHelper authHelper)
+        public AccountApplication(IAccountRepository repository, IFileManager fileManager, IPasswordHasher passwordHasher, IAuthHelper authHelper, IRoleRepository roleRepository)
         {
             _repository = repository;
             _fileManager = fileManager;
             _passwordHasher = passwordHasher;
             _authHelper = authHelper;
+            _roleRepository = roleRepository;
         }
 
         public List<AccountViewModel> GetAll(AccountSearchModel searchModel)
@@ -113,9 +117,15 @@ namespace AccountManagement.Application
             if (!passwordResult.Verified)
                 return operationResult.Failed(ApplicationMessages.AccountExists);
 
-            var authInfo = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name);
+            var permissions = _roleRepository
+                .GetBy(account.RoleId)
+                .Permissions
+                .Select(x => x.Permission)
+                .ToList();
 
-            _authHelper.Login(authInfo);
+            var result = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name,permissions);
+
+            _authHelper.Login(result);
 
             return operationResult.Succeeded();
         }

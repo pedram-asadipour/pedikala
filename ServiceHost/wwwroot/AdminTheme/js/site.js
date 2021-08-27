@@ -23,7 +23,7 @@ SinglePage.LoadModal = function() {
 
             showModal();
 
-        }).fail(function () {
+        }).fail(function() {
         ClearHash();
         swal("خطا در انجام عملیات!!!", "خطایی رخ داده , لطفا با مدیر سیستم تماس بگیرید", "error");
     });
@@ -56,7 +56,7 @@ SinglePage.LoadContent = function() {
     GetContent(url, "siteContent");
 
     if (handlerPage == "list")
-        setTimeout(function() { $("#datatable").DataTable(); }, 1000);
+        setTimeout(function() { SetDataTable() }, 1000);
 
 }
 
@@ -101,6 +101,7 @@ $(document).ready(function() {
             SetSelect2("CategoryId");
             SetSelect2("ProductId");
             SetPersianDatePicker();
+            MultipleSelect("Permission");
         });
 
     // Send Form event
@@ -156,8 +157,9 @@ function CallBackHandler(data, action, form) {
             swal(data.message, "شما به صورت خودکار به صفحه اصلی باز گردانه می شوید", "success");
             const refreshUrl = form.attr("data-callback");
             setTimeout(function() {
-                location.assign(refreshUrl);
-            }, 3000);
+                    location.assign(refreshUrl);
+                },
+                3000);
         } else {
             swal(data.message, "", "error");
         }
@@ -281,7 +283,9 @@ function SetSelect2(source) {
 
 function SetDataTable() {
     try {
-        $("#datatable").dataTable();
+        $("#datatable").dataTable({
+            "order": [[0, "desc"]]
+        });
     } catch (e) {
     }
 }
@@ -301,6 +305,59 @@ function SetPersianDatePicker() {
 
     } catch (e) {
     }
+}
+
+function MultipleSelect(element) {
+
+    try {
+
+        $("#" + element).multiSelect({
+            selectableOptgroup: true,
+            selectableHeader:
+                "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جست و جو...'>",
+            selectionHeader:
+                "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جست و جو...'>",
+            afterInit: function (ms) {
+                var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString =
+                        '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown',
+                        function (e) {
+                            if (e.which === 40) {
+                                that.$selectableUl.focus();
+                                return false;
+                            }
+                        });
+
+                that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown',
+                        function (e) {
+                            if (e.which == 40) {
+                                that.$selectionUl.focus();
+                                return false;
+                            }
+                        });
+            },
+            afterSelect: function () {
+                this.qs1.cache();
+                this.qs2.cache();
+            },
+            afterDeselect: function () {
+                this.qs1.cache();
+                this.qs2.cache();
+            }
+        });
+
+
+    } catch (e) {
+
+    } 
+
 }
 
 //File extension Validation

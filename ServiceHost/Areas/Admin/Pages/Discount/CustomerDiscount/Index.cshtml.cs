@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System.Globalization;
-using _01_Framework.Tools;
+using _01_Framework.Application;
 using DiscountManagement.Application.Contract.CustomerDiscount;
+using DiscountManagement.Configuration.Permission;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,19 +24,21 @@ namespace ServiceHost.Areas.Admin.Pages.Discount.CustomerDiscount
             _productApplication = productApplication;
         }
 
-
+        [NeedsPermission(DiscountPermissions.CustomerDiscount)]
         public void OnGet(CustomerDiscountSearchModel searchModel)
         {
             Products = new SelectList(_productApplication.GetAllSelectModel(), "Id", "Name");
             CustomerDiscounts = _application.GetAll(searchModel);
         }
 
+        [NeedsPermission(DiscountPermissions.CustomerDiscount)]
         public PartialViewResult OnGetList(CustomerDiscountSearchModel searchModel)
         {
             CustomerDiscounts = _application.GetAll(searchModel);
             return Partial("./List", CustomerDiscounts);
         }
 
+        [NeedsPermission(DiscountPermissions.DefineCustomerDiscount)]
         public PartialViewResult OnGetDefine()
         {
             var defineCustomerDiscount = new DefineCustomerDiscount()
@@ -47,12 +49,14 @@ namespace ServiceHost.Areas.Admin.Pages.Discount.CustomerDiscount
             return Partial("./Define", defineCustomerDiscount);
         }
 
+        [NeedsPermission(DiscountPermissions.DefineCustomerDiscount)]
         public JsonResult OnPostDefine(DefineCustomerDiscount command)
         {
             var json = _application.Define(command);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(DiscountPermissions.EditCustomerDiscount)]
         public PartialViewResult OnGetEdit(long id)
         {
             var customerDiscount = _application.GetDetail(id);
@@ -62,18 +66,21 @@ namespace ServiceHost.Areas.Admin.Pages.Discount.CustomerDiscount
             return Partial("./Edit", customerDiscount);
         }
 
+        [NeedsPermission(DiscountPermissions.EditCustomerDiscount)]
         public JsonResult OnPostEdit(EditCustomerDiscount command)
         {
             var json = _application.Edit(command);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(DiscountPermissions.RemoveRestoreCustomerDiscount)]
         public JsonResult OnGetRemoved(long id)
         {
             var json = _application.Removed(id);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(DiscountPermissions.RemoveRestoreCustomerDiscount)]
         public JsonResult OnGetRestore(long id)
         {
             var json = _application.Restore(id);

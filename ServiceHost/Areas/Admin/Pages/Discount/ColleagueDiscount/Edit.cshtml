@@ -1,6 +1,7 @@
-﻿@model DiscountManagement.Application.Contract.ColleagueDiscount.EditColleagueDiscount
+﻿@using DiscountManagement.Configuration.Permission
+@model DiscountManagement.Application.Contract.ColleagueDiscount.EditColleagueDiscount
 
-<form asp-page="./Index" asp-page-handler="Edit"
+<form asp-page="./Index" asp-page-handler="Edit" permission="@DiscountPermissions.EditColleagueDiscount"
       method="post"
       data-ajax="true"
       data-callback=""

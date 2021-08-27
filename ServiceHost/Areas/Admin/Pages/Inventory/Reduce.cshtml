@@ -1,6 +1,7 @@
-﻿@model InventoryManagement.Application.Contract.Inventory.ReduceInventory
+﻿@using InventoryManagement.Configuration.Permission
+@model InventoryManagement.Application.Contract.Inventory.ReduceInventory
 
-<form asp-page="./Index" asp-page-handler="Reduce"
+<form asp-page="./Index" asp-page-handler="Reduce" permission="@InventoryPermissions.ReduceInventory"
       method="post"
       data-ajax="true"
       data-callback=""

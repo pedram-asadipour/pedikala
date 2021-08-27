@@ -1,6 +1,7 @@
-﻿@model ShopManagement.Application.Contract.ProductPicture.CreateProductPicture
+﻿@using ShopManagement.Configuration.Permission
+@model ShopManagement.Application.Contract.ProductPicture.CreateProductPicture
 
-<form asp-page="./Index" asp-page-handler="Create"
+<form asp-page="./Index" asp-page-handler="Create" permission="@ShopPermissions.CreateProductPicture"
       method="post"
       data-ajax="true"
       data-callback=""

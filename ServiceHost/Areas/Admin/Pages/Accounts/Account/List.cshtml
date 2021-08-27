@@ -1,7 +1,8 @@
-﻿@model List<AccountManagement.Application.Contract.Account.AccountViewModel>
+﻿@using AccountManagement.Configuration.Permission
+@model List<AccountManagement.Application.Contract.Account.AccountViewModel>
 
 
-<div class="row">
+<div class="row" permission="@AccountPermissions.Account">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -45,9 +46,11 @@
                                     <td>@item.Mobile</td>
                                     <td>@item.Role</td>
                                     <td>@item.CreationDate</td>
-                                    <td>
-                                        <a href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش<i class="md md-edit"></i></a>
-                                        <a href="#showmodal=@Url.Page("./Index", "ChangePassword", new {id = item.Id})" class="btn btn-primary waves-effect waves-light">تغییر رمز عبور<i class="md md-vpn-key"></i></a>
+                                    <td> 
+                                            <a permission="@AccountPermissions.EditAccount"
+                                                href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش<i class="md md-edit"></i></a>
+                                            <a permission="@AccountPermissions.ChangePasswordAccount"
+                                                href="#showmodal=@Url.Page("./Index", "ChangePassword", new {id = item.Id})" class="btn btn-primary waves-effect waves-light">تغییر رمز عبور<i class="md md-vpn-key"></i></a>
                                     </td>
                                 </tr>
                             }

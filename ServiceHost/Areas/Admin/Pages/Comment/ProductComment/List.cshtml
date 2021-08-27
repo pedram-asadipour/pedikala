@@ -1,7 +1,8 @@
-﻿@model List<CommentManagement.Application.Contract.ProductComment.ProductCommentViewModel>
+﻿@using CommentManagement.Configuration.Permission
+@model List<CommentManagement.Application.Contract.ProductComment.ProductCommentViewModel>
 
 
-<div class="row">
+<div class="row" permission="@CommentPermissions.ProductComment">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -55,15 +56,17 @@
                                     </td>
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        @if (!item.IsConfirmed && !item.IsCanceled)
-                                        {
-                                            <a href="#operation=@Url.Page("./Index", "Confirmed", new {id = item.Id})" class="btn btn-success waves-effect waves-light">تایید <i class="md md-check"></i></a>
-                                            <a href="#operation=@Url.Page("./Index", "Canceled", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">عدم تایید <i class="md md-check"></i></a>
-                                        }
-                                        @if (item.IsConfirmed && !item.IsCanceled)
-                                        {
-                                            <a href="#operation=@Url.Page("./Index", "Canceled", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">عدم تایید <i class="md md-check"></i></a>
-                                        }
+                                        <span permission="@CommentPermissions.ConfirmCancelProductComment">
+                                            @if (!item.IsConfirmed && !item.IsCanceled)
+                                            {
+                                                <a href="#operation=@Url.Page("./Index", "Confirmed", new {id = item.Id})" class="btn btn-success waves-effect waves-light">تایید <i class="md md-check"></i></a>
+                                                <a href="#operation=@Url.Page("./Index", "Canceled", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">عدم تایید <i class="md md-check"></i></a>
+                                            }
+                                            @if (item.IsConfirmed && !item.IsCanceled)
+                                            {
+                                                <a href="#operation=@Url.Page("./Index", "Canceled", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">عدم تایید <i class="md md-check"></i></a>
+                                            }
+                                        </span>
                                     </td>
                                 </tr>
                             }

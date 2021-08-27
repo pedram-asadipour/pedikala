@@ -1,6 +1,7 @@
 using _01_Framework.Application;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
+using BlogManagement.Configuration.Permission;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,6 +22,7 @@ namespace ServiceHost.Areas.Admin.Pages.Blog.Article
             _categoryApplication = categoryApplication;
         }
 
+        [NeedsPermission(BlogPermissions.EditArticle)]
         public IActionResult OnGet(long id)
         {
             Command = _application.GetDetail(id);
@@ -32,6 +34,7 @@ namespace ServiceHost.Areas.Admin.Pages.Blog.Article
             return Page();
         }
 
+        [NeedsPermission(BlogPermissions.EditArticle)]
         public IActionResult OnPost(EditArticle command)
         {
             if (!ModelState.IsValid)

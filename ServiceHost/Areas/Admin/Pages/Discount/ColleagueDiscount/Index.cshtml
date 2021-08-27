@@ -1,4 +1,5 @@
 ﻿@page
+@using DiscountManagement.Configuration.Permission
 @model IndexModel
 @{
     ViewData["Title"] = "تخفیفات همکاران";
@@ -7,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-6 text-left">
-        <h4>
+        <h4 permission="@DiscountPermissions.DefineColleagueDiscount">
             <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Define")">ایجاد تخفیف برای همکاران <i class="md md-add"></i></a>
         </h4>
     </div>
@@ -17,7 +18,7 @@
 </div>
 
 
-<div class="row">
+<div class="row" permission="@DiscountPermissions.SearchColleagueDiscount">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">

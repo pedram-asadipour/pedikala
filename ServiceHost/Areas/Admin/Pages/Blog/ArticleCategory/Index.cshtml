@@ -1,4 +1,5 @@
 ﻿@page
+@using BlogManagement.Configuration.Permission
 @model IndexModel
 @{
     ViewData["Title"] = "دسته بندی مقالات";
@@ -7,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-6 text-left">
-        <h4 class="">
+        <h4 permission="@BlogPermissions.CreateArticleCategory">
             <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","Create")">ایجاد دسته بندی مقاله<i class="md md-add"></i></a>
         </h4>
     </div>
@@ -17,7 +18,7 @@
 </div>
 
 
-<div class="row">
+<div class="row" permission="@BlogPermissions.SearchArticleCategory">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">

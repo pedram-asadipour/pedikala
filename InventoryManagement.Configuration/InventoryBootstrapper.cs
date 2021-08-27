@@ -1,6 +1,8 @@
 ﻿using System;
+using _01_Framework.Infrastructure;
 using InventoryManagement.Application;
 using InventoryManagement.Application.Contract.Inventory;
+using InventoryManagement.Configuration.Permission;
 using InventoryManagement.Domain.InventoryAgg;
 using InventoryManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore.Repository;
@@ -22,6 +24,12 @@ namespace InventoryManagement.Configuration
 
             services.AddScoped<IInventoryRepository, InventoryRepository>();
             services.AddScoped<IInventoryApplication, InventoryApplication>();
+
+            #endregion
+
+            #region Invenroty Permission
+
+            services.AddSingleton<IPermissionExposer, InventoryPermissionExposer>();
 
             #endregion
         }

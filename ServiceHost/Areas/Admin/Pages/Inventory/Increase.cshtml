@@ -1,6 +1,7 @@
-﻿@model InventoryManagement.Application.Contract.Inventory.IncreaseInventory
+﻿@using InventoryManagement.Configuration.Permission
+@model InventoryManagement.Application.Contract.Inventory.IncreaseInventory
 
-<form asp-page="./Index" asp-page-handler="Increase"
+<form asp-page="./Index" asp-page-handler="Increase" permission="@InventoryPermissions.IncreaseInventory"
       method="post"
       data-ajax="true"
       data-callback=""

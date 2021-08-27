@@ -1,9 +1,10 @@
-﻿@model List<ShopManagement.Application.Contract.ProductPicture.ProductPictureViewModel>
+﻿@using ShopManagement.Configuration.Permission
+@model List<ShopManagement.Application.Contract.ProductPicture.ProductPictureViewModel>
 
 
 
 
-<div class="row">
+<div class="row" permission="@ShopPermissions.ProductPicture">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -45,18 +46,20 @@
                                     </td>
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        <a href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش <i class="md md-edit"></i></a>
+                                        <a permission="@ShopPermissions.EditProductPicture"
+                                            href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش <i class="md md-edit"></i></a>
 
-                                        @if (item.IsRemoved)
-                                        {
-                                    <a href="#operation=@Url.Page("./Index", "Restore", new {id = item.Id})" class="btn btn-success waves-effect waves-light">فعال <i class="md md-check"></i></a>
+                                        <span permission="@ShopPermissions.RemoveRestoreProductPicture">
+                                            @if (item.IsRemoved)
+                                            {
+                                                <a href="#operation=@Url.Page("./Index", "Restore", new {id = item.Id})" class="btn btn-success waves-effect waves-light">فعال <i class="md md-check"></i></a>
 
-                                        }
-                                        else
-                                        {
-                                    <a href="#operation=@Url.Page("./Index", "Removed", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">غیر فعال <i class="md md-close"></i></a>
-                                        }
-
+                                            }
+                                            else
+                                            {
+                                                <a href="#operation=@Url.Page("./Index", "Removed", new {id = item.Id})" class="btn btn-danger waves-effect waves-light">غیر فعال <i class="md md-close"></i></a>
+                                            }
+                                        </span>
                                     </td>
                                 </tr>
                             }

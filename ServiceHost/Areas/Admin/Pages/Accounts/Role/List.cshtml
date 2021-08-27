@@ -1,7 +1,8 @@
-﻿@model List<AccountManagement.Application.Contract.Role.RoleViewModel>
+﻿@using AccountManagement.Configuration.Permission
+@model List<AccountManagement.Application.Contract.Role.RoleViewModel>
 
 
-<div class="row">
+<div class="row" permission="@AccountPermissions.Role">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -29,7 +30,8 @@
                                     <td>@item.Name</td>
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        <a href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش<i class="md md-edit"></i></a>
+                                        <a permission="@AccountPermissions.EditRole"
+                                            href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش<i class="md md-edit"></i></a>
                                     </td>
                                 </tr>
                             }

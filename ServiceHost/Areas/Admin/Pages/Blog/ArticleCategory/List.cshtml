@@ -1,7 +1,8 @@
-﻿@model List<BlogManagement.Application.Contract.ArticleCategory.ArticleCategoryViewModel>
+﻿@using BlogManagement.Configuration.Permission
+@model List<BlogManagement.Application.Contract.ArticleCategory.ArticleCategoryViewModel>
 
 
-<div class="row">
+<div class="row" permission="@BlogPermissions.ArticleCategory">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -35,7 +36,8 @@
                                     <td>@item.ArticleCount</td>
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        <a href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش <i class="md md-edit"></i></a>
+                                        <a permission="@BlogPermissions.EditArticleCategory"
+                                            href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">ویرایش <i class="md md-edit"></i></a>
                                     </td>
                                 </tr>
                             }

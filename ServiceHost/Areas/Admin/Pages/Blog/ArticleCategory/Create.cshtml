@@ -1,6 +1,7 @@
-﻿@model BlogManagement.Application.Contract.ArticleCategory.CreateArticleCategory
+﻿@using BlogManagement.Configuration.Permission
+@model BlogManagement.Application.Contract.ArticleCategory.CreateArticleCategory
 
-<form asp-page="./Index" asp-page-handler="Create"
+<form asp-page="./Index" asp-page-handler="Create" permission="@BlogPermissions.CreateArticleCategory"
       method="post"
       data-ajax="true"
       data-callback=""

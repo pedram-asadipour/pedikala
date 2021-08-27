@@ -1,6 +1,8 @@
-﻿using AccountManagement.Application;
+﻿using _01_Framework.Infrastructure;
+using AccountManagement.Application;
 using AccountManagement.Application.Contract.Account;
 using AccountManagement.Application.Contract.Role;
+using AccountManagement.Configuration.Permission;
 using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
 using AccountManagement.Infrastructure.EFCore;
@@ -30,6 +32,12 @@ namespace AccountManagement.Configuration
 
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IRoleApplication, RoleApplication>();
+
+            #endregion
+
+            #region RolePermission
+
+            services.AddSingleton<IPermissionExposer, AccountPermissionExposer>();
 
             #endregion
         }

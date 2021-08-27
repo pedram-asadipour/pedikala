@@ -1,6 +1,8 @@
-﻿using BlogManagement.Application;
+﻿using _01_Framework.Infrastructure;
+using BlogManagement.Application;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
+using BlogManagement.Configuration.Permission;
 using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using BlogManagement.Infrastructure.EFCore;
@@ -30,6 +32,12 @@ namespace BlogManagement.Configuration
 
             services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped<IArticleApplication, ArticleApplication>();
+
+            #endregion
+
+            #region Permission
+
+            services.AddSingleton<IPermissionExposer, BlogPermissionExposer>();
 
             #endregion
         }

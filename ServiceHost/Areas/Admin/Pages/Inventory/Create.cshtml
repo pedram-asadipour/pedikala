@@ -1,6 +1,7 @@
-﻿@model InventoryManagement.Application.Contract.Inventory.CreateInventory
+﻿@using InventoryManagement.Configuration.Permission
+@model InventoryManagement.Application.Contract.Inventory.CreateInventory
 
-<form asp-page="./Index" asp-page-handler="Create"
+<form asp-page="./Index" asp-page-handler="Create" permission="@InventoryPermissions.CreateInventory"
       method="post"
       data-ajax="true"
       data-callback=""

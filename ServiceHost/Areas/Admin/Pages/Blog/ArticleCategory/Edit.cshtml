@@ -1,6 +1,7 @@
-﻿@model BlogManagement.Application.Contract.ArticleCategory.EditArticleCategory
+﻿@using BlogManagement.Configuration.Permission
+@model BlogManagement.Application.Contract.ArticleCategory.EditArticleCategory
 
-<form asp-page="./Index" asp-page-handler="Edit"
+<form asp-page="./Index" asp-page-handler="Edit" permission="@BlogPermissions.EditArticleCategory"
       method="post"
       data-ajax="true"
       data-callback=""

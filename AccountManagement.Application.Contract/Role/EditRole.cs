@@ -1,4 +1,6 @@
-﻿namespace AccountManagement.Application.Contract.Role
+﻿using System.Collections.Generic;
+
+namespace AccountManagement.Application.Contract.Role
 {
     public class EditRole : CreateRole
     {

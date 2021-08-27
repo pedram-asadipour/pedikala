@@ -4,6 +4,7 @@ using AccountManagement.Domain.RoleAgg;
 using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Tools;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore.Repository
 {
@@ -25,6 +26,7 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                     Name = x.Name,
                     CreationDate = x.CreationDate.ToPersianDate()
                 })
+                .AsNoTracking()
                 .ToList();
         }
 
@@ -34,9 +36,18 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                .Select(x => new EditRole()
                {
                    Id = x.Id,
-                   Name = x.Name
+                   Name = x.Name,
+                   Permission = MappingPermissions(x.Permissions)
                })
+               .AsNoTracking()
                .FirstOrDefault(x => x.Id == id);
+        }
+
+        private static List<string> MappingPermissions(IEnumerable<RolePermission> permissions)
+        {
+            return permissions
+                .Select(x => x.Permission)
+                .ToList();
         }
     }
 }

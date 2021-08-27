@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using _01_Framework.Application;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductPicture;
+using ShopManagement.Configuration.Permission;
 
 namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
 {
@@ -22,18 +24,21 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
             _productApplication = productApplication;
         }
 
+        [NeedsPermission(ShopPermissions.ProductPicture)]
         public void OnGet(ProductPictureSearchModel searchModel)
         {
             Products = new SelectList(_productApplication.GetAllSelectModel(), "Id", "Name");
             ProductPictures = _application.GetAll(searchModel);
         }
 
+        [NeedsPermission(ShopPermissions.ProductPicture)]
         public PartialViewResult OnGetList(ProductPictureSearchModel searchModel)
         {
             ProductPictures = _application.GetAll(searchModel);
             return Partial("./List", ProductPictures);
         }
 
+        [NeedsPermission(ShopPermissions.CreateProductPicture)]
         public PartialViewResult OnGetCreate()
         {
             var createProductPicture = new CreateProductPicture()
@@ -44,12 +49,14 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
             return Partial("./Create", createProductPicture);
         }
 
+        [NeedsPermission(ShopPermissions.CreateProductPicture)]
         public JsonResult OnPostCreate(CreateProductPicture command)
         {
             var json = _application.Create(command);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(ShopPermissions.EditProductPicture)]
         public PartialViewResult OnGetEdit(long id)
         {
             var editProductPicture = _application.GetDetail(id);
@@ -59,18 +66,21 @@ namespace ServiceHost.Areas.Admin.Pages.Shop.ProductPicture
             return Partial("./Edit", editProductPicture);
         }
 
+        [NeedsPermission(ShopPermissions.EditProductPicture)]
         public JsonResult OnPostEdit(EditProductPicture command)
         {
             var json = _application.Edit(command);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(ShopPermissions.RemoveRestoreProductPicture)]
         public JsonResult OnGetRemoved(long id)
         {
             var json = _application.Removed(id);
             return new JsonResult(json);
         }
 
+        [NeedsPermission(ShopPermissions.RemoveRestoreProductPicture)]
         public JsonResult OnGetRestore(long id)
         {
             var json = _application.Restore(id);

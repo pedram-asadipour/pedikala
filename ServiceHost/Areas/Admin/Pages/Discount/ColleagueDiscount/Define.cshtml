@@ -1,6 +1,7 @@
-﻿@model DiscountManagement.Application.Contract.ColleagueDiscount.DefineColleagueDiscount
+﻿@using DiscountManagement.Configuration.Permission
+@model DiscountManagement.Application.Contract.ColleagueDiscount.DefineColleagueDiscount
 
-<form asp-page="./Index" asp-page-handler="Define"
+<form asp-page="./Index" asp-page-handler="Define" permission="@DiscountPermissions.DefineColleagueDiscount"
       method="post"
       data-ajax="true"
       data-callback=""

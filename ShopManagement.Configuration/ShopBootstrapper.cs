@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using _01_Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagement.Application;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Application.Contract.ProductPicture;
+using ShopManagement.Configuration.Permission;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
@@ -39,6 +41,12 @@ namespace ShopManagement.Configuration
 
             services.AddScoped<IProductPictureRepository, ProductPictureRepository>();
             services.AddScoped<IProductPictureApplication, ProductPictureApplication>();
+
+            #endregion
+
+            #region Shop Permission
+
+            services.AddSingleton<IPermissionExposer, ShopPermissionExposer>();
 
             #endregion
         }

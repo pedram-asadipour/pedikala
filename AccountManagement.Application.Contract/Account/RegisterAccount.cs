@@ -12,7 +12,7 @@ namespace AccountManagement.Application.Contract.Account
         public RegisterAccount()
         {
             if (RoleId == 0)
-                RoleId = AccountRoles.NormalAccount;
+                RoleId = AccountRoles.DefaultRole;
         }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

@@ -1,6 +1,7 @@
 using _01_Framework.Application;
 using BlogManagement.Application.Contract.Article;
 using BlogManagement.Application.Contract.ArticleCategory;
+using BlogManagement.Configuration.Permission;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,11 +22,13 @@ namespace ServiceHost.Areas.Admin.Pages.Blog.Article
             _categoryApplication = categoryApplication;
         }
 
+        [NeedsPermission(BlogPermissions.CreateArticle)]
         public void OnGet()
         {
             Categories = new SelectList(_categoryApplication.GetAllSelectModel(), "Id", "Name");
         }
 
+        [NeedsPermission(BlogPermissions.CreateArticle)]
         public IActionResult OnPost(CreateArticle command)
         {
             if (!ModelState.IsValid)

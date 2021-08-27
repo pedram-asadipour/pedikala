@@ -5,27 +5,31 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace _01_Framework.Application
 {
     public class AuthHelper : IAuthHelper
     {
-        private readonly IHttpContextAccessor _httpContext;
+        private readonly IHttpContextAccessor _contextAccessor;
 
-        public AuthHelper(IHttpContextAccessor httpContext)
+        public AuthHelper(IHttpContextAccessor contextAccessor)
         {
-            _httpContext = httpContext;
+            _contextAccessor = contextAccessor;
         }
 
         public void Login(AuthViewModel account)
         {
+            var permissions = JsonConvert.SerializeObject(account.Permissions);
+
             var claims = new List<Claim>()
             {
-                new Claim("Id",account.Id.ToString()),
+                new Claim("AccountId",account.AccountId.ToString()),
                 new Claim(ClaimTypes.Name,account.Fullname),
                 new Claim("Username",account.Username),
                 new Claim(ClaimTypes.Role,account.RoleId.ToString()),
                 new Claim("RoleName",account.RoleName),
+                new Claim("Permissions",permissions)
             };
 
             var claimsIdentity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
@@ -35,7 +39,7 @@ namespace _01_Framework.Application
                 ExpiresUtc = DateTimeOffset.UtcNow.AddDays(5)
             };
 
-            _httpContext.HttpContext.SignInAsync(
+            _contextAccessor.HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity),
                 properties);
@@ -43,13 +47,12 @@ namespace _01_Framework.Application
 
         public void SignOut()
         {
-            _httpContext.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            _contextAccessor.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
         public bool IsAuthenticated()
         {
-            var claims = _httpContext.HttpContext.User.Claims.ToList();
-            return claims.Count > 0;
+            return _contextAccessor.HttpContext.User.Identity is {IsAuthenticated: true};
         }
 
         public AuthViewModel GetCurrentAccount()
@@ -57,16 +60,16 @@ namespace _01_Framework.Application
             if (!IsAuthenticated())
                 return new AuthViewModel();
 
-            var claims = _httpContext.HttpContext.User.Claims.ToList();
+            var claims = _contextAccessor.HttpContext.User.Claims.ToList();
 
-            var result = new AuthViewModel
-            (
-                id:long.Parse(claims.FirstOrDefault(x => x.Type == "Id")?.Value),
-                fullname:claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value,
-                username:claims.FirstOrDefault(x => x.Type == "Username")?.Value,
-                roleId:long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value),
-                roleName:claims.FirstOrDefault(x => x.Type == "RoleName")?.Value
-            );
+            var accountId = long.Parse(claims.FirstOrDefault(x => x.Type == "AccountId")?.Value);
+            var fullname = claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+            var username = claims.FirstOrDefault(x => x.Type == "Username")?.Value;
+            var roleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value);
+            var roleName = claims.FirstOrDefault(x => x.Type == "RoleName")?.Value;
+            var permissions = JsonConvert.DeserializeObject<List<string>>(claims.FirstOrDefault(x => x.Type == "Permissions")?.Value);
+
+            var result = new AuthViewModel(accountId, fullname,username,roleId,roleName,permissions);
 
             return result;
         }
