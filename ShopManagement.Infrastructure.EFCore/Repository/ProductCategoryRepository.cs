@@ -66,5 +66,13 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 })
                 .FirstOrDefault(x => x.Id == id);
         }
+
+        public string GetName(long id)
+        {
+            return _context.ProductCategories
+                .Select(x => new {x.Id, x.Name})
+                .FirstOrDefault(x => x.Id == id)?.Name;
+
+        }
     }
 }

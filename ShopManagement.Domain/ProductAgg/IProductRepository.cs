@@ -10,6 +10,7 @@ namespace ShopManagement.Domain.ProductAgg
         List<ProductViewModel> GetAll(ProductSearchModel searchModel);
         List<SelectModel> GetAllSelectModels();
         EditProduct GetDetail(long id);
-        ProductWithCategoryModel GetCategoryIdBy(long productId);
+        string GetCategoryNameBy(long productId);
+        string GetNameBy(long id);
     }
 }

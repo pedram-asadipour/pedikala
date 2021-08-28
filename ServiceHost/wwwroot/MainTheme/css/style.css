@@ -3432,7 +3432,7 @@ select {
 
 .single-product-content-description .single-info a:hover { color: #e33; }
 
-.single-product-content-description .product-title { margin-bottom: 20px; }
+.single-product-content-description .product-title { margin-bottom: 20px;direction: rtl; }
 
 .single-product-content-description .product-rating { margin-bottom: 20px; }
 

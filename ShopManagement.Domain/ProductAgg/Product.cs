@@ -27,12 +27,16 @@ namespace ShopManagement.Domain.ProductAgg
         }
 
         public Product(string name, string productCode, string shortDescription,
-            string description, string keyword, string metaDescription, long categoryId)
+            string description, string image, string imageAlt, string imageTitle, string keyword,
+            string metaDescription, long categoryId)
         {
             Name = name;
             ProductCode = productCode;
             ShortDescription = shortDescription;
             Description = description;
+            Image = image;
+            ImageAlt = imageAlt;
+            ImageTitle = imageTitle;
             Keyword = keyword;
             MetaDescription = metaDescription;
             IsRemoved = false;

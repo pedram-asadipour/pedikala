@@ -2,18 +2,21 @@
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Domain.ProductAgg;
 using System.Collections.Generic;
+using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace ShopManagement.Application
 {
     public class ProductApplication : IProductApplication
     {
         private readonly IProductRepository _repository;
+        private readonly IProductCategoryRepository _categoryRepository;
         private readonly IFileManager _fileManager;
 
-        public ProductApplication(IProductRepository repository, IFileManager fileManager)
+        public ProductApplication(IProductRepository repository, IFileManager fileManager, IProductCategoryRepository categoryRepository)
         {
             _repository = repository;
             _fileManager = fileManager;
+            _categoryRepository = categoryRepository;
         }
 
 
@@ -35,6 +38,7 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateProduct command)
         {
             var operationResult = new OperationResult();
+            var categoryName = _categoryRepository.GetName(command.CategoryId);
 
             if (_repository.Exists(x => x.Name == command.Name))
                 return operationResult.Failed(ApplicationMessages.Exists);
@@ -42,8 +46,10 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.ProductCode == command.ProductCode))
                 return operationResult.Failed(ApplicationMessages.DuplicationCode);
 
+            var imageFile = _fileManager.Uploader(command.Image, $"{categoryName}/{command.Name}");
+
             var product = new Product(command.Name, command.ProductCode.ToLower(), command.ShortDescription,
-                command.Description, command.Keyword, command.MetaDescription, command.CategoryId);
+                command.Description,imageFile,command.ImageAlt,command.ImageTitle, command.Keyword, command.MetaDescription, command.CategoryId);
 
             _repository.Create(product);
 
@@ -56,6 +62,7 @@ namespace ShopManagement.Application
         {
             var operationResult = new OperationResult();
             var product = _repository.GetBy(command.Id);
+            var categoryName = _categoryRepository.GetName(command.CategoryId);
 
             if (product == null)
                 return operationResult.Failed(ApplicationMessages.NotFound);
@@ -66,7 +73,7 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.ProductCode == command.ProductCode && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.DuplicationCode);
 
-            var imageFile = _fileManager.Uploader(command.Image, $"category-id-{command.CategoryId}/product-id-{product.Id}");
+            var imageFile = _fileManager.Uploader(command.Image, $"{categoryName}/{command.Name}");
 
             if (command.Image != null)
                 _fileManager.Remove(product.Image);

@@ -33,11 +33,10 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateProductPicture command)
         {
             var operationResult = new OperationResult();
+            var productName = _productRepository.GetNameBy(command.ProductId);
+            var categoryName = _productRepository.GetCategoryNameBy(command.ProductId);
 
-            var categoryModel = _productRepository.GetCategoryIdBy(command.ProductId);
-
-            var imageFile = _fileManager.Uploader(command.Image,
-                $"category-id-{categoryModel.CategoryId}/product-id-{command.ProductId}");
+            var imageFile = _fileManager.Uploader(command.Image, $"{categoryName}/{productName}");
 
             var productPicture =
                 new ProductPicture(command.ProductId, imageFile, command.ImageAlt, command.ImageTitle);
@@ -52,16 +51,16 @@ namespace ShopManagement.Application
         public OperationResult Edit(EditProductPicture command)
         {
             var operationResult = new OperationResult();
-
+            var productName = _productRepository.GetNameBy(command.ProductId);
+            var categoryName = _productRepository.GetCategoryNameBy(command.ProductId);
             var productPicture = _repository.GetBy(command.Id);
 
             if (productPicture == null)
                 return operationResult.Failed(ApplicationMessages.NotFound);
 
-            var categoryModel = _productRepository.GetCategoryIdBy(command.ProductId);
+            var categoryModel = _productRepository.GetCategoryNameBy(command.ProductId);
 
-            var imageFile = _fileManager.Uploader(command.Image,
-                $"category-id-{categoryModel.CategoryId}/product-id-{command.ProductId}");
+            var imageFile = _fileManager.Uploader(command.Image, $"{categoryName}/{productName}");
 
             if (command.Image != null)
                 _fileManager.Remove(productPicture.Image);

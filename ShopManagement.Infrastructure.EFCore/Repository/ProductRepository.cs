@@ -78,15 +78,27 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 .FirstOrDefault(x => x.Id == id);
         }
 
-        public ProductWithCategoryModel GetCategoryIdBy(long productId)
+        public string GetCategoryNameBy(long productId)
         {
-           return _context.Products
-                .Select(x => new ProductWithCategoryModel
+            return _context.Products
+                .Include(x => x.ProductCategory)
+                .Select(x => new
                 {
-                    Id = x.Id,
-                    CategoryId = x.CategoryId
+                    x.Id,
+                    x.ProductCategory.Name
                 })
-                .FirstOrDefault(x => x.Id == productId);
+                .FirstOrDefault(x => x.Id == productId)?.Name;
+        }
+
+        public string GetNameBy(long id)
+        {
+            return _context.Products
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Name
+                })
+                .FirstOrDefault(x => x.Id == id)?.Name;
         }
     }
 }
