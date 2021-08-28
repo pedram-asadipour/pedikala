@@ -45,6 +45,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
             query = query.AsNoTracking();
 
+            query = query.OrderByDescending(x => x.Id);
+
             return query.ToList();
         }
 

@@ -39,8 +39,10 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.Name == command.Name))
                 return operationResult.Failed(ApplicationMessages.Exists);
 
-            var productCategory = new ProductCategory(command.Name, command.Description, command.Keyword,
-                command.MetaDescription);
+            var imageFile = _fileManager.Uploader(command.Image, $"{command.Name}");
+
+            var productCategory = new ProductCategory(command.Name, command.Description,imageFile,command.ImageAlt,command.ImageTitle,
+            command.Keyword,command.MetaDescription);
 
             _repository.Create(productCategory);
 
@@ -60,7 +62,7 @@ namespace ShopManagement.Application
             if (_repository.Exists(x => x.Name == command.Name && x.Id != command.Id))
                 return operationResult.Failed(ApplicationMessages.Duplication);
 
-            var imageFile = _fileManager.Uploader(command.Image, $"category-id-{productCategory.Id}");
+            var imageFile = _fileManager.Uploader(command.Image, $"{command.Name}");
 
             if(command.Image != null)
                 _fileManager.Remove(productCategory.Image);
