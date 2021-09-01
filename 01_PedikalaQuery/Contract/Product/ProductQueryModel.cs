@@ -8,7 +8,7 @@ namespace _01_PedikalaQuery.Contract.Product
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public string UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
         public bool IsInStock { get; set; }
         public string ProductCode { get; set; }
         public string ShortDescription { get; set; }
@@ -23,7 +23,7 @@ namespace _01_PedikalaQuery.Contract.Product
         public string CategoryName { get; set; }
         public bool HasDiscount { get; set; }
         public int DiscountRate { get; set; }
-        public string DiscountPrice { get; set; }
+        public double DiscountPrice { get; set; }
         public string DiscountEndDate { get; set; }
         public List<ProductCommandQueryModel> Comments { get; set; }
         public List<ProductPictureQueryModel> Pictures { get; set; }

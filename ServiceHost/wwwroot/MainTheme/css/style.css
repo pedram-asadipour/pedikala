@@ -676,7 +676,7 @@ select {
 .header-cart-icon .mini-cart {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     margin-top: 34px;
 }
 
@@ -696,7 +696,7 @@ select {
 .mini-cart .cart-items-wrapper {
     position: relative;
     overflow: hidden;
-    max-height: 280px;
+    max-height: 350px;
     margin: 0 -30px;
     padding: 0 30px;
 }
@@ -880,7 +880,7 @@ select {
     position: absolute;
     z-index: 9999;
     top: 100%;
-    right: 0;
+    left: 0;
     display: none;
     width: 300px;
     margin-top: 34px;
@@ -4194,15 +4194,16 @@ select {
     background-color: #e33;
 }
 
-.cart-summary .cart-summary-button button.checkout-btn {
+.cart-summary .cart-summary-button a.checkout-btn {
     font-weight: 400;
     text-transform: uppercase;
     color: #fff;
     border-color: #292929;
     background-color: #292929;
+    padding: 1rem 2rem
 }
 
-.cart-summary .cart-summary-button button.checkout-btn:hover {
+.cart-summary .cart-summary-button a.checkout-btn:hover {
     border-color: #e33;
     background-color: #e33;
 }

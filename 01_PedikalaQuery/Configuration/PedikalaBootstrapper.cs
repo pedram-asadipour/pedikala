@@ -1,5 +1,7 @@
 ﻿using _01_PedikalaQuery.Contract.Article;
 using _01_PedikalaQuery.Contract.ArticleCategory;
+using _01_PedikalaQuery.Contract.Cart;
+using _01_PedikalaQuery.Contract.Inventory;
 using _01_PedikalaQuery.Contract.Menu;
 using _01_PedikalaQuery.Contract.Product;
 using _01_PedikalaQuery.Contract.ProductCategory;
@@ -39,6 +41,18 @@ namespace _01_PedikalaQuery.Configuration
             #region Article
 
             services.AddScoped<IArticleQuery, ArticleQuery>();
+
+            #endregion
+
+            #region Inventory
+
+            services.AddScoped<IInventoryQuery, InventoryQuery>();
+
+            #endregion
+
+            #region Cart
+
+            services.AddScoped<ICartQuery, CartQuery>();
 
             #endregion
         }

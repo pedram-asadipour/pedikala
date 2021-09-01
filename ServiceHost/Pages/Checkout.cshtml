@@ -1,0 +1,110 @@
+﻿@page
+@model ServiceHost.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "نهایی سازی فرایند خرید";
+}
+
+
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-wrapper">
+                    <img class="breadcrumb-img" src="/MainTheme/img/backgrounds/default.jpg" alt="pattern" title="pattern" />
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-content__title">نهایی سازی فرایند خرید</h2>
+                        <ul class="breadcrumb-content__page-map">
+                            <li>
+                                <a asp-page="/Index">صفحه اصلی</a>
+                            </li>
+                            <li class="active">نهایی سازی فرایند خرید</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--=======  page wrapper  =======-->
+                <div class="page-wrapper">
+                    <div class="page-content-wrapper">
+                        <form action="#">
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="pro-thumbnail">تصویر محصول</th>
+                                            <th class="pro-title">محصول</th>
+                                            <th class="pro-quantity">قیمت واحد</th>
+                                            <th class="pro-price">تعداد</th>
+                                            <th class="pro-remove">مبلغ کل بدون تخفیف</th>
+                                            <th class="pro-subtotal">درصد تخفیف</th>
+                                            <th class="pro-remove">مبلغ تخفیف</th>
+                                            <th class="pro-remove">مبلغ نهایی</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach (var item in Model.Cart.CartItems)
+                                    {
+                                        <tr>
+                                            <td class="pro-thumbnail">
+                                                <a href="#">
+                                                    <img src="~/Uploads/@item.Image" class="img-fluid"
+                                                         alt="@item.Name" title="@item.Name">
+                                                </a>
+                                            </td>
+                                            <td class="pro-title">
+                                                <a href="#">@item.Name</a>
+                                            </td>
+                                            <td class="pro-quantity">
+                                                <span>@item.UnitPrice.ToString("##,###") تومان</span>
+                                            </td>
+                                            <td class="pro-price">
+                                                <span>@item.Count</span>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span>@item.TotalPrice.ToString("##,###") تومان</span>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span>@item.DiscountRate%</span>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span>@item.DiscountPrice.ToString("##,###") تومان</span>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span>@item.FinalPrice.ToString("##,###") تومان</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-12 d-flex">
+                                <div class="cart-summary">
+                                    <div class="cart-summary-wrap">
+                                        <h4>مجموع مبالغ</h4>
+                                        <p>مبالغ کل بدون تخفیف <span>@Model.Cart.TotalAmounts.ToString("##,###") تومان</span></p>
+                                        <p>مبالغ تخفیف <span>@Model.Cart.TotalDiscounts.ToString("##,###") تومان</span></p>
+                                        <h2>مبلغ نهایی (پرداختی)<span>@Model.Cart.Pay.ToString("##,###") تومان</span></h2>
+                                    </div>
+                                    <div class="cart-summary-button">
+                                        <button class="checkout-btn">پرداخت</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

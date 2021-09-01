@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="Contract\ArticleComment\" />
     <Folder Include="Contract\ProductPicture\" />
-    <Folder Include="Query\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,3 +1,4 @@
+using System.Linq;
 using _01_Framework.Application;
 using AccountManagement.Application.Contract.Account;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,7 @@ namespace ServiceHost.Pages
         }
 
 
-        public IActionResult OnPostRegister(RegisterAccount register)
+        public IActionResult OnPostRegister(RegisterAccount register,string returnUrl)
         {
             if (!ModelState.IsValid)
                 return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));

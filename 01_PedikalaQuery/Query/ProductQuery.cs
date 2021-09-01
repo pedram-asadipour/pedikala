@@ -76,7 +76,7 @@ namespace _01_PedikalaQuery.Query
                 .FirstOrDefault(x => x.ProductId == productQuery.Id);
             if (currentInventory == null) return productQuery;
 
-            productQuery.UnitPrice = currentInventory.UnitPrice.ToString("##,###");
+            productQuery.UnitPrice = currentInventory.UnitPrice;
             productQuery.IsInStock = currentInventory.IsInStock;
 
             var currentDiscount = _discountContext.CustomerDiscounts
@@ -87,7 +87,7 @@ namespace _01_PedikalaQuery.Query
 
             productQuery.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
             productQuery.DiscountRate = currentDiscount.DiscountRate;
-            productQuery.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
+            productQuery.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice);
             productQuery.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
 
             return productQuery;

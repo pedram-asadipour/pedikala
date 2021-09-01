@@ -1,11 +1,10 @@
 ﻿@using _01_Framework.Application
 @using _01_Framework.Tools
-@using Microsoft.AspNetCore.Http
 @model _01_PedikalaQuery.Contract.Menu.MenuQueryModel
 @inject IAuthHelper _authHelper
 
 <div class="header-area header-sticky">
-<div class="container">
+<div class="container wide">
 <div class="row">
 <div class="col-lg-12">
 <div class="header-wrapper d-none d-lg-flex">
@@ -65,18 +64,37 @@
 
     <div class="header-icon-wrapper">
         <ul class="icon-list">
+
+            @if (_authHelper.IsAuthenticated())
+            {
+            <li>
+                @(_authHelper.GetCurrentAccount().Fullname) خوش آمدید.
+            </li>
+            }
+
             <li>
                 <a href="javascript:void(0)" id="search-overlay-trigger">
                     <i class="ion-ios-search-strong"></i>
                 </a>
             </li>
 
-            @if (_authHelper.IsAuthenticated())
-            {
-                <li>
-                    خوش آمدید @(_authHelper.GetCurrentAccount().Fullname)
-                </li>
-            }
+            <li>
+                <div class="header-cart-icon">
+                    <a href="#" id="minicart-trigger">
+                        <i class="ion-bag"></i>
+                        <span class="counter" id="cart_item_count_desktop"></span>
+                    </a>
+                    <!-- mini cart  -->
+                    <div class="mini-cart" id="mini-cart">
+                        <div class="cart-items-wrapper ps-scroll" id="cart_items">
+
+                        </div>
+                        <div class="cart-buttons">
+                            <a asp-page="./Cart">مشاهده سبد خرید</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
 
             <li>
                 <div class="header-settings-icon">
@@ -138,9 +156,9 @@
                     <ul class="icon-list justify-content-end">
                         <li>
                             <div class="header-cart-icon">
-                                <a href="cart.html">
+                                <a asp-page="./Cart">
                                     <i class="ion-bag"></i>
-                                    <span class="counter">3</span>
+                                    <span class="counter" id="cart_item_count_Mob"></span>
                                 </a>
                             </div>
                         </li>
