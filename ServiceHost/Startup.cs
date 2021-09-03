@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using _01_Framework.Application;
+using _01_Framework.Application.ZarinPal;
 using _01_Framework.Infrastructure;
 using _01_PedikalaQuery.Configuration;
 using AccountManagement.Configuration;
@@ -50,6 +51,7 @@ namespace ServiceHost
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic)
             );
             services.AddSingleton<IPermissionExposer, AdminPermissionExposer>();
+            services.AddSingleton<IZarinPalService, _01_Framework.Application.ZarinPal.ZarinPalService>();
 
             services.AddHttpContextAccessor();
             services.Configure<CookiePolicyOptions>(options =>

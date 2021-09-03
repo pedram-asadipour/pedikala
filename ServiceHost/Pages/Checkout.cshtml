@@ -97,7 +97,7 @@
                                         <h2>مبلغ نهایی (پرداختی)<span>@Model.Cart.Pay.ToString("##,###") تومان</span></h2>
                                     </div>
                                     <div class="cart-summary-button">
-                                        <button class="checkout-btn">پرداخت</button>
+                                        <a asp-page-handler="GoToPay" class="checkout-btn">پرداخت</a>
                                     </div>
                                 </div>
                             </div>

@@ -4,6 +4,7 @@ using System.Linq;
 using _01_Framework.Domain;
 using _01_Framework.Infrastructure;
 using _01_Framework.Tools;
+using AccountManagement.Infrastructure.EFCore;
 using InventoryManagement.Application.Contract.Inventory;
 using InventoryManagement.Domain.InventoryAgg;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +16,13 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
     {
         private readonly InventoryContext _context;
         private readonly ShopContext _shopContext;
+        private readonly AccountContext _accountContext;
 
-        public InventoryRepository(InventoryContext context, ShopContext shopContext) : base(context)
+        public InventoryRepository(InventoryContext context, ShopContext shopContext, AccountContext accountContext) : base(context)
         {
             _context = context;
             _shopContext = shopContext;
+            _accountContext = accountContext;
         }
 
         public List<InventoryViewModel> GetAll(InventorySearchModel searchModel)
@@ -63,14 +66,17 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 .AsNoTracking()
                 .FirstOrDefault(x => x.Id == inventoryId);
 
-            return inventory?.Operations
+            var accounts = _accountContext.Accounts
+                .Select(x => new {x.Id, x.Username})
+                .ToList();
+
+            var query = inventory?.Operations
                 .Select(x => new InventoryOperationViewModel
                 {
                     Id = x.Id,
                     OperationType = x.OperationType,
                     Count = x.Count,
                     OperatorId = x.OperatorId,
-                    OperatorName = "مدیر سیستم",
                     OperationDate = x.OperationDate.ToPersianDate(),
                     CurrentCount = x.CurrentCount,
                     Description = x.Description,
@@ -78,6 +84,13 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 })
                 .OrderByDescending(x => x.Id)
                 .ToList();
+
+            query?.ForEach(x =>
+            {
+                x.OperatorName = accounts.FirstOrDefault(account => x.OperatorId == account.Id)?.Username;
+            });
+
+            return query;
         }
 
         public EditInventory GetDetail(long id)

@@ -21,5 +21,17 @@ namespace InventoryManagement.Application.Contract.Inventory
         public string Description { get; set; }
 
         public long OrderId { get; set; }
+
+        public ReduceInventory()
+        {
+        }
+
+        public ReduceInventory(long productId, int count, string description, long orderId)
+        {
+            ProductId = productId;
+            Count = count;
+            Description = description;
+            OrderId = orderId;
+        }
     }
 }

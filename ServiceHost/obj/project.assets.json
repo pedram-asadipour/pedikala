@@ -568,11 +568,11 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.8": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.8"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.9"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
@@ -1044,6 +1044,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "RestSharp/106.12.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -2707,7 +2716,8 @@
           "Microsoft.AspNetCore.Http.Features": "5.0.8",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "RestSharp": "106.12.0"
         },
         "compile": {
           "bin/placeholder/01_Framework.dll": {}
@@ -2941,8 +2951,8 @@
           "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "CommentManagement.Application.Contract": "1.0.0",
           "CommentManagement.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "compile": {
@@ -3014,8 +3024,8 @@
         "dependencies": {
           "01_Framework": "1.0.0",
           "DiscountManagement.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "compile": {
@@ -3085,9 +3095,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.Infrastructure.EFCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "compile": {
@@ -3130,7 +3141,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "ShopManagement.Application": "1.0.0",
           "ShopManagement.Domain": "1.0.0",
-          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+          "ShopManagement.Infrastructure.EFCore": "1.0.0",
+          "ShopManagement.Infrastructure.Inventory.ACL": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopManagement.Configuration.dll": {}
@@ -3157,8 +3169,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "ShopManagement.Domain": "1.0.0"
         },
         "compile": {
@@ -3166,6 +3178,20 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.Inventory.ACL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "InventoryManagement.Application.Contract": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.Inventory.ACL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.Inventory.ACL.dll": {}
         }
       }
     }
@@ -3795,17 +3821,17 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.8": {
-      "sha512": "kQbUHiJDqIm+LdY7SS/fm/W/eHCXUJjAJhMvTzSGtPuFGBN4S+RKfs8FiXXk0WKWxmDjXo4Dck4WDJLCXdv/Sw==",
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.9": {
+      "sha512": "WGKYDApx75QRQ8LecGoPi5tvwHM8CvHz383U4c9zfW2Pjz+yUNUL4XAzLRlkg9QyE7USGk4VnAVNS0sTXK4qVQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.8",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.5.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -4483,6 +4509,22 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "RestSharp/106.12.0": {
+      "sha512": "irOsQHe5nTJB0BKxGQnTX1dsgCPl5dLTxvL7gbl98JiFPiHMN4wpFyUG/66ZpaFCsIrPKh6XwozWXlwYe9JwYQ==",
+      "type": "package",
+      "path": "restsharp/106.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.12.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -9259,6 +9301,11 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj"
+    },
+    "ShopManagement.Infrastructure.Inventory.ACL/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.Inventory.ACL/ShopManagement.Infrastructure.Inventory.ACL.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.Inventory.ACL/ShopManagement.Infrastructure.Inventory.ACL.csproj"
     }
   },
   "projectFileDependencyGroups": {

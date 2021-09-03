@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using _01_Framework.Domain;
@@ -13,6 +14,16 @@ namespace _01_Framework.Infrastructure
         public GenericRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public List<TEntity> GetAll(Func<TEntity, object> select)
+        {
+            IQueryable<TEntity> query = _dbContext.Set<TEntity>();
+
+            if (select != null)
+                query.Select(select);
+
+            return query.ToList();
         }
 
         public TEntity GetBy(TKey entity)
@@ -33,6 +44,11 @@ namespace _01_Framework.Infrastructure
         public void Edit(TEntity entity)
         {
             _dbContext.Update<TEntity>(entity);
+        }
+
+        public void Delete(TEntity entity)
+        {
+            _dbContext.Remove<TEntity>(entity);
         }
 
         public void SaveChange()

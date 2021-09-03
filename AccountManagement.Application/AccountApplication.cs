@@ -123,7 +123,7 @@ namespace AccountManagement.Application
                 .Select(x => x.Permission)
                 .ToList();
 
-            var result = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name,permissions);
+            var result = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name,account.Mobile,permissions);
 
             _authHelper.Login(result);
 

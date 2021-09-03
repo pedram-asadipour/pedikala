@@ -9,10 +9,12 @@ namespace InventoryManagement.Application
     public class InventoryApplication : IInventoryApplication
     {
         private readonly IInventoryRepository _repository;
+        private readonly IAuthHelper _authHelper;
 
-        public InventoryApplication(IInventoryRepository repository)
+        public InventoryApplication(IInventoryRepository repository, IAuthHelper authHelper)
         {
             _repository = repository;
+            _authHelper = authHelper;
         }
 
         public List<InventoryViewModel> GetAll(InventorySearchModel searchModel)
@@ -94,7 +96,7 @@ namespace InventoryManagement.Application
             if (command.Count > inventory.CalculationCurrentCount())
                 return operationResult.Failed(ApplicationMessages.CurrentCount);
 
-            const long operatorId = 1;
+            var operatorId = _authHelper.GetCurrentAccount().AccountId;
 
             inventory.Reduce(command.Count, operatorId, command.Description,command.OrderId, command.InventoryId);
 
@@ -106,14 +108,15 @@ namespace InventoryManagement.Application
         public OperationResult Reduce(List<ReduceInventory> command)
         {
             var operationResult = new OperationResult();
-            const long operatorId = 1;
+            var operatorId = _authHelper.GetCurrentAccount().AccountId;
+            var inventories = _repository.GetAll(x => new {x.ProductId});
 
             foreach (var item in command)
             {
                 try
                 {
-                    var inventory = _repository.GetBy(item.InventoryId);
-                    inventory.Reduce(item.Count,operatorId,item.Description,item.OrderId,item.InventoryId);
+                    var inventory = inventories.Find(x => x.ProductId == item.ProductId);
+                    inventory?.Reduce(item.Count, operatorId, item.Description, item.OrderId, item.InventoryId);
                 }
                 catch
                 {

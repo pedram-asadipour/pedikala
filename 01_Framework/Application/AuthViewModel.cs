@@ -9,6 +9,7 @@ namespace _01_Framework.Application
         public string Username { get; private set; }
         public long RoleId { get; private set; }
         public string RoleName { get; private set; }
+        public string Mobile { get; private set; }
         public List<string> Permissions { get; set; }
 
         public AuthViewModel()
@@ -16,13 +17,14 @@ namespace _01_Framework.Application
             Permissions = new List<string>();
         }
 
-        public AuthViewModel(long accountId,string fullname, string username, long roleId, string roleName, List<string> permissions)
+        public AuthViewModel(long accountId,string fullname, string username, long roleId, string roleName,string mobile, List<string> permissions)
         {
             AccountId = accountId;
             Fullname = fullname;
             Username = username;
             RoleId = roleId;
             RoleName = roleName;
+            Mobile = mobile;
             Permissions = permissions;
         }
     }

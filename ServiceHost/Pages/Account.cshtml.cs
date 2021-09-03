@@ -13,7 +13,6 @@ namespace ServiceHost.Pages
         [ViewData] public bool StatusMessage { get; set; }
         [ViewData] public string ResultMessage { get; set; }
 
-
         private readonly IAccountApplication _application;
 
         public AccountModel(IAccountApplication application)
@@ -54,7 +53,7 @@ namespace ServiceHost.Pages
 
             StatusMessage = json.IsSucceeded;
             ResultMessage = json.Message;
-
+            
             return json.IsSucceeded ? Redirect("./") : Page();
         }
     }
