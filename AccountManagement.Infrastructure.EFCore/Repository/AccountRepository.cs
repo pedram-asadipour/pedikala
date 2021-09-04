@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _01_Framework.Application;
 using _01_Framework.Infrastructure;
 using _01_Framework.Tools;
 using AccountManagement.Application.Contract.Account;
@@ -44,6 +45,18 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             query = query.AsNoTracking();
 
             return query.ToList();
+        }
+
+        public List<SelectModel> GetAllSelectModel()
+        {
+            return _context.Accounts
+                .Select(x => new SelectModel
+                {
+                    Id = x.Id,
+                    Name = x.Username
+                })
+                .AsNoTracking()
+                .ToList();
         }
 
         public EditAccount GetDetail(long id)

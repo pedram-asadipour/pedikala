@@ -1,0 +1,54 @@
+﻿@using ShopManagement.Configuration.Permission
+@model List<ShopManagement.Application.Contract.Order.OrderItemViewModel>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ریز فاکتور (@Model.Count)</h4>
+</div>
+<div class="row" permission="@ShopPermissions.OrderItems">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center table-responsive">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>نام محصول</th>
+                                    <th>قیمت واحد</th>
+                                    <th>تعداد</th>
+                                    <th>جمع مبلغ بدون تخفیف</th>
+                                    <th>درصد تخفیف</th>
+                                    <th>مبلغ تخفیف</th>
+                                    <th>مبلغ پرداختی</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.UnitPrice</td>
+                                    <td>@item.Count</td>
+                                    <td>@item.TotalPrice</td>
+                                    <td>@item.DiscountRate%</td>
+                                    <td>@item.DiscountPrice</td>
+                                    <td>@item.Pay</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+</div>

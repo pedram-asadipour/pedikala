@@ -84,6 +84,7 @@ $(document).ready(function() {
     SetSelect2("SearchModel_CategoryId");
     SetSelect2("SearchModel_ProductId");
     SetSelect2("Command_CategoryId");
+    SetSelect2("SearchModel_AccountId");
     SetTagInput();
     SetPersianDatePicker();
 

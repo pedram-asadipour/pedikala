@@ -38,6 +38,15 @@ namespace ShopManagement.Configuration.Permission
                         new PermissionDto(ShopPermissions.RemoveRestoreProductPicture,"حذف و بازیابی تصویر محصول"),
                     }
                 },
+                {
+                    "Order (فاکتور سفارشات)", new List<PermissionDto>()
+                    {
+                        new PermissionDto(ShopPermissions.Orders,"مدیریت فاکتور سفارشات"),
+                        new PermissionDto(ShopPermissions.SearchOrders,"جست و جو در فاکتور سفارشات"),
+                        new PermissionDto(ShopPermissions.OrderProcess,"پردازش سفارش"),
+                        new PermissionDto(ShopPermissions.OrderItems,"ریز فاکتور سفارشات")
+                    }
+                },
             };
         }
     }

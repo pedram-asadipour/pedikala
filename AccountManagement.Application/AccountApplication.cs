@@ -29,6 +29,11 @@ namespace AccountManagement.Application
             return _repository.GetAll(searchModel);
         }
 
+        public List<SelectModel> GetAllSelectModel()
+        {
+            return _repository.GetAllSelectModel();
+        }
+
         public EditAccount GetDetail(long id)
         {
             return _repository.GetDetail(id);

@@ -1,4 +1,5 @@
-﻿using _01_Framework.Application;
+﻿using System.Collections.Generic;
+using _01_Framework.Application;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contract.Order;
 using ShopManagement.Domain.OrderAgg;
@@ -19,6 +20,31 @@ namespace ShopManagement.Application
             _authHelper = authHelper;
             _configuration = configuration;
             _inventoryAcl = inventoryAcl;
+        }
+
+        public List<OrderViewModel> GetAll(OrderSearchModel searchModel)
+        {
+            return _repository.GetAll(searchModel);
+        }
+
+        public List<OrderItemViewModel> GetAllOrderItems(long orderId)
+        {
+            return _repository.GetAllOrderItems(orderId);
+        }
+
+        public OperationResult Process(long orderId)
+        {
+            var operationResult = new OperationResult();
+            var order = _repository.GetBy(orderId);
+
+            if (order == null)
+                return operationResult.Failed(ApplicationMessages.NotFound);
+
+            order.Process();
+
+            _repository.SaveChange();
+
+            return operationResult.Succeeded();
         }
 
         public long PlaceOrder(Cart cart)

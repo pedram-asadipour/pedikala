@@ -10,7 +10,7 @@ namespace _01_Framework.Domain
         //     Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, 
         //     Expression<Func<TEntity, IProperty>> includes = null);
 
-        List<TEntity> GetAll(Func<TEntity, object> select);
+        List<TEntity> GetAll(Func<TEntity, object> select = null);
         TEntity GetBy(TKey entity);
         bool Exists(Expression<Func<TEntity, bool>> expression);
         void Create(TEntity entity);

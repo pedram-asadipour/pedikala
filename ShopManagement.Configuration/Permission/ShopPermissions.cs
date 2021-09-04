@@ -30,5 +30,14 @@
         public const string RemoveRestoreProductPicture = "permission.productPicture.remove_restore";
 
         #endregion
+
+        #region Order
+
+        public const string Orders = "permission.orders";
+        public const string SearchOrders = "permission.orders.search";
+        public const string OrderProcess = "permission.orders.process";
+        public const string OrderItems = "permission.orders.items";
+
+        #endregion
     }
 }

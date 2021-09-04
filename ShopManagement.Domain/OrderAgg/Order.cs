@@ -10,7 +10,7 @@ namespace ShopManagement.Domain.OrderAgg
         public double PayAmount { get; private set; }
         public double DiscountAmount { get; private set; }
         public bool IsPaid { get; private set; }
-        public bool IsCancel { get; private set; }
+        public bool IsProcessing { get; private set; }
         public string IssueTrackingNo { get; private set; }
         public long RefId { get; private set; }
         public List<OrderItem> Items { get; private set; }
@@ -27,7 +27,7 @@ namespace ShopManagement.Domain.OrderAgg
             PayAmount = payAmount;
             DiscountAmount = discountAmount;
             IsPaid = false;
-            IsCancel = false;
+            IsProcessing = false;
             Items = new List<OrderItem>();
         }
 
@@ -38,9 +38,9 @@ namespace ShopManagement.Domain.OrderAgg
             IssueTrackingNo = issueTrackingNo;
         }
 
-        public void Canceled()
+        public void Process()
         {
-            IsCancel = true;
+            IsProcessing = true;
         }
 
         public void AddItem(OrderItem item)

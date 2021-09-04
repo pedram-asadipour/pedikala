@@ -6,6 +6,7 @@ namespace AccountManagement.Application.Contract.Account
     public interface IAccountApplication
     {
         List<AccountViewModel> GetAll(AccountSearchModel searchModel);
+        List<SelectModel> GetAllSelectModel();
         EditAccount GetDetail(long id);
         OperationResult Register(RegisterAccount command);
         OperationResult Edit(EditAccount command);

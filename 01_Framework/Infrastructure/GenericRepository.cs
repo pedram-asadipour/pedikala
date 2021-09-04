@@ -16,9 +16,9 @@ namespace _01_Framework.Infrastructure
             _dbContext = dbContext;
         }
 
-        public List<TEntity> GetAll(Func<TEntity, object> select)
+        public List<TEntity> GetAll(Func<TEntity, object> select = null)
         {
-            IQueryable<TEntity> query = _dbContext.Set<TEntity>();
+            var query = _dbContext.Set<TEntity>();
 
             if (select != null)
                 query.Select(select);
