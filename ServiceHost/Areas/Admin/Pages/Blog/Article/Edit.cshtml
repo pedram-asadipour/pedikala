@@ -96,7 +96,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="Command.ShortDescription" class="control-label"></label>
-                                <textarea asp-for="Command.ShortDescription" class="form-control"></textarea>
+                                <textarea asp-for="Command.ShortDescription" class="form-control" rows="8"></textarea>
                                 <span asp-validation-for="Command.ShortDescription" class="error"></span>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="Command.MetaDescription" class="control-label"></label>
-                                <textarea asp-for="Command.MetaDescription" class="form-control"></textarea>
+                                <textarea asp-for="Command.MetaDescription" class="form-control" rows="8"></textarea>
                                 <span asp-validation-for="Command.MetaDescription" class="error"></span>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label asp-for="Command.Description" class="control-label"></label>
-                                <textarea asp-for="Command.Description" class="form-control Validation-Error-Fix"></textarea>
+                                <textarea asp-for="Command.Description" class="form-control editor"></textarea>
                                 <span asp-validation-for="Command.Description" class="error"></span>
                             </div>
                         </div>
@@ -147,9 +147,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 @section Meta
@@ -187,16 +184,87 @@
     <script src="~/lib/persian-datepicker/persian-date.min.js"></script>
     <script src="~/lib/persian-datepicker/persian-datepicker.min.js"></script>
 
-    <!--Tiny Editor-->
-    <script src="~/lib/ckeditor/ckeditor.js" referrerpolicy="origin"></script>
+    <!--CKEditor-->
+    <script src="~/lib/ckeditor5/build/ckeditor.js"></script>
 
     <!-- Custom Site Script -->
     <script src="~/AdminTheme/js/site.js"></script>
 
     <script>
-        CKEDITOR.replace('Comment_Description',
-            {
-                language: "fa"
-            });
+        $(document).ready(function() {
+
+            ClassicEditor
+                .create(document.querySelector('.editor'),
+                    {
+                        ckfinder: {
+                            uploadUrl: '/UploadImage'
+                        },
+                        toolbar: {
+                            items: [
+                                'undo',
+                                'redo',
+                                '|',
+                                'heading',
+                                '|',
+                                'bold',
+                                'italic',
+                                'link',
+                                'bulletedList',
+                                'numberedList',
+                                '|',
+                                'outdent',
+                                'indent',
+                                '|',
+                                'blockQuote',
+                                'imageInsert',
+                                'insertTable',
+                                'mediaEmbed',
+                                'exportPdf',
+                                '|',
+                                'alignment',
+                                'code',
+                                'fontBackgroundColor',
+                                'fontColor',
+                                'fontFamily',
+                                'findAndReplace',
+                                'fontSize',
+                                'highlight'
+                            ]
+                        },
+                        language: 'fa',
+                        image: {
+                            toolbar: [
+                                'imageTextAlternative',
+                                'imageStyle:inline',
+                                'imageStyle:block',
+                                'imageStyle:side',
+                                'linkImage'
+                            ]
+                        },
+                        table: {
+                            contentToolbar: [
+                                'tableColumn',
+                                'tableRow',
+                                'mergeTableCells'
+                            ]
+                        },
+                        licenseKey: '',
+
+
+                    })
+                .then(editor => {
+                    window.editor = editor;
+
+
+                })
+                .catch(error => {
+                    console.error('Oops, something went wrong!');
+                    console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+                    console.warn('Build id: n4xiz3ja5y7b-jo6zodgmztuf');
+                    console.error(error);
+                });
+
+
+        });
     </script>
 }
