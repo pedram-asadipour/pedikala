@@ -73,6 +73,19 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 .FirstOrDefault(x => x.Id == id);
         }
 
+        public EditCurrentAccount GetDetailCurrentAccount(long id)
+        {
+            return _context.Accounts
+                .Select(x => new EditCurrentAccount
+                {
+                    Id = x.Id,
+                    Fullname = x.Fullname,
+                    Username = x.Username,
+                    Mobile = x.Mobile
+                })
+                .FirstOrDefault(x => x.Id == id);
+        }
+
         public Account GetAccountBy(string username)
         {
             return _context.Accounts

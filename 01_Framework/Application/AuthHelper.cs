@@ -30,6 +30,8 @@ namespace _01_Framework.Application
                 new Claim(ClaimTypes.Role,account.RoleId.ToString()),
                 new Claim("RoleName",account.RoleName),
                 new Claim(ClaimTypes.MobilePhone,account.Mobile),
+                new Claim("Profile" , account.Profile),
+                new Claim( "CreationDate" , account.CreationDate),
                 new Claim("Permissions",permissions)
             };
 
@@ -69,9 +71,11 @@ namespace _01_Framework.Application
             var roleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value);
             var roleName = claims.FirstOrDefault(x => x.Type == "RoleName")?.Value;
             var mobile = claims.FirstOrDefault(x => x.Type == ClaimTypes.MobilePhone)?.Value;
+            var profile = claims.FirstOrDefault(x => x.Type == "Profile")?.Value;
+            var creationDate = claims.FirstOrDefault(x => x.Type == "CreationDate")?.Value;
             var permissions = JsonConvert.DeserializeObject<List<string>>(claims.FirstOrDefault(x => x.Type == "Permissions")?.Value);
 
-            var result = new AuthViewModel(accountId, fullname,username,roleId,roleName,mobile,permissions);
+            var result = new AuthViewModel(accountId, fullname,username,roleId,roleName,mobile,profile,creationDate,permissions);
 
             return result;
         }

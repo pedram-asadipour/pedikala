@@ -83,7 +83,14 @@
         <div class="sidebar-inner slimscrollleft">
             <div class="user-details">
                 <div class="pull-right">
-                    <img src="~/AdminTheme/img/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+                    @if (currentAccount.Profile == "default")
+                    {
+                        <img class="img-circle thumb-md" src="~/MainTheme/img/user-profile.png" alt="profile">
+                    }
+                    else
+                    {
+                        <img class="img-circle thumb-md" src="~/Uploads/@currentAccount.Profile" alt="profile">
+                    }
                 </div>
                 <div class="user-info">
                     <div class="dropdown">
@@ -92,7 +99,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="javascript:void(0)">پروفال <i class="md md-face-unlock"></i></a>
+                                <a asp-page="/Account/Dashboard">پروفال <i class="md md-face-unlock"></i></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">تنظیمات <i class="md md-settings"></i></a>
@@ -120,11 +127,16 @@
                         </a>
                     </li>
 
+                    <li permission="@ShopPermissions.Orders">
+                        <a asp-page="/Shop/Order/Index" class="waves-effect">
+                            <i class="md md-assessment"></i><span>فاکتور سفارشات</span>
+                        </a>
+                    </li>
+
                     <li class="has_sub" permissions="@(new List<string>(){
                                                          ShopPermissions.Product,
                                                          ShopPermissions.ProductCategory,
-                                                         ShopPermissions.ProductPicture, 
-                                                         ShopPermissions.Orders
+                                                         ShopPermissions.ProductPicture
                                                      })">
                         <a href="#" class="waves-effect">
                             <i class="md md-shopping-cart"></i><span>مدیریت فروشگاه</span>
@@ -141,9 +153,6 @@
                             </li>
                             <li permission="@ShopPermissions.ProductPicture">
                                 <a asp-page="/Shop/ProductPicture/Index">تصاویر محصولات</a>
-                            </li>
-                            <li permission="@ShopPermissions.Orders">
-                                <a asp-page="/Shop/Order/Index">فاکتور سفارشات</a>
                             </li>
                         </ul>
                     </li>
@@ -238,7 +247,7 @@
 
 
                     <li>
-                        <a asp-page="/Account"
+                        <a asp-page="/Account/Index"
                            asp-page-handler="SignOut" class="waves-effect">
                             <i class="md md-exit-to-app"></i><span>خروج</span>
                         </a>

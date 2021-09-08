@@ -83,7 +83,10 @@ namespace ServiceHost
 
             services.AddQueryConfigure();
             services.AddRazorPages()
-                .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
+                .AddMvcOptions(options => {
+                    options.Filters.Add<SecurityPageFilter>();
+                    options.Filters.Add<CheckUserAuthenticationPageFilter>();
+                })
                 .AddRazorPagesOptions(options => { options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin"); });
         }
 

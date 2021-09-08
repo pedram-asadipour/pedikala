@@ -1,0 +1,133 @@
+﻿@page
+@model ServiceHost.Pages.Account.EditAccountModel
+@{
+    ViewData["Title"] = "ویرایش حساب";
+    ViewData["MetaDescription"] = "ویرایش حساب";
+    ViewData["KeyWord"] = "ویرایش حساب";
+}
+
+
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-wrapper">
+                    <img class="breadcrumb-img" src="/MainTheme/img/backgrounds/default.jpg" alt="pattern" title="pattern"/>
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-content__title">ویرایش حساب</h2>
+                        <ul class="breadcrumb-content__page-map">
+                            <li>
+                                <a asp-page="../">صفحه اصلی</a>
+                            </li>
+                            <li class="active">ویرایش حساب</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-content-area mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-wrapper">
+                    <div class="page-content-wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4">
+
+                                <div class="list-group list-group-flush login-form">
+
+                                    <partial name="UserLinkLIst" model="@Model.Account"/>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-sm-12 col-md-12 col-lg-8 col-xs-12">
+                                <form asp-page-handler="EditAccount" method="post" enctype="multipart/form-data">
+
+                                    <div class="login-form">
+                                        <h4 class="login-title">ویرایش حساب</h4>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Command.Fullname"></label>
+                                                <input asp-for="Command.Fullname">
+                                                <span asp-validation-for="Command.Fullname" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label asp-for="Command.Username"></label>
+                                                <input asp-for="Command.Username" class="ltr">
+                                                <span asp-validation-for="Command.Username" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-12 col-12 mb-20">
+                                                <label asp-for="Command.Mobile"></label>
+                                                <input asp-for="Command.Mobile" class="ltr">
+                                                <span asp-validation-for="Command.Mobile" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-md-12 col-12 mb-20">
+                                                <label asp-for="Command.ProfileImage"></label>
+                                                <input asp-for="Command.ProfileImage" accept="image/*">
+                                                <span asp-validation-for="Command.ProfileImage" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="register-button mt-0">ویرایش</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Meta
+{
+    <link rel="stylesheet" href="~/lib/sweet-alert/sweet-alert.min.css"/>
+}
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    @if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+    {
+        @if (Model.StatusMessage)
+        {
+            <script>
+                swal("عملیات با موفقیت انجام شد", "@Model.ResultMessage", "success");
+
+                setTimeout(function() {
+                    location.assign('../Account?handler=SignOut');
+                    },
+                    3000);
+            </script>
+        }
+        else
+        {
+            <script>
+                swal("خطا", "@Model.ResultMessage", "error")
+            </script>
+        }
+    }
+}

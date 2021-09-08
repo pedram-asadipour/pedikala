@@ -3,6 +3,7 @@ using _01_PedikalaQuery.Contract.ArticleCategory;
 using _01_PedikalaQuery.Contract.Cart;
 using _01_PedikalaQuery.Contract.Inventory;
 using _01_PedikalaQuery.Contract.Menu;
+using _01_PedikalaQuery.Contract.Order;
 using _01_PedikalaQuery.Contract.Product;
 using _01_PedikalaQuery.Contract.ProductCategory;
 using _01_PedikalaQuery.Query;
@@ -53,6 +54,12 @@ namespace _01_PedikalaQuery.Configuration
             #region Cart
 
             services.AddScoped<ICartQuery, CartQuery>();
+
+            #endregion
+
+            #region Order
+
+            services.AddScoped<IOrderQuery, OrderQuery>();
 
             #endregion
         }

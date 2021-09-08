@@ -6,7 +6,6 @@ namespace AccountManagement.Application.Contract.Account
 {
     public class ChangePasswordAccount
     {
-        [Range(1,int.MaxValue,ErrorMessage = ValidationMessages.IsRequired)]
         public long Id { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

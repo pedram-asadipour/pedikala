@@ -1,0 +1,40 @@
+﻿@model _01_Framework.Application.AuthViewModel
+
+
+<div class="row mb-5 text-center">
+    <div class="col-12 mb-4">
+        @if (Model.Profile == "default")
+        {
+            <img class="rounded-circle w-50" src="~/MainTheme/img/user-profile.png" alt="profile">
+        }
+        else
+        {
+            <img class="rounded-circle" src="~/Uploads/@Model.Profile" alt="profile">
+        }
+    </div>
+    <div class="col-12">
+        <span class="h5">کاربر : @Model.Fullname </span>
+    </div>
+</div>
+
+<a asp-page="/Account/Dashboard" class="list-group-item  list-group-item-action h5">
+    مشخصات کاربر
+</a>
+
+<a asp-page="/Account/EditAccount"class="list-group-item  list-group-item-action h5">
+    ویرایش حساب
+</a>
+
+<a asp-page="/Account/ChangePassword" class="list-group-item  list-group-item-action h5">
+    ویرایش رمز عبور
+</a>
+
+<a asp-page="/Account/Order" class="list-group-item  list-group-item-action h5">
+    سفارشات
+</a>
+
+<a asp-page="/Account/Index"
+   asp-page-handler="SignOut"
+   class="list-group-item  list-group-item-action h5">
+    خروج
+</a>

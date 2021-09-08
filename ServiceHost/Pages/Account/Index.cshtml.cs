@@ -1,10 +1,9 @@
-using System.Linq;
 using _01_Framework.Application;
 using AccountManagement.Application.Contract.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceHost.Pages
+namespace ServiceHost.Pages.Account
 {
     public class AccountModel : PageModel
     {
@@ -20,6 +19,7 @@ namespace ServiceHost.Pages
             _application = application;
         }
 
+        [UserAuthentication("/Account/Dashboard")]
         public void OnGet()
         {
         }
@@ -30,11 +30,16 @@ namespace ServiceHost.Pages
             return Redirect("./");
         }
 
-
+        [UserAuthentication("/Account/Dashboard")]
         public IActionResult OnPostRegister(RegisterAccount register,string returnUrl)
         {
             if (!ModelState.IsValid)
-                return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
+            {
+                StatusMessage = false;
+                ResultMessage = ValidationMessages.AllRequired;
+
+                return Page();
+            }
 
             var json = _application.Register(register);
 
@@ -44,10 +49,16 @@ namespace ServiceHost.Pages
             return Page();
         }
 
+        [UserAuthentication("/Account/Dashboard")]
         public IActionResult OnPostLogIn(LogInAccount logIn)
         {
             if (!ModelState.IsValid)
-                return new JsonResult(new OperationResult().Failed(ValidationMessages.AllRequired));
+            {
+                StatusMessage = false;
+                ResultMessage = ValidationMessages.AllRequired;
+
+                return Page();
+            }
 
             var json = _application.LogIn(logIn);
 

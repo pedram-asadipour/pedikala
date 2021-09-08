@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Application;
+using _01_Framework.Tools;
 using AccountManagement.Application.Contract.Account;
 using AccountManagement.Domain.AccountAgg;
 using AccountManagement.Domain.RoleAgg;
@@ -37,6 +38,11 @@ namespace AccountManagement.Application
         public EditAccount GetDetail(long id)
         {
             return _repository.GetDetail(id);
+        }
+
+        public EditCurrentAccount GetDetailCurrentAccount(long id)
+        {
+            return _repository.GetDetailCurrentAccount(id);
         }
 
         public OperationResult Register(RegisterAccount command)
@@ -88,6 +94,32 @@ namespace AccountManagement.Application
             return operationResult.Succeeded();
         }
 
+        public OperationResult EditCurrentAccount(EditCurrentAccount command)
+        {
+            var operationResult = new OperationResult();
+
+            var account = _repository.GetBy(command.Id);
+
+            if (account == null)
+                return operationResult.Failed(ApplicationMessages.NotFound);
+
+            if (_repository.Exists(x => (x.Username == command.Username || x.Mobile == command.Mobile) && x.Id != command.Id))
+                return operationResult.Failed(ApplicationMessages.Exists + " به نام کاربری و شماره موبایل توجه کنید");
+
+            var profileImage = _fileManager.Uploader(command.ProfileImage, "کاربران");
+
+            if (command.ProfileImage != null)
+                _fileManager.Remove(account.ProfileImage);
+
+            account.Edit(command.Fullname, command.Username, command.Mobile, account.RoleId, profileImage);
+
+            _repository.Edit(account);
+
+            _repository.SaveChange();
+
+            return operationResult.Succeeded();
+        }
+
         public OperationResult ChangePassword(ChangePasswordAccount command)
         {
             var operationResult = new OperationResult();
@@ -96,6 +128,32 @@ namespace AccountManagement.Application
 
             if (account == null)
                 return operationResult.Failed(ApplicationMessages.NotFound);
+
+            if (command.NewPassword != command.RePassword)
+                return operationResult.Failed(ApplicationMessages.PasswordNotMatch);
+
+            var password = _passwordHasher.Hash(command.NewPassword);
+
+            account.ChangePassword(password);
+
+            _repository.SaveChange();
+
+            return operationResult.Succeeded();
+        }
+
+        public OperationResult ChangePasswordCurrentAccount(ChangePasswordCurrentAccount command)
+        {
+            var operationResult = new OperationResult();
+
+            var account = _repository.GetBy(command.Id);
+
+            if (account == null)
+                return operationResult.Failed(ApplicationMessages.NotFound);
+
+            var passwordResult = _passwordHasher.Check(account.Password, command.CurrentPassword);
+
+            if (!passwordResult.Verified)
+                return operationResult.Failed(ApplicationMessages.PasswordIdentity);
 
             if (command.NewPassword != command.RePassword)
                 return operationResult.Failed(ApplicationMessages.PasswordNotMatch);
@@ -128,7 +186,7 @@ namespace AccountManagement.Application
                 .Select(x => x.Permission)
                 .ToList();
 
-            var result = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name,account.Mobile,permissions);
+                var result = new AuthViewModel(account.Id, account.Fullname, account.Username, account.RoleId, account.Role.Name,account.Mobile,account.ProfileImage,account.CreationDate.ToPersianDate(),permissions);
 
             _authHelper.Login(result);
 

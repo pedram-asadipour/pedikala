@@ -117,7 +117,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManagement.Configura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManagement.Application", "AccountManagement.Application\AccountManagement.Application.csproj", "{B9F2D341-4686-43C2-8CF5-C221F47DBF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.Inventory.ACL", "ShopManagement.Infrastructure.Inventory.ACL\ShopManagement.Infrastructure.Inventory.ACL.csproj", "{E0DE4430-513C-41D4-A292-F03B7542FA91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Inventory.ACL", "ShopManagement.Infrastructure.Inventory.ACL\ShopManagement.Infrastructure.Inventory.ACL.csproj", "{E0DE4430-513C-41D4-A292-F03B7542FA91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
