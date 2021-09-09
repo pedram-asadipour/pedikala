@@ -4,7 +4,6 @@ using System.Linq;
 using _01_Framework.Tools;
 using _01_PedikalaQuery.Contract.Article;
 using _01_PedikalaQuery.Contract.ArticleComment;
-using _01_PedikalaQuery.Contract.ProductComment;
 using BlogManagement.Infrastructure.EFCore;
 using CommentManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
@@ -63,7 +62,7 @@ namespace _01_PedikalaQuery.Query
             return articleQuery;
         }
 
-        public List<ArticleMiniWrapQueryModel> GetLastArticles()
+        public List<ArticleMiniWrapQueryModel> GetLastArticlesMini()
         {
             return _context.Articles
                 .Where(x => x.PublishDate <= DateTime.Now)
@@ -78,6 +77,27 @@ namespace _01_PedikalaQuery.Query
                 })
                 .Take(5)
                 .AsNoTracking()
+                .OrderByDescending(x => x.Id)
+                .ToList();
+        }
+
+        public List<ArticleWrapQueryModel> GetLastArticles()
+        {
+            return _context.Articles
+                .Where(x => x.PublishDate <= DateTime.Now)
+                .Select(x => new ArticleWrapQueryModel()
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Image = x.Image,
+                    ImageAlt = x.ImageAlt,
+                    ImageTitle = x.ImageTitle,
+                    ShortDescription = x.ShortDescription,
+                    PublishDate = x.PublishDate.ToPersianDate()
+                })
+                .Take(8)
+                .AsNoTracking()
+                .OrderByDescending(x => x.Id)
                 .ToList();
         }
     }

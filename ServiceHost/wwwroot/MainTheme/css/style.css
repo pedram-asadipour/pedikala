@@ -2305,6 +2305,10 @@ select {
     margin-left: -15px !important;
 }
 
+.blog-post-slider-wrapper button.slick-prev.slick-arrow {
+    display: none;
+}
+
 .single-slider-post__image { position: relative; }
 
 .single-slider-post__image a {
@@ -2325,7 +2329,7 @@ select {
     display: -ms-flexbox;
     display: flex;
     flex-direction: column;
-    width: 62px;
+    width: 120px;
     height: 70px;
     text-align: center;
     background: #fff;

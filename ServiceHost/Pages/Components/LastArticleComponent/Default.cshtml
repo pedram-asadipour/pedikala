@@ -1,0 +1,83 @@
+﻿@using _01_Framework.Tools
+@model List<_01_PedikalaQuery.Contract.Article.ArticleWrapQueryModel>
+
+
+<div class="blog-post-slider-area">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-post-slider-border-wrapper section-space--inner">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-wrapper text-center section-space--half">
+                                <h2 class="section-title">اخرین مقالات</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="blog-post-slider-wrapper">
+                                <div class="ht-slick-slider" data-slick-setting='{
+                                    "slidesToShow": 3,
+                                    "slidesToScroll": 1,
+                                    "arrows": true,
+                                    "autoplay": true,
+                                    "autoplaySpeed": 1000,
+                                    "speed": 1000,
+                                    "infinite": true,
+                                    "rtl": true
+                                }' data-slick-responsive='[
+                                    {"breakpoint":1501, "settings": {"slidesToShow": 3} },
+                                    {"breakpoint":1199, "settings": {"slidesToShow": 3} },
+                                    {"breakpoint":991, "settings": {"slidesToShow": 2} },
+                                    {"breakpoint":767, "settings": {"slidesToShow": 1} },
+                                    {"breakpoint":575, "settings": {"slidesToShow": 1} },
+                                    {"breakpoint":479, "settings": {"slidesToShow": 1} }
+                                ]'>
+
+                                    @foreach (var article in Model)
+                                    {
+                                        <div class="col">
+                                            <div class="single-slider-post">
+                                                <div class="single-slider-post__image">
+                                                    <a asp-page="./Article"
+                                                       asp-route-id="@article.Id"
+                                                       asp-route-slug="@article.Title.Sluggish()">
+                                                        <img src="~/Uploads/@article.Image"
+                                                             class="img-fluid"
+                                                             alt="@article.ImageAlt"
+                                                             title="@article.ImageTitle">
+                                                    </a>
+                                                    <div class="single-slider-post__date-sticker">
+                                                        <span class="month">تاریخ انتشار</span>
+                                                        <span class="day">@article.PublishDate</span>
+                                                    </div>
+                                                </div>
+                                                <div class="single-slider-post__content">
+                                                    <h3 class="title">
+                                                        <a href="blog-post-left-sidebar.html">
+                                                            @article.Title
+                                                        </a>
+                                                    </h3>
+                                                    <p class="short-desc">
+                                                        @article.ShortDescription
+                                                    </p>
+                                                    <a asp-page="./Article"
+                                                       asp-route-id="@article.Id"
+                                                       asp-route-slug="@article.Title.Sluggish()"
+                                                       class="blog-post-link">
+                                                        ادامه مطلب...
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

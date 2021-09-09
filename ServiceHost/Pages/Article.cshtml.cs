@@ -39,7 +39,7 @@ namespace ServiceHost.Pages
                 return NotFound();
 
             SimpleCategories = _categoryQuery.GetSimpleCategories();
-            LastArticles = _query.GetLastArticles();
+            LastArticles = _query.GetLastArticlesMini();
 
             return Page();
         }
@@ -80,7 +80,7 @@ namespace ServiceHost.Pages
                 return NotFound();
 
             SimpleCategories = _categoryQuery.GetSimpleCategories();
-            LastArticles = _query.GetLastArticles();
+            LastArticles = _query.GetLastArticlesMini();
 
             return Page();
         }

@@ -32,7 +32,7 @@ namespace ServiceHost.Pages
                 return NotFound();
 
             SimpleCategories = _query.GetSimpleCategories();
-            LastArticles = _articleQuery.GetLastArticles();
+            LastArticles = _articleQuery.GetLastArticlesMini();
 
             return Page();
         }
