@@ -6,5 +6,6 @@ namespace _01_PedikalaQuery.Contract.Product
     {
         ProductQueryModel GetProductBy(long productId);
         List<ProductWrapQueryModel> Search(string search);
+        List<ProductWrapQueryModel> GetProducts();
     }
 }

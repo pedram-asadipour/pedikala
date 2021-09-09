@@ -50,7 +50,7 @@ namespace _01_PedikalaQuery.Query
                     ImageTitle = x.ImageTitle,
                     Keyword = x.Keyword,
                     MetaDescription = x.MetaDescription,
-                    Products = ProductsMapping(x.Products)
+                    Products = ProductsMapping(x.Products,0)
                 })
                 .OrderByDescending(x => x.Id)
                 .AsNoTracking()
@@ -71,7 +71,6 @@ namespace _01_PedikalaQuery.Query
 
             foreach (var product in categoryQuery.Products)
             {
-
                 var currentInventory = inventoryQuery.FirstOrDefault(x => x.ProductId == product.Id);
                 if (currentInventory == null) continue;
 
@@ -81,10 +80,12 @@ namespace _01_PedikalaQuery.Query
                 var currentDiscount = discountQuery.FirstOrDefault(x => x.ProductId == product.Id && !x.IsRemoved);
                 if (currentDiscount == null) continue;
 
-                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
+                product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate,
+                    currentDiscount.EndDate, !currentDiscount.IsRemoved);
                 product.DiscountRate = currentDiscount.DiscountRate;
                 product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
-                product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate,currentInventory.UnitPrice).ToString("##,###");
+                product.DiscountPrice = CurrencyProcess
+                    .GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
             }
 
             return categoryQuery;
@@ -93,23 +94,23 @@ namespace _01_PedikalaQuery.Query
         public List<ProductWithCategoryQueryModel> GetProductsWithCategories()
         {
             var categoryQuery = _shopContext.ProductCategories
-               .Select(x => new ProductWithCategoryQueryModel()
-               {
-                   Id = x.Id,
-                   Name = x.Name,
-                   Products = ProductsMapping(x.Products).Take(6).ToList()
-               })
-               .OrderByDescending(x => x.Id)
-               .AsNoTracking()
-               .ToList();
+                .Select(x => new ProductWithCategoryQueryModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Products = ProductsMapping(x.Products,6)
+                })
+                .OrderByDescending(x => x.Id)
+                .AsNoTracking()
+                .ToList();
 
             var inventoryQuery = _inventoryContext.Inventories
-                .Select(x => new { x.ProductId, x.UnitPrice, x.IsInStock })
+                .Select(x => new {x.ProductId, x.UnitPrice, x.IsInStock})
                 .AsNoTracking()
                 .ToList();
 
             var discountQuery = _discountContext.CustomerDiscounts
-                .Select(x => new { x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved })
+                .Select(x => new {x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved})
                 .AsNoTracking()
                 .ToList();
 
@@ -118,7 +119,6 @@ namespace _01_PedikalaQuery.Query
             {
                 foreach (var product in category.Products)
                 {
-
                     var currentInventory = inventoryQuery.FirstOrDefault(x => x.ProductId == product.Id);
                     if (currentInventory == null) continue;
 
@@ -128,19 +128,21 @@ namespace _01_PedikalaQuery.Query
                     var currentDiscount = discountQuery.FirstOrDefault(x => x.ProductId == product.Id && !x.IsRemoved);
                     if (currentDiscount == null) continue;
 
-                    product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
+                    product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate,
+                        currentDiscount.EndDate, !currentDiscount.IsRemoved);
                     product.DiscountRate = currentDiscount.DiscountRate;
                     product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
-                    product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
+                    product.DiscountPrice = CurrencyProcess
+                        .GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
                 }
             }
 
             return categoryQuery;
         }
 
-        private static List<ProductWrapQueryModel> ProductsMapping(IEnumerable<Product> products)
+        private static List<ProductWrapQueryModel> ProductsMapping(IEnumerable<Product> products, int take)
         {
-            return products
+            var query = products
                 .Where(x => !x.IsRemoved)
                 .Select(x => new ProductWrapQueryModel
                 {
@@ -151,8 +153,9 @@ namespace _01_PedikalaQuery.Query
                     ImageTitle = x.ImageTitle,
                     IsRemoved = x.IsRemoved,
                 })
-                .OrderByDescending(x => x.Id)
-                .ToList();
+                .OrderByDescending(x => x.Id);
+
+            return take != 0 ? query.Take(take).ToList() : query.ToList();
         }
     }
 }
