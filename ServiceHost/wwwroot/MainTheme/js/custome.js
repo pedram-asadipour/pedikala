@@ -1,6 +1,6 @@
 ﻿const cookieName = "cart-items";
 
-function AddProductToCart(id, name, price, image) {
+function AddProductToCart(id, name, price, image,count) {
     let products = $.cookie(cookieName);
 
     if (products === undefined) {
@@ -8,8 +8,6 @@ function AddProductToCart(id, name, price, image) {
     } else {
         products = JSON.parse(products);
     }
-
-    const count = $("#product-count").val();
 
     const currentProduct = products.find(x => x.id === id);
 

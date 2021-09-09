@@ -102,12 +102,9 @@
                                                         </a>
 
                                                         <div class="hover-icons">
-                                                            <a href="javascript:void(0)">
-                                                                <i class="ion-bag"></i>
-                                                            </a>
-                                                            <a href="javascript:void(0)" data-toggle="modal"
-                                                               data-target="#quick-view-modal-container">
-                                                                <i class="ion-android-open"></i>
+                                                            <a href="javascript:void(0)"
+                                                               onclick="AddProductToCart('@product.Id', '@product.Name', '@product.UnitPrice', '@product.Image', 1)">
+                                                                <i class="ion-bag"></i> +
                                                             </a>
                                                         </div>
 
@@ -118,13 +115,6 @@
                                                                 <a asp-page="/Category"
                                                                    asp-route-id="@Model.Category.Id"
                                                                    asp-route-slug="@Model.Category.Name.Sluggish()">@Model.Category.Name</a>
-                                                            </span>
-                                                            <span class="rating">
-                                                                <i class="ion-android-star active"></i>
-                                                                <i class="ion-android-star active"></i>
-                                                                <i class="ion-android-star active"></i>
-                                                                <i class="ion-android-star active"></i>
-                                                                <i class="ion-android-star-outline"></i>
                                                             </span>
                                                         </div>
 
@@ -189,3 +179,8 @@
         </div>
     </div>
 </div>
+
+@section Meta
+{
+    <link rel="stylesheet" href="~/lib/sweet-alert/sweet-alert.min.css" />
+}

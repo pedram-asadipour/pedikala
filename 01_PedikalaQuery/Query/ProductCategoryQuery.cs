@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Tools;
 using _01_PedikalaQuery.Contract.Product;
@@ -8,7 +7,6 @@ using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain.ProductAgg;
-using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Infrastructure.EFCore;
 
 namespace _01_PedikalaQuery.Query
@@ -92,6 +90,54 @@ namespace _01_PedikalaQuery.Query
             return categoryQuery;
         }
 
+        public List<ProductWithCategoryQueryModel> GetProductsWithCategories()
+        {
+            var categoryQuery = _shopContext.ProductCategories
+               .Select(x => new ProductWithCategoryQueryModel()
+               {
+                   Id = x.Id,
+                   Name = x.Name,
+                   Products = ProductsMapping(x.Products).Take(6).ToList()
+               })
+               .OrderByDescending(x => x.Id)
+               .AsNoTracking()
+               .ToList();
+
+            var inventoryQuery = _inventoryContext.Inventories
+                .Select(x => new { x.ProductId, x.UnitPrice, x.IsInStock })
+                .AsNoTracking()
+                .ToList();
+
+            var discountQuery = _discountContext.CustomerDiscounts
+                .Select(x => new { x.ProductId, x.DiscountRate, x.StartDate, x.EndDate, x.IsRemoved })
+                .AsNoTracking()
+                .ToList();
+
+
+            foreach (var category in categoryQuery)
+            {
+                foreach (var product in category.Products)
+                {
+
+                    var currentInventory = inventoryQuery.FirstOrDefault(x => x.ProductId == product.Id);
+                    if (currentInventory == null) continue;
+
+                    product.UnitPrice = currentInventory.UnitPrice.ToString("##,###");
+                    product.IsInStock = currentInventory.IsInStock;
+
+                    var currentDiscount = discountQuery.FirstOrDefault(x => x.ProductId == product.Id && !x.IsRemoved);
+                    if (currentDiscount == null) continue;
+
+                    product.HasDiscount = DiscountOperation.DiscountStatus(currentDiscount.StartDate, currentDiscount.EndDate, !currentDiscount.IsRemoved);
+                    product.DiscountRate = currentDiscount.DiscountRate;
+                    product.DiscountEndDate = currentDiscount.EndDate.ToString("yyyy/MM/dd");
+                    product.DiscountPrice = CurrencyProcess.GetDiscountPrice(currentDiscount.DiscountRate, currentInventory.UnitPrice).ToString("##,###");
+                }
+            }
+
+            return categoryQuery;
+        }
+
         private static List<ProductWrapQueryModel> ProductsMapping(IEnumerable<Product> products)
         {
             return products
@@ -105,6 +151,7 @@ namespace _01_PedikalaQuery.Query
                     ImageTitle = x.ImageTitle,
                     IsRemoved = x.IsRemoved,
                 })
+                .OrderByDescending(x => x.Id)
                 .ToList();
         }
     }
