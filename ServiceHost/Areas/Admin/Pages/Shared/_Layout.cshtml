@@ -3,6 +3,7 @@
 @using BlogManagement.Configuration.Permission
 @using CommentManagement.Configuration.Permission
 @using DiscountManagement.Configuration.Permission
+@using global::Banner.Management.Configuration.Permission
 @using InventoryManagement.Configuration.Permission
 @using ShopManagement.Configuration.Permission
 @inject IAuthHelper _authHelper
@@ -245,6 +246,22 @@
                         </ul>
                     </li>
 
+                    <li class="has_sub" permissions="@(new List<string>() {
+                                                         BannerPermissions.Slider
+
+                                                     })">
+                        <a href="#" class="waves-effect">
+                            <i class="md md-my-library-books"></i><span>مدیریت بنر ها</span>
+                            <span class="pull-left">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li permission="@BannerPermissions.Slider">
+                                <a asp-page="/Banner/Slider/Index">اسلایدر</a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li>
                         <a asp-page="/Account/Index"

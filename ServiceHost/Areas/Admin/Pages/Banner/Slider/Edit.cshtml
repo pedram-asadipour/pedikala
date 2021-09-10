@@ -1,0 +1,105 @@
+﻿@using global::Banner.Management.Configuration.Permission
+@model BannerManagement.ApplicationContract.Slider.EditSlider
+
+<form asp-page="./Index" asp-page-handler="Edit" permission="@BannerPermissions.EditSlider"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">ویرایش سلایدر : @Model.TitleOne </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="TitleOne" class="control-label"></label>
+                    <input asp-for="TitleOne" class="form-control">
+                    <span asp-validation-for="TitleOne" class="error"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="TitleTwo" class="control-label"></label>
+                    <input asp-for="TitleTwo" class="form-control">
+                    <span asp-validation-for="TitleTwo" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" accept="image/*" />
+                <span asp-validation-for="Image" class="error"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ImageTitle" class="control-label"></label>
+                    <input asp-for="ImageTitle" class="form-control">
+                    <span asp-validation-for="ImageTitle" class="error"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ImageAlt" class="control-label"></label>
+                    <input asp-for="ImageAlt" class="form-control">
+                    <span asp-validation-for="ImageAlt" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Link" class="control-label"></label>
+                    <input asp-for="Link" class="form-control ltr">
+                    <span asp-validation-for="Link" class="error"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="LifeTime" class="control-label"></label>
+                    <input asp-for="LifeTime" class="form-control datePickerInput">
+                    <span asp-validation-for="LifeTime" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="error"></span>
+            </div>
+        </div>
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row">
+            <div class="col-12">
+                نکات مهم
+                <ul>
+                    <li>بهترین ابعاد تصویر برای این قسمت (1820x785) می باشد.</li>
+                    <li>Alt , Title تصویر خود را همنام با موضوع عکس انتخاب کنید.</li>
+                    <li>اگه سلایدر قرار است به جایی لینک نداشته باشد از کاراکتر # استفاده کنید بجای لینک</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">لغو</button>
+        <button type="submit" class="btn btn-pink waves-effect waves-light">ویرایش</button>
+    </div>
+
+</form>

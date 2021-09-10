@@ -32,7 +32,14 @@
                                 <tr>
                                     <td>@item.Id</td>
                                     <td>
-                                        <img src="~/Uploads/@item.Image" style="width: 150px; height: 80px" alt="@item.Title" />
+                                        @if (string.IsNullOrWhiteSpace(item.Image))
+                                        {
+                                            <img src="~/MainTheme/img/empty.png" style="width: 7rem;" alt="empty" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Uploads/@item.Image" style="width: 20rem;" alt="@item.Title" />
+                                        }
                                     </td>
                                     <td>@item.Title</td>
                                     <td>@item.CategoryName</td>

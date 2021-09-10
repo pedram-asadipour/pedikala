@@ -32,13 +32,13 @@
                                 <tr>
                                     <td>@item.Id</td>
                                     <td>
-                                        @if (!string.IsNullOrWhiteSpace(item.ProfileImage))
+                                        @if (string.IsNullOrWhiteSpace(item.ProfileImage))
                                         {
-                                            <img src="~/Uploads/@item.ProfileImage" style="width: 80px; height: 100px" alt="@item.Fullname" />
+                                            <img src="~/MainTheme/img/empty.png" style="width: 7rem;" alt="empty" />
                                         }
                                         else
                                         {
-                                            <img src="~/MainTheme/img/user-profile.png" style="width: 80px; height: 80px" alt="@item.Fullname" />
+                                            <img src="~/Uploads/@item.ProfileImage" class="img-circle" style="width: 10rem;" alt="@item.Fullname" />
                                         }
                                     </td>
                                     <td>@item.Fullname</td>

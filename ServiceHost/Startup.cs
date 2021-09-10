@@ -7,6 +7,7 @@ using _01_Framework.Application.ZarinPal;
 using _01_Framework.Infrastructure;
 using _01_PedikalaQuery.Configuration;
 using AccountManagement.Configuration;
+using Banner.Management.Configuration;
 using BlogManagement.Configuration;
 using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
@@ -43,6 +44,7 @@ namespace ServiceHost
             services.AddCommentConfigure(connection);
             services.AddBlogConfigure(connection);
             services.AddAccountConfigure(connection);
+            services.AddBannerConfigure(connection);
 
             services.AddSingleton<IFileManager, FileManager>();
             services.AddSingleton<IPasswordHasher, PasswordHasher>();

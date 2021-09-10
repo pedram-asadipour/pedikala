@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\01_PedikalaQuery\01_PedikalaQuery.csproj" />
     <ProjectReference Include="..\AccountManagement.Configuration\AccountManagement.Configuration.csproj" />
+    <ProjectReference Include="..\Banner.Management.Configuration\Banner.Management.Configuration.csproj" />
     <ProjectReference Include="..\BlogManagement.Configuration\BlogManagement.Configuration.csproj" />
     <ProjectReference Include="..\CommentManagement.Application.Contract\CommentManagement.Application.Contract.csproj" />
     <ProjectReference Include="..\CommentManagement.Configuration\CommentManagement.Configuration.csproj" />
