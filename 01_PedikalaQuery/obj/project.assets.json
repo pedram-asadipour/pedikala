@@ -2682,6 +2682,49 @@
           "bin/placeholder/AccountManagement.Infrastructure.EFCore.dll": {}
         }
       },
+      "BannerManagement.ApplicationContract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.8"
+        },
+        "compile": {
+          "bin/placeholder/BannerManagement.ApplicationContract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BannerManagement.ApplicationContract.dll": {}
+        }
+      },
+      "BannerManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "BannerManagement.ApplicationContract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BannerManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BannerManagement.Domain.dll": {}
+        }
+      },
+      "BannerManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "BannerManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
+        },
+        "compile": {
+          "bin/placeholder/BannerManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BannerManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
       "BlogManagement.Application.Contract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -8710,6 +8753,21 @@
       "path": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj"
     },
+    "BannerManagement.ApplicationContract/1.0.0": {
+      "type": "project",
+      "path": "../BannerManagement.ApplicationContract/BannerManagement.ApplicationContract.csproj",
+      "msbuildProject": "../BannerManagement.ApplicationContract/BannerManagement.ApplicationContract.csproj"
+    },
+    "BannerManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BannerManagement.Domain/BannerManagement.Domain.csproj",
+      "msbuildProject": "../BannerManagement.Domain/BannerManagement.Domain.csproj"
+    },
+    "BannerManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../BannerManagement.Infrastructure.EFCore/BannerManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../BannerManagement.Infrastructure.EFCore/BannerManagement.Infrastructure.EFCore.csproj"
+    },
     "BlogManagement.Application.Contract/1.0.0": {
       "type": "project",
       "path": "../BlogManagement.Application.Contract/BlogManagement.Application.Contract.csproj",
@@ -8788,6 +8846,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BannerManagement.Infrastructure.EFCore >= 1.0.0",
       "BlogManagement.Infrastructure.EFCore >= 1.0.0",
       "CommentManagement.Infrastructure.EFCore >= 1.0.0",
       "DiscountManagement.Infrastructure.EFCore >= 1.0.0",
@@ -8827,6 +8886,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BannerManagement.Infrastructure.EFCore\\BannerManagement.Infrastructure.EFCore.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BannerManagement.Infrastructure.EFCore\\BannerManagement.Infrastructure.EFCore.csproj"
+            },
             "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
             },

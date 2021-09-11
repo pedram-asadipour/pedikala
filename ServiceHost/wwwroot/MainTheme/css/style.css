@@ -2757,7 +2757,7 @@ select {
     position: fixed;
     z-index: 9;
     right: 5%;
-    bottom: 210px;
+    bottom: 50px;
     display: none;
     padding: 18px 20px;
     cursor: pointer;

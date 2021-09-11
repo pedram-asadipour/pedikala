@@ -122,6 +122,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BannerManagement.Infrastructure.EFCore\\BannerManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BannerManagement.Infrastructure.EFCore\\BannerManagement.Infrastructure.EFCore.csproj"
+              },
               "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
               },

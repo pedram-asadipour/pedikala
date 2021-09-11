@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using _01_Framework.Infrastructure;
@@ -27,6 +28,7 @@ namespace BannerManagement.Infrastructure.EFCore.Repository
                     TitleOne = x.TitleOne,
                     Image = x.Image,
                     Link = x.Link,
+                    Status = (x.IsRemove || (x.LifeTime <= DateTime.Now)),
                     IsRemove = x.IsRemove,
                     LifeTime = x.LifeTime.ToPersianDate(),
                     CreationDate = x.CreationDate.ToPersianDate()

@@ -6,6 +6,7 @@ using _01_PedikalaQuery.Contract.Menu;
 using _01_PedikalaQuery.Contract.Order;
 using _01_PedikalaQuery.Contract.Product;
 using _01_PedikalaQuery.Contract.ProductCategory;
+using _01_PedikalaQuery.Contract.Slider;
 using _01_PedikalaQuery.Query;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -60,6 +61,12 @@ namespace _01_PedikalaQuery.Configuration
             #region Order
 
             services.AddScoped<IOrderQuery, OrderQuery>();
+
+            #endregion
+
+            #region Slider
+
+            services.AddScoped<ISliderQuery, SliderQuery>();
 
             #endregion
         }
