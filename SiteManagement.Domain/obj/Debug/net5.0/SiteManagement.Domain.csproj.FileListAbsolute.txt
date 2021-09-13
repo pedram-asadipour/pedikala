@@ -1,0 +1,17 @@
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\SiteManagement.Domain.deps.json
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\SiteManagement.Domain.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\ref\SiteManagement.Domain.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\SiteManagement.Domain.pdb
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\01_Framework.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\SiteManagement.Application.Contract.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\01_Framework.pdb
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\bin\Debug\net5.0\SiteManagement.Application.Contract.pdb
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.AssemblyInfo.cs
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.csproj.CopyComplete
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\ref\SiteManagement.Domain.dll
+C:\Users\pedram\Desktop\me\source\pedikala\SiteManagement.Domain\obj\Debug\net5.0\SiteManagement.Domain.pdb

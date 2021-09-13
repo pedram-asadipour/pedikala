@@ -1,0 +1,75 @@
+﻿@page
+@using SiteManagement.Configuration.Permission
+@model ServiceHost.Areas.Admin.Pages.Site.ContactUs.EditInfoModel
+@{
+    ViewData["Title"] = "ویرایش بخش ارتباط با ما";
+}
+
+
+<div class="row" permission="@SitePermissions.EditInfo">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">ویرایش بخش ارتباط با ما</h3>
+            </div>
+
+            <div class="panel-body">
+                <form method="post"
+                      data-ajax="true"
+                      data-callback="@Url.Page("EditInfo")"
+                      data-action="RefreshPage">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label asp-for="Command.Description" class="control-label"></label>
+                                <textarea asp-for="Command.Description" class="form-control ltr" rows="5"></textarea>
+                                <span asp-validation-for="Command.Description" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label asp-for="Command.Location" class="control-label"></label>
+                                <textarea asp-for="Command.Location" class="form-control ltr" rows="5"></textarea>
+                                <span asp-validation-for="Command.Location" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" asp-for="Command.Id"/>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-pink waves-effect waves-light">ویرایش</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

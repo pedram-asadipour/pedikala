@@ -22,6 +22,7 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using ServiceHost.Framework;
 using ShopManagement.Configuration;
+using SiteManagement.Configuration;
 
 namespace ServiceHost
 {
@@ -38,6 +39,7 @@ namespace ServiceHost
         {
             var connection = Configuration.GetConnectionString("connection");
 
+            services.AddSiteConfigure(connection);
             services.AddShopConfigure(connection);
             services.AddDiscountConfigure(connection);
             services.AddInventoryConfigure(connection);

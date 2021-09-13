@@ -3674,6 +3674,11 @@ input.ltr {
     /* text-align: left; */
 }
 
+textarea.ltr {
+    direction: ltr;
+    /* text-align: left; */
+}
+
 
 .Validation-Error-Fix {
     display: block !important;

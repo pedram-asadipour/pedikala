@@ -3267,6 +3267,77 @@
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.Inventory.ACL.dll": {}
         }
+      },
+      "SiteManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SiteManagement.Application.Contract": "1.0.0",
+          "SiteManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Application.dll": {}
+        }
+      },
+      "SiteManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Application.Contract.dll": {}
+        }
+      },
+      "SiteManagement.Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "SiteManagement.Application": "1.0.0",
+          "SiteManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Configuration.dll": {}
+        }
+      },
+      "SiteManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "SiteManagement.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Domain.dll": {}
+        }
+      },
+      "SiteManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
+          "SiteManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Infrastructure.EFCore.dll": {}
+        }
       }
     }
   },
@@ -9405,6 +9476,31 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure.Inventory.ACL/ShopManagement.Infrastructure.Inventory.ACL.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure.Inventory.ACL/ShopManagement.Infrastructure.Inventory.ACL.csproj"
+    },
+    "SiteManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Application/SiteManagement.Application.csproj",
+      "msbuildProject": "../SiteManagement.Application/SiteManagement.Application.csproj"
+    },
+    "SiteManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Application.Contract/SiteManagement.Application.Contract.csproj",
+      "msbuildProject": "../SiteManagement.Application.Contract/SiteManagement.Application.Contract.csproj"
+    },
+    "SiteManagement.Configuration/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Configuration/SiteManagement.Configuration.csproj",
+      "msbuildProject": "../SiteManagement.Configuration/SiteManagement.Configuration.csproj"
+    },
+    "SiteManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Domain/SiteManagement.Domain.csproj",
+      "msbuildProject": "../SiteManagement.Domain/SiteManagement.Domain.csproj"
+    },
+    "SiteManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Infrastructure.EFCore/SiteManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../SiteManagement.Infrastructure.EFCore/SiteManagement.Infrastructure.EFCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9419,7 +9515,8 @@
       "InventoryManagement.Configuration >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
       "Nancy >= 2.0.0",
-      "ShopManagement.Configuration >= 1.0.0"
+      "ShopManagement.Configuration >= 1.0.0",
+      "SiteManagement.Configuration >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9480,6 +9577,9 @@
             },
             "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
+            },
+            "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\SiteManagement.Configuration\\SiteManagement.Configuration.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\SiteManagement.Configuration\\SiteManagement.Configuration.csproj"
             }
           }
         }

@@ -6,6 +6,7 @@
 @using global::Banner.Management.Configuration.Permission
 @using InventoryManagement.Configuration.Permission
 @using ShopManagement.Configuration.Permission
+@using SiteManagement.Configuration.Permission
 @inject IAuthHelper _authHelper
 @{
     var currentAccount = _authHelper.GetCurrentAccount();
@@ -134,6 +135,15 @@
                         </a>
                     </li>
 
+                    <li permission="@SitePermissions.Messages">
+                        <a asp-page="/Site/ContactUs/Index" class="waves-effect">
+                            <i class="md md-assessment"></i><span>
+                                پیغام کاربران
+                                @await Component.InvokeAsync("CountMessageComponent")
+                            </span>
+                        </a>
+                    </li>
+
                     <li class="has_sub" permissions="@(new List<string>(){
                                                          ShopPermissions.Product,
                                                          ShopPermissions.ProductCategory,
@@ -251,7 +261,7 @@
 
                                                      })">
                         <a href="#" class="waves-effect">
-                            <i class="md md-my-library-books"></i><span>مدیریت بنر ها</span>
+                            <i class="md md-alarm"></i><span>مدیریت بنر ها</span>
                             <span class="pull-left">
                                 <i class="md md-add"></i>
                             </span>
@@ -259,6 +269,22 @@
                         <ul class="list-unstyled">
                             <li permission="@BannerPermissions.Slider">
                                 <a asp-page="/Banner/Slider/Index">اسلایدر</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub" permissions="@(new List<string>(){
+                                                         SitePermissions.EditInfo
+                                                     })">
+                        <a href="#" class="waves-effect">
+                            <i class="md md-settings"></i><span>تنظیمات</span>
+                            <span class="pull-left">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li permission="@ShopPermissions.ProductCategory">
+                                <a asp-page="/Site/ContactUs/EditInfo">بخش ارتباط با ما</a>
                             </li>
                         </ul>
                     </li>

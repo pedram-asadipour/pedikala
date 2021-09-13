@@ -9,6 +9,7 @@ namespace _01_Framework.Domain
 
         public EntityBase()
         {
+            // Id = 1;
             CreationDate = DateTime.Now;
         }
     }

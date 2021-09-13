@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "پیغام ها";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title">پیغام ها</h2>
+    </div>
+</div>
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.Massages" />
+</div>
+
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Scripts
+{
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}
