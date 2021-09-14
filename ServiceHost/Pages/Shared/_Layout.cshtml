@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>فروشگاه پدیکالا | @ViewData["Title"]</title>
     <meta name="description" content="@ViewData["MetaDescription"]">
     <meta name="keywords" content="@ViewData["KeyWord"]">
@@ -20,41 +20,11 @@
 
 <body>
 
-@await Component.InvokeAsync("Header");
+@await Component.InvokeAsync("Header")
 
 @RenderBody()
 
-<!--====================  footer area ====================-->
-<div class="footer-area">
-    <div class="footer-copyright">
-        <div class="container wide">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-copyright-wrapper footer-copyright-wrapper--default-footer">
-                        <div class="container">
-                            <div class="row align-items-center no-gutters">
-
-                                <div class="col-12">
-
-                                    <div class="copyright-text">
-                                        تمامیه حقوق مادی و معنوی این سایت مطعلق به پدرام اسدی پور می باشد
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--====================  End of footer area  ====================-->
-
-
-
-
-
+@await Component.InvokeAsync("Footer")
 
 <!-- scroll to top  -->
 <div id="scroll-top">

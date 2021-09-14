@@ -145,15 +145,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Application", "SM.Applic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Infrastructure", "SM.Infrastructure", "{C3CB0E51-7A51-4769-BA3C-FAD8F80743C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Domain", "SiteManagement.Domain\SiteManagement.Domain.csproj", "{4E6B5AE7-D81C-4CD6-B6C1-06D6E3EB3744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteManagement.Domain", "SiteManagement.Domain\SiteManagement.Domain.csproj", "{4E6B5AE7-D81C-4CD6-B6C1-06D6E3EB3744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Application", "SiteManagement.Application\SiteManagement.Application.csproj", "{4C4BE107-1035-4877-B0B0-7C923E9C1EEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteManagement.Application", "SiteManagement.Application\SiteManagement.Application.csproj", "{4C4BE107-1035-4877-B0B0-7C923E9C1EEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Application.Contract", "SiteManagement.Application.Contract\SiteManagement.Application.Contract.csproj", "{1225456A-184C-4F36-A46D-C2426EC2859F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteManagement.Application.Contract", "SiteManagement.Application.Contract\SiteManagement.Application.Contract.csproj", "{1225456A-184C-4F36-A46D-C2426EC2859F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Infrastructure.EFCore", "SiteManagement.Infrastructure.EFCore\SiteManagement.Infrastructure.EFCore.csproj", "{47C60F03-35FF-4BD5-9474-C618F047A97C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteManagement.Infrastructure.EFCore", "SiteManagement.Infrastructure.EFCore\SiteManagement.Infrastructure.EFCore.csproj", "{47C60F03-35FF-4BD5-9474-C618F047A97C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteManagement.Configuration", "SiteManagement.Configuration\SiteManagement.Configuration.csproj", "{D13A8901-7108-41E2-8840-2EF128D5289A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteManagement.Configuration", "SiteManagement.Configuration\SiteManagement.Configuration.csproj", "{D13A8901-7108-41E2-8840-2EF128D5289A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

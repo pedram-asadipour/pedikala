@@ -2944,6 +2944,48 @@
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.EFCore.dll": {}
         }
+      },
+      "SiteManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Application.Contract.dll": {}
+        }
+      },
+      "SiteManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "SiteManagement.Application.Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Domain.dll": {}
+        }
+      },
+      "SiteManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
+          "SiteManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SiteManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SiteManagement.Infrastructure.EFCore.dll": {}
+        }
       }
     }
   },
@@ -8842,6 +8884,21 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj"
+    },
+    "SiteManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Application.Contract/SiteManagement.Application.Contract.csproj",
+      "msbuildProject": "../SiteManagement.Application.Contract/SiteManagement.Application.Contract.csproj"
+    },
+    "SiteManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Domain/SiteManagement.Domain.csproj",
+      "msbuildProject": "../SiteManagement.Domain/SiteManagement.Domain.csproj"
+    },
+    "SiteManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../SiteManagement.Infrastructure.EFCore/SiteManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../SiteManagement.Infrastructure.EFCore/SiteManagement.Infrastructure.EFCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8851,7 +8908,8 @@
       "CommentManagement.Infrastructure.EFCore >= 1.0.0",
       "DiscountManagement.Infrastructure.EFCore >= 1.0.0",
       "InventoryManagement.Infrastructure.EFCore >= 1.0.0",
-      "ShopManagement.Infrastructure.EFCore >= 1.0.0"
+      "ShopManagement.Infrastructure.EFCore >= 1.0.0",
+      "SiteManagement.Infrastructure.EFCore >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8903,6 +8961,9 @@
             },
             "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+            },
+            "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\SiteManagement.Infrastructure.EFCore\\SiteManagement.Infrastructure.EFCore.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\SiteManagement.Infrastructure.EFCore\\SiteManagement.Infrastructure.EFCore.csproj"
             }
           }
         }

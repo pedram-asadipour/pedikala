@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control">
+                    <input asp-for="Name" class="form-control ltr">
                     <span asp-validation-for="Name" class="error"></span>
                 </div>
             </div>
@@ -30,8 +30,17 @@
                 </div>
             </div>
         </div>
-        
-        <input type="hidden" asp-for="Id"/>
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row">
+            <div class="col-12">
+                نکات مهم
+                <ul>
+                    <li>در بخش نام می توانید از کد های html هم استفاده کنید</li>
+                </ul>
+            </div>
+        </div>
 
     </div>
     <div class="modal-footer">

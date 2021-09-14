@@ -1,6 +1,7 @@
 ﻿using _01_PedikalaQuery.Contract.Article;
 using _01_PedikalaQuery.Contract.ArticleCategory;
 using _01_PedikalaQuery.Contract.Cart;
+using _01_PedikalaQuery.Contract.Footer;
 using _01_PedikalaQuery.Contract.Inventory;
 using _01_PedikalaQuery.Contract.Menu;
 using _01_PedikalaQuery.Contract.Order;
@@ -67,6 +68,12 @@ namespace _01_PedikalaQuery.Configuration
             #region Slider
 
             services.AddScoped<ISliderQuery, SliderQuery>();
+
+            #endregion
+
+            #region Footer
+
+            services.AddScoped<IFooterQuery, FooterQuery>();
 
             #endregion
         }
