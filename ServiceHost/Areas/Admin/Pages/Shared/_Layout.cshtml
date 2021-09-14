@@ -274,7 +274,10 @@
                     </li>
 
                     <li class="has_sub" permissions="@(new List<string>(){
-                                                         SitePermissions.EditInfo
+                                                         SitePermissions.EditInfo,
+                                                         SitePermissions.EditFooter,
+                                                         SitePermissions.CreateLink,
+                                                         SitePermissions.EditLink
                                                      })">
                         <a href="#" class="waves-effect">
                             <i class="md md-settings"></i><span>تنظیمات</span>
@@ -283,8 +286,14 @@
                             </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li permission="@ShopPermissions.ProductCategory">
+                            <li permission="@SitePermissions.EditInfo">
                                 <a asp-page="/Site/ContactUs/EditInfo">بخش ارتباط با ما</a>
+                            </li>
+                            <li permissions="@(new List<string>(){
+                                                 SitePermissions.EditFooter,
+                                                 SitePermissions.FooterLink
+                                             })">
+                                <a asp-page="/Site/Footer/Index">بخش Footer</a>
                             </li>
                         </ul>
                     </li>

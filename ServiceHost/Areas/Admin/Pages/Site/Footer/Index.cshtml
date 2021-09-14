@@ -1,0 +1,84 @@
+﻿@page
+@using SiteManagement.Configuration.Permission
+@model IndexModel
+@{
+    ViewData["Title"] = "لینک های footer";
+}
+
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <h4 permission="@SitePermissions.CreateLink">
+            <a class="btn btn-purple btn-lg waves-effect waves-light m-b-15" href="#showmodal=@Url.Page("./Index","CreateLink")">ایجاد لینک <i class="md md-add"></i></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="page-title">تنظیمات Footer</h2>
+    </div>
+</div>
+
+
+<div class="row" permission="@SitePermissions.EditFooter">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">ویرایش توضیحات Footer</h3>
+            </div>
+            <div class="panel-body">
+
+                <form asp-page-handler="EditFooter" permission="@SitePermissions.CreateLink"
+                      method="post"
+                      data-ajax="true"
+                      data-callback="@Url.Page("Index")"
+                      data-action="RefreshPage">
+
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="Command.Description"></label>
+                        <input asp-for="Command.Description" class="form-control" placeholder="توضیحات Footer">
+                        <span asp-validation-for="Command.Description" class="error"></span>
+                    </div>
+                    
+                    <input type="hidden" asp-for="Command.Id"/>
+
+                    <button type="submit" class="btn btn-pink waves-effect waves-light m-l-10">ویرایش</button>
+                </form>
+
+            </div> 
+        </div> 
+    </div> 
+
+</div>
+
+
+
+<div id="siteContent" data-handler="list">
+    <partial name="List" model="Model.Links" />
+</div>
+
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Scripts
+{
+    <!-- JQuery Validation -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- JQuery DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

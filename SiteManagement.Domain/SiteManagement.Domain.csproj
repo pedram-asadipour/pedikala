@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FooterAgg\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\01_Framework\01_Framework.csproj" />
     <ProjectReference Include="..\SiteManagement.Application.Contract\SiteManagement.Application.Contract.csproj" />
   </ItemGroup>

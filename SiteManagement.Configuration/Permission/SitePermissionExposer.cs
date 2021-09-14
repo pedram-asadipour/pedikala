@@ -16,6 +16,17 @@ namespace SiteManagement.Configuration.Permission
                         new PermissionDto(SitePermissions.Status,"وضعیت"),
                         new PermissionDto(SitePermissions.EditInfo,"ویرایش اطلاعات ارتباط با ما")
                     }
+                },
+                {
+                    "Footer (تنظیمات footer)", new List<PermissionDto>()
+                    {
+                        new PermissionDto(SitePermissions.EditFooter,"footer"),
+
+                        new PermissionDto(SitePermissions.FooterLink,"لینک های footer"),
+                        new PermissionDto(SitePermissions.CreateLink,"ایجاد لینک"),
+                        new PermissionDto(SitePermissions.EditLink,"ویرایش لینک"),
+                        new PermissionDto(SitePermissions.RemoveRestoreLink,"حذف و بازیابی لینک")
+                    }
                 }
             };
         }

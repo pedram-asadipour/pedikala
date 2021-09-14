@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SiteManagement.Domain.ContactUsAgg;
+using SiteManagement.Domain.FooterAgg;
 using SiteManagement.Infrastructure.EFCore.Mapping;
 
 namespace SiteManagement.Infrastructure.EFCore
@@ -10,9 +11,10 @@ namespace SiteManagement.Infrastructure.EFCore
         {
         }
 
-
         public DbSet<ContactUs> ContactUs { get; set; }
         public DbSet<ContactUsInfo> ContactUsInfo { get; set; }
+        public DbSet<Footer> Footer { get; set; }
+        public DbSet<FooterLink> FooterLink { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

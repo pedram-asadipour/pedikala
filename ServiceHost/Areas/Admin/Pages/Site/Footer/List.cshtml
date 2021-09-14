@@ -1,0 +1,74 @@
+﻿@using SiteManagement.Configuration.Permission
+@model List<SiteManagement.Application.Contract.Footer.FooterLinkViewModel>
+
+
+<div class="row" permission="@SitePermissions.FooterLink">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">لیست پیغام ها (@Model.Count)</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center table-responsive">
+                        <table id="datatable" class="table table-striped table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>نام</th>
+                                    <th>لینک</th>
+                                    <th>وضعیت</th>
+                                    <th>تاریخ ساخت</th>
+                                    <th>عملیات</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <a href="@item.Link">لینک</a>
+                                    </td>
+                                    <td>
+                                        @if (item.IsRemove)
+                                        {
+                                            <span class="text-warning">غیر فعال <i class="md md-close"></i></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-success">فعال <i class="md md-check"></i></span>
+                                        }
+                                    </td>
+                                    <td>@item.CreationDate</td>
+                                    <td>
+
+                                        <a permission="@SitePermissions.EditLink"
+                                           href="#showmodal=@Url.Page("./Index", "EditLink", new {id = item.Id})" class="btn btn-primary waves-effect waves-light">ویرایش <i class="md md-edit "></i></a>
+
+                                        @if (item.IsRemove)
+                                        {
+                                            <a permission="@SitePermissions.RemoveRestoreLink"
+                                               href="#operation=@Url.Page("./Index", "Restore", new {id = item.Id})" class="btn btn-success waves-effect waves-light">فعال <i class="md md-check "></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a permission="@SitePermissions.RemoveRestoreLink"
+                                               href="#operation=@Url.Page("./Index", "Remove", new {id = item.Id})" class="btn btn-warning waves-effect waves-light">غیر فعال <i class="md md-close "></i></a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
