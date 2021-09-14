@@ -3,6 +3,7 @@ using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Tools;
 using _01_PedikalaQuery.Contract.Cart;
+using AccountManagement.Application.Contract.Role;
 using DiscountManagement.Infrastructure.EFCore;
 using ShopManagement.Application.Contract.Order;
 
@@ -11,12 +12,14 @@ namespace _01_PedikalaQuery.Query
     public class CartQuery : ICartQuery
     {
         private readonly IAuthHelper _authHelper;
+        private readonly IRoleApplication _roleApplication;
         private readonly DiscountContext _discountContext;
 
-        public CartQuery(IAuthHelper authHelper, DiscountContext discountContext)
+        public CartQuery(IAuthHelper authHelper, DiscountContext discountContext, IRoleApplication roleApplication)
         {
             _authHelper = authHelper;
             _discountContext = discountContext;
+            _roleApplication = roleApplication;
         }
 
         public Cart ComputeCart(List<CartItem> cartItems)
@@ -33,9 +36,11 @@ namespace _01_PedikalaQuery.Query
 
             var currentAccountRole = _authHelper.GetCurrentAccount().RoleId;
 
+            var colleagueRole = _roleApplication.GetColleagueRole().RoleId;
+
             foreach (var item in cartItems)
             {
-                if (currentAccountRole == 1000) // Colleague Role For Test
+                if (currentAccountRole == colleagueRole) // Colleague Discount
                 {
                     var discount = colleagueDiscounts
                         .FirstOrDefault(x => x.ProductId == item.Id && !x.IsRemoved);

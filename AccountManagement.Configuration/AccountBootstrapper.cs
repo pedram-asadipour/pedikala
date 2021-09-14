@@ -35,6 +35,12 @@ namespace AccountManagement.Configuration
 
             #endregion
 
+            #region Colleague Role
+
+            services.AddScoped<IColleagueRoleRepository, ColleagueRoleRepository>();
+
+            #endregion
+
             #region RolePermission
 
             services.AddSingleton<IPermissionExposer, AccountPermissionExposer>();

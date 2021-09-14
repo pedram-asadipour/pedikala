@@ -26,6 +26,12 @@ namespace AccountManagement.Configuration.Permission
                         new PermissionDto(AccountPermissions.CreateRole, "ایحاد دسترسی"),
                         new PermissionDto(AccountPermissions.EditRole, "ویرایش دسترسی"),
                     }
+                },
+                {
+                    "Colleague Role(تنظیمات دسترسی مشتری)", new List<PermissionDto>()
+                    {
+                        new PermissionDto(AccountPermissions.ColleagueRole, "تنظیمات دسترسی مشتری")
+                    }
                 }
             };
         }

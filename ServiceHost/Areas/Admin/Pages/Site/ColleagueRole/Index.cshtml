@@ -1,0 +1,67 @@
+﻿@page
+@using AccountManagement.Configuration.Permission
+@model ServiceHost.Areas.Admin.Pages.Site.ColleagueRole.IndexModel
+@{
+    ViewData["Title"] = "تنظیمات دسترسی مشتری";
+}
+
+
+<div class="row" permission="@AccountPermissions.ColleagueRole">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">تنظیمات دسترسی مشتری</h3>
+            </div>
+
+            <div class="panel-body">
+                <form method="post"
+                      data-ajax="true"
+                      data-callback="@Url.Page("Index")"
+                      data-action="RefreshPage">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <select asp-for="Command.RoleId" class="form-control" asp-items="Model.Roles">
+                                    <option value="0">کاربر مشتری را انتخاب کنید</option>
+                                </select>
+                                <span asp-validation-for="Command.RoleId" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" asp-for="Command.Id"/>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">تایید</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Meta
+{
+    <!-- SweetAlert -->
+    <link href="~/lib/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+}
+
+@section Scripts
+{
+    <!-- Validation JQuery Unobtrusive -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="~/lib/sweet-alert/sweet-alert.min.js"></script>
+
+    <!-- Custom Site Script -->
+    <script src="~/AdminTheme/js/site.js"></script>
+}

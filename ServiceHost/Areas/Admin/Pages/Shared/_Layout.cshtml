@@ -277,7 +277,8 @@
                                                          SitePermissions.EditInfo,
                                                          SitePermissions.EditFooter,
                                                          SitePermissions.CreateLink,
-                                                         SitePermissions.EditLink
+                                                         SitePermissions.EditLink,
+                                                         AccountPermissions.ColleagueRole
                                                      })">
                         <a href="#" class="waves-effect">
                             <i class="md md-settings"></i><span>تنظیمات</span>
@@ -294,6 +295,9 @@
                                                  SitePermissions.FooterLink
                                              })">
                                 <a asp-page="/Site/Footer/Index">بخش Footer</a>
+                            </li>
+                            <li permission="@AccountPermissions.ColleagueRole">
+                                <a asp-page="/Site/ColleagueRole/Index">تنظیمات دسترسی مشتری</a>
                             </li>
                         </ul>
                     </li>

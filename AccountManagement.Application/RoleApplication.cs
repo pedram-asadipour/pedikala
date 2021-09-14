@@ -11,12 +11,14 @@ namespace AccountManagement.Application
     public class RoleApplication : IRoleApplication
     {
         private readonly IRoleRepository _repository;
+        private readonly IColleagueRoleRepository _colleagueRoleRepository;
         private readonly IEnumerable<IPermissionExposer> _exposers;
 
-        public RoleApplication(IRoleRepository repository, IEnumerable<IPermissionExposer> exposers)
+        public RoleApplication(IRoleRepository repository, IEnumerable<IPermissionExposer> exposers, IColleagueRoleRepository colleagueRoleRepository)
         {
             _repository = repository;
             _exposers = exposers;
+            _colleagueRoleRepository = colleagueRoleRepository;
         }
 
         public List<RoleViewModel> GetAll()
@@ -104,6 +106,28 @@ namespace AccountManagement.Application
             }
 
             return allPermissionsWithGroup;
+        }
+
+        public EditColleagueRole GetColleagueRole()
+        {
+            return _colleagueRoleRepository.GetColleagueRole();
+        }
+
+        public OperationResult EditColleagueRole(EditColleagueRole command)
+        {
+            var operationResult = new OperationResult();
+            var colleagueRole = _colleagueRoleRepository.GetBy(command.Id);
+
+            if (colleagueRole == null)
+                return operationResult.Failed(ApplicationMessages.NotFound);
+
+            colleagueRole.Edit(command.RoleId);
+
+            _colleagueRoleRepository.Edit(colleagueRole);
+
+            _colleagueRoleRepository.SaveChange();
+
+            return operationResult.Succeeded();
         }
     }
 }

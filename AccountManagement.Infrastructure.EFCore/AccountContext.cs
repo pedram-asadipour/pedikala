@@ -13,6 +13,7 @@ namespace AccountManagement.Infrastructure.EFCore
         
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<ColleagueRole> ColleagueRole { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

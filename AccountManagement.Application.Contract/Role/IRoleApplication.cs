@@ -11,5 +11,7 @@ namespace AccountManagement.Application.Contract.Role
         OperationResult Create(CreateRole command);
         OperationResult Edit(EditRole command);
         List<SelectListItem> GetPermissions(List<string> currentRolePermissions);
+        EditColleagueRole GetColleagueRole();
+        OperationResult EditColleagueRole(EditColleagueRole command);
     }
 }

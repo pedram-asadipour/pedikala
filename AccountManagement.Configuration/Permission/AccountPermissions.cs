@@ -19,5 +19,11 @@
         public const string EditRole = "permission.role.edit";
 
         #endregion
+
+        #region Colleague Role
+
+        public const string ColleagueRole = "permission.colleagueRole";
+
+        #endregion
     }
 }
