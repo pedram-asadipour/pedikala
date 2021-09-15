@@ -2298,6 +2298,81 @@
         }
       }
     },
+    "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj",
+        "projectName": "InventoryManagement.Presentation.Api",
+        "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj",
+        "packagesPath": "C:\\Users\\pedram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\pedram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\01_PedikalaQuery\\01_PedikalaQuery.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ServiceHost\\ServiceHost.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -2349,6 +2424,9 @@
               },
               "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj"
               },
               "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"
@@ -2492,6 +2570,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Application.Contract\\AccountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Application.Contract\\AccountManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Domain\\AccountManagement.Domain.csproj"
+              },
               "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }

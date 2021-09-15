@@ -105,7 +105,7 @@ function ChangeItemCardCount(id, totalPriceId, count) {
     products[itemIndex].count = count;
 
     const totalPrice = new Intl.NumberFormat().format(
-        parseInt(products[itemIndex].UnitPrice) * parseInt(count)
+        parseInt(products[itemIndex].UnitPrice.replace(",","")) * parseInt(count)
     );
 
     $(`#${totalPriceId}`).html(totalPrice);
@@ -113,6 +113,45 @@ function ChangeItemCardCount(id, totalPriceId, count) {
     $.cookie(cookieName, JSON.stringify(products), { expire: 1, path: "/" });
 
     UpdateCart();
+
+    const  settings = {
+        "url": window.location.origin + "/api/inventory",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "ProductId": id,
+            "Count": count
+        })
+    };
+
+    $.ajax(settings).done(function (response) {
+
+
+        const  parentDiv = $("#StockStatus");
+
+        if (!response.inStock) {
+
+            if ($(`#status-product-${id}`).length == 0) {
+
+                const alert = `
+                    <div class="alert alert-danger" id="status-product-${id}">
+                        <i class="fa fa-warning"></i>
+                        محصول <strong>${response.productName}</strong> به این میزان موجود نمی باشد.
+                    </div>`;
+
+                parentDiv.append(alert);
+
+            }
+        } else {
+
+            const alert = $(`#status-product-${id}`);
+            alert.remove();
+        }
+
+    });
 }
 
 $(document).ready(function() {

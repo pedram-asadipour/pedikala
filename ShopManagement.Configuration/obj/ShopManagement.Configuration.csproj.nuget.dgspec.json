@@ -463,6 +463,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Application.Contract\\AccountManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Application.Contract\\AccountManagement.Application.Contract.csproj"
+              },
+              "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\AccountManagement.Domain\\AccountManagement.Domain.csproj"
+              },
               "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
                 "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }

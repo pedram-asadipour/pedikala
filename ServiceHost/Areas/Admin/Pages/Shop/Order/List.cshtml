@@ -17,6 +17,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>نام کاربر</th>
+                                    <th>نوع سفارش</th>
                                     <th>مبلغ کل</th>
                                     <th>مبلغ تخفیف</th>
                                     <th>مبلغ پرداختی</th>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>@item.Id</td>
                                     <td>@item.AccountUsername</td>
+                                    <td> @(item.Status ? "کاربر همکار" : "کاربر سایت") </td>
                                     <td>@item.TotalAmount</td>
                                     <td>@item.DiscountAmount</td>
                                     <td>@item.PayAmount</td>

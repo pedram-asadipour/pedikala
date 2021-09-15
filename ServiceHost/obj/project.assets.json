@@ -3182,10 +3182,28 @@
           "bin/placeholder/InventoryManagement.Infrastructure.EFCore.dll": {}
         }
       },
+      "InventoryManagement.Presentation.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "01_PedikalaQuery": "1.0.0",
+          "InventoryManagement.Application.Contract": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/InventoryManagement.Presentation.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InventoryManagement.Presentation.Api.dll": {}
+        }
+      },
       "ShopManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.Application.Contract": "1.0.0",
+          "AccountManagement.Domain": "1.0.0",
           "ShopManagement.Domain": "1.0.0"
         },
         "compile": {
@@ -9448,6 +9466,11 @@
       "path": "../InventoryManagement.Infrastructure.EFCore/InventoryManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../InventoryManagement.Infrastructure.EFCore/InventoryManagement.Infrastructure.EFCore.csproj"
     },
+    "InventoryManagement.Presentation.Api/1.0.0": {
+      "type": "project",
+      "path": "../InventoryManagement.Presentation.Api/InventoryManagement.Presentation.Api.csproj",
+      "msbuildProject": "../InventoryManagement.Presentation.Api/InventoryManagement.Presentation.Api.csproj"
+    },
     "ShopManagement.Application/1.0.0": {
       "type": "project",
       "path": "../ShopManagement.Application/ShopManagement.Application.csproj",
@@ -9514,6 +9537,7 @@
       "CommentManagement.Configuration >= 1.0.0",
       "DiscountManagement.Configuration >= 1.0.0",
       "InventoryManagement.Configuration >= 1.0.0",
+      "InventoryManagement.Presentation.Api >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
       "Nancy >= 2.0.0",
       "ShopManagement.Configuration >= 1.0.0",
@@ -9575,6 +9599,9 @@
             },
             "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Configuration\\InventoryManagement.Configuration.csproj"
+            },
+            "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj": {
+              "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj"
             },
             "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\pedram\\Desktop\\me\\source\\pedikala\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj"

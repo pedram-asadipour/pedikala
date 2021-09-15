@@ -2699,6 +2699,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.Application.Contract": "1.0.0",
+          "AccountManagement.Domain": "1.0.0",
           "ShopManagement.Domain": "1.0.0"
         },
         "compile": {

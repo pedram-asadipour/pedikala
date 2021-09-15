@@ -32,6 +32,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 {
                     Id = x.Id,
                     AccountId = x.AccountId,
+                    Status = x.Status,
                     TotalAmount = x.TotalAmount.ToString("##,###"),
                     DiscountAmount = x.DiscountAmount.ToString("##,###"),
                     PayAmount = x.PayAmount.ToString("##,###"),

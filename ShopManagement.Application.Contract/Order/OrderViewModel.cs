@@ -6,6 +6,7 @@ namespace ShopManagement.Application.Contract.Order
     {
         public long Id { get; set; }
         public long AccountId { get; set; }
+        public bool Status { get; set; }
         public string AccountUsername { get; set; }
         public string TotalAmount { get; set; }
         public string DiscountAmount { get; set; }

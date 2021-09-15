@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
+using AccountManagement.Domain.RoleAgg;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contract.Order;
 using ShopManagement.Domain.OrderAgg;
@@ -13,13 +14,15 @@ namespace ShopManagement.Application
         private readonly IAuthHelper _authHelper;
         private readonly IConfiguration _configuration;
         private readonly IShopInventoryAcl _inventoryAcl;
+        private readonly IColleagueRoleRepository _colleagueRoleRepository;
 
-        public OrderApplication(IOrderRepository repository, IAuthHelper authHelper, IConfiguration configuration, IShopInventoryAcl inventoryAcl)
+        public OrderApplication(IOrderRepository repository, IAuthHelper authHelper, IConfiguration configuration, IShopInventoryAcl inventoryAcl, IColleagueRoleRepository colleagueRoleRepository)
         {
             _repository = repository;
             _authHelper = authHelper;
             _configuration = configuration;
             _inventoryAcl = inventoryAcl;
+            _colleagueRoleRepository = colleagueRoleRepository;
         }
 
         public List<OrderViewModel> GetAll(OrderSearchModel searchModel)
@@ -50,7 +53,9 @@ namespace ShopManagement.Application
         public long PlaceOrder(Cart cart)
         {
             var accountId = _authHelper.GetCurrentAccount().AccountId;
-            var order = new Order(accountId,cart.TotalAmounts,cart.Pay,cart.TotalDiscounts);
+            var status = _authHelper.GetCurrentAccount().RoleId == _colleagueRoleRepository.GetColleagueRole().RoleId;
+
+            var order = new Order(accountId,status,cart.TotalAmounts,cart.Pay,cart.TotalDiscounts);
 
             foreach (var cartItem in cart.CartItems)
             {

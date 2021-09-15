@@ -31,7 +31,7 @@ namespace ServiceHost.Pages.Account
         }
 
         [UserAuthentication("/Account/Dashboard")]
-        public IActionResult OnPostRegister(RegisterAccount register,string returnUrl)
+        public IActionResult OnPostRegister(RegisterAccount register)
         {
             if (!ModelState.IsValid)
             {

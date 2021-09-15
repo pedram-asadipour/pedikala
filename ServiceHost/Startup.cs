@@ -12,6 +12,7 @@ using BlogManagement.Configuration;
 using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
+using InventoryManagement.Presentation.Api;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -91,7 +92,8 @@ namespace ServiceHost
                     options.Filters.Add<SecurityPageFilter>();
                     options.Filters.Add<CheckUserAuthenticationPageFilter>();
                 })
-                .AddRazorPagesOptions(options => { options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin"); });
+                .AddRazorPagesOptions(options => { options.Conventions.AuthorizeAreaFolder("Admin", "/", "Admin"); })
+                .AddApplicationPart(typeof(InventoryController).Assembly);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
